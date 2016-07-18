@@ -11,18 +11,26 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.Locale;
+
 /**
  * Created by Abi Karami on 5/30/2016.
  */
 public class AdapterListIoCommand extends BaseAdapter {
 
-    String[] output_name={"Lampu Kuning", "Lampu LED", "Lampu Belajar", "Test", "Test", "Test", "Test"};
+    private String[] output_name={"Lampu Kuning", "Lampu LED", "Lampu Belajar", "Test", "Test", "Test", "Test"};
 
-    Context context;
+    private Context context;
 
-    AdapterListIoCommand(Context ini){
+    public AdapterListIoCommand(Context ini){
         context = ini;
+        SQLiteAdapter sqLiteAdapter = new SQLiteAdapter(context);
+        if (sqLiteAdapter.getController() != null) {
+            String[][] data_controller = sqLiteAdapter.getController();
+            output_name = data_controller[0];
+        }
     }
+
     @Override
     public int getCount() {
         return output_name.length;
@@ -38,7 +46,7 @@ public class AdapterListIoCommand extends BaseAdapter {
         return position;
     }
 
-    @SuppressLint("ViewHolder")
+    @SuppressLint({"ViewHolder", "InflateParams"})
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -47,7 +55,7 @@ public class AdapterListIoCommand extends BaseAdapter {
         TextView list_output_name = (TextView)convertView.findViewById(R.id.textview_list_io_command_output_name);
         TextView list_output_number = (TextView)convertView.findViewById(R.id.textview_list_io_command_output_number);
 
-        list_output_number.setText("0"+position);
+        list_output_number.setText(String.format(Locale.getDefault(), "%02d", position+1));
         list_output_name.setText(output_name[position]);
 
         return convertView;
