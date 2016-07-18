@@ -27,12 +27,9 @@ public class AdapterStatistic extends BaseAdapter {
     String[] output_number;
 
     private Context context;
-    private Handler handler;
 
     public AdapterStatistic(Context ini){
         context = ini;
-        handler = new Handler(Looper.getMainLooper());
-
         SQLiteAdapter sqLiteAdapter = new SQLiteAdapter(context);
         if (sqLiteAdapter.getController() != null) {
             String[][] data_controller = sqLiteAdapter.getController();
@@ -84,20 +81,15 @@ public class AdapterStatistic extends BaseAdapter {
         final TextView statistic_month = (TextView)convertView.findViewById(R.id.textview_statistic_month);
         final TextView statistic_average = (TextView)convertView.findViewById(R.id.textview_statistic_average);
 
-        handler.post(new Runnable() {
-            @Override
-            public void run() {
-                statistic_output_number.setText(output_number[position]);
-                statistic_output_image.setImageResource(id_image[0]);
-                statistic_output_name.setText(output_name[position]);
-                statistic_output_position.setText(output_position[position]);
-                statistic_output_power.setText(output_power[position]);
-                statistic_day.setText("5h");
-                statistic_week.setText("35h");
-                statistic_month.setText("200h");
-                statistic_average.setText("4,5h");
-            }
-        });
+        statistic_output_number.setText(output_number[position]);
+        statistic_output_image.setImageResource(id_image[0]);
+        statistic_output_name.setText(output_name[position]);
+        statistic_output_position.setText(output_position[position]);
+        statistic_output_power.setText(output_power[position]);
+        statistic_day.setText("5h");
+        statistic_week.setText("35h");
+        statistic_month.setText("200h");
+        statistic_average.setText("4,5h");
 
         return convertView;
     }

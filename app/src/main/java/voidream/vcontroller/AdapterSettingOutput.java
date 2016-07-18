@@ -17,6 +17,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.apache.commons.lang.ArrayUtils;
+
 import java.util.Locale;
 
 /**
@@ -35,7 +37,6 @@ public class AdapterSettingOutput extends BaseAdapter {
 
     AdapterSettingOutput(Context ini){
         context = ini;
-        //menuInflater = new MenuInflater(context);
         sqLiteAdapter = new SQLiteAdapter(context);
     }
 
@@ -58,7 +59,11 @@ public class AdapterSettingOutput extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return output_name.length;
+        if (ArrayUtils.isEmpty(output_name)){
+            return 0;
+        }else {
+            return output_name.length;
+        }
     }
 
     @Override
@@ -76,7 +81,6 @@ public class AdapterSettingOutput extends BaseAdapter {
     public View getView(final int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         convertView = inflater.inflate(R.layout.custom_list_setting_output, null);
-        Handler handler = new Handler(Looper.getMainLooper());
 
         final TextView setting_output_number = (TextView)convertView.findViewById(R.id.textview_setting_output_number);
         final ImageView setting_output_image = (ImageView)convertView.findViewById(R.id.imageview_setting_output_image);
@@ -85,16 +89,11 @@ public class AdapterSettingOutput extends BaseAdapter {
         final TextView setting_output_power = (TextView)convertView.findViewById(R.id.textview_setting_output_power);
         Button setting_output_edit = (Button)convertView.findViewById(R.id.button_edit_output_edit);
 
-        handler.post(new Runnable() {
-            @Override
-            public void run() {
-                setting_output_number.setText(output_number[position]);
-                setting_output_name.setText(output_name[position]);
-                setting_output_position.setText(output_position[position]);
-                setting_output_power.setText(output_power[position]);
-                setting_output_image.setImageResource(id_image[position]);
-            }
-        });
+        setting_output_number.setText(output_number[position]);
+        setting_output_name.setText(output_name[position]);
+        setting_output_position.setText(output_position[position]);
+        setting_output_power.setText(output_power[position]);
+        setting_output_image.setImageResource(id_image[position]);
 
         setting_output_edit.setOnClickListener(new View.OnClickListener() {
             @Override

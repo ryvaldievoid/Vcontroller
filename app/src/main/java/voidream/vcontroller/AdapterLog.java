@@ -27,16 +27,13 @@ public class AdapterLog extends BaseAdapter {
     private String[] status;
     private String[] ago;
     private String[] loc;
-    //private String[] stamp;
     private String[] dateString;
     private String[] num;
 
     private Context context;
-    private Handler handler;
     private SQLiteAdapter sqLiteAdapter;
     public AdapterLog(Context ini){
         context = ini;
-        handler = new Handler(Looper.getMainLooper());
         sqLiteAdapter = new SQLiteAdapter(context);
     }
 
@@ -109,18 +106,14 @@ public class AdapterLog extends BaseAdapter {
         final TextView log_number = (TextView)convertView.findViewById(R.id.textview_log_number);
 
         ago[position] = timeConverter.howManySecondsAgo(dateString[position]);
-        handler.post(new Runnable() {
-            @Override
-            public void run() {
-                log_image.setImageResource(Id_outputimage[position]);
-                log_output.setText(outputName[position]);
-                log_explanation.setText(status[position]);
-                log_time_ago.setText(ago[position]);
-                log_location.setText(loc[position]);
-                log_time_stamp.setText(dateString[position]);
-                log_number.setText(num[position]);
-            }
-        });
+
+        log_image.setImageResource(Id_outputimage[position]);
+        log_output.setText(outputName[position]);
+        log_explanation.setText(status[position]);
+        log_time_ago.setText(ago[position]);
+        log_location.setText(loc[position]);
+        log_time_stamp.setText(dateString[position]);
+        log_number.setText(num[position]);
 
         return convertView;
     }

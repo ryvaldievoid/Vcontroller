@@ -32,11 +32,9 @@ public class AdapterController extends BaseAdapter {
     public static boolean tcp_or_mqtt;
 
     private static Context context;
-    private Handler handler;
     private SQLiteAdapter sqLiteAdapter;
     public AdapterController(Context ini) {
         context = ini;
-        handler = new Handler(Looper.getMainLooper());
         sqLiteAdapter = new SQLiteAdapter(context);
     }
 
@@ -93,23 +91,18 @@ public class AdapterController extends BaseAdapter {
         ImageButton button_push = (ImageButton)convertView.findViewById(R.id.imagebutton_controller_push_button);
         ImageButton button_timer = (ImageButton)convertView.findViewById(R.id.imagebutton_controller_timer);
 
-        handler.post(new Runnable() {
-            @Override
-            public void run() {
-                output_number.setText(outputNumber[position]);
-                output_image.setButtonDrawable(Id_outputimage[position]);
-                if (status[position].equals("on")) {
-                    output_image.setChecked(true);
-                }else {
-                    output_image.setChecked(false);
-                }
-                output_name.setText(outputName[position]);
+        output_number.setText(outputNumber[position]);
+        output_image.setButtonDrawable(Id_outputimage[position]);
+        if (status[position].equals("on")) {
+            output_image.setChecked(true);
+        }else {
+            output_image.setChecked(false);
+        }
+        output_name.setText(outputName[position]);
 
-                output_position.setText(AdapterController.position[position]);
-                output_power.setText(power[position]);
-                output_status.setText(status[position]);
-            }
-        });
+        output_position.setText(AdapterController.position[position]);
+        output_power.setText(power[position]);
+        output_status.setText(status[position]);
 
         final MqttPublisher publisher = new MqttPublisher(context);
         button_push.setOnClickListener(new View.OnClickListener() {
