@@ -21,7 +21,9 @@ public class CustomListOutputOptions extends BaseAdapter {
         layoutInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
-    public static int[] id = new int[]{R.drawable.output1_on_off, R.drawable.output2_on_off};
+    public static int[] id = new int[]{R.drawable.output1_on_off, R.drawable.output2_on_off
+            , R.drawable.output3_on_off};
+
     public void updateData(int[] id){
         CustomListOutputOptions.id = id;
         notifyDataSetChanged();

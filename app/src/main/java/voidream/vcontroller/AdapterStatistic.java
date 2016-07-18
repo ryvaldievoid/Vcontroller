@@ -35,8 +35,9 @@ public class AdapterStatistic extends BaseAdapter {
             String[][] data_controller = sqLiteAdapter.getController();
             int[] id_image = new int[data_controller[4].length];
             output_number = new String[data_controller[4].length];
+            int b = 1;
             for (int a=0;a<data_controller[4].length;a++){
-                output_number[a] = String.format(Locale.getDefault(), "%02d", a);
+                output_number[a] = String.format(Locale.getDefault(), "%02d", b++);
                 id_image[a] = Integer.parseInt(data_controller[4][a]);
             }
             this.id_image = id_image;

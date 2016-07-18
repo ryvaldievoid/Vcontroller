@@ -1,9 +1,13 @@
 package voidream.vcontroller;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
@@ -61,9 +65,9 @@ public class SettingOutputForm extends Activity {
                         String power_output_ = power_output.getText().toString();
                         sqLiteAdapter.deleteController(nama_temp);
                         sqLiteAdapter.AddController(nama_output_, posisi_output_, power_output_, id_image);
-                        finish();
                         intent.putExtra(getString(R.string.update_list_controller), true);
                         sendBroadcast(intent);
+                        finish();
                     }
                 }else {
                     if (image_set.getId() != 0 & !isEmpty(nama_ouput) & !isEmpty(posisi_output)
@@ -74,9 +78,9 @@ public class SettingOutputForm extends Activity {
                             String posisi_output_ = posisi_output.getText().toString();
                             String power_output_ = power_output.getText().toString();
                             sqLiteAdapter.AddController(nama_output_, posisi_output_, power_output_, id_image);
-                            finish();
                             intent.putExtra(getString(R.string.update_list_controller), true);
                             sendBroadcast(intent);
+                            finish();
                         }else {
                             nama_ouput.setError(getString(R.string.nama_sudah_ada));
                         }
@@ -96,6 +100,8 @@ public class SettingOutputForm extends Activity {
             image_set.setImageResource(id_image);
             image_set.setId(id_image);
             add.setText(getString(R.string.save));
+        }else {
+            output_number.setText(String.format(Locale.getDefault(), "%02d", sqLiteAdapter.getController().length));
         }
 
     }
