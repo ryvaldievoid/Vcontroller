@@ -143,7 +143,9 @@ public class MqttService extends Service {
     @Override
     public void onDestroy() {
         try {
-            mqttClient.disconnect(0);
+            if (mqttClient.isConnected()) {
+                mqttClient.disconnect(0);
+            }
         } catch (MqttException e) {
             Toast.makeText(getApplicationContext()
                     , this.getResources().getString
