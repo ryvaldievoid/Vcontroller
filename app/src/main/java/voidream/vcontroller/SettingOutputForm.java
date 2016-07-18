@@ -101,7 +101,7 @@ public class SettingOutputForm extends Activity {
             image_set.setId(id_image);
             add.setText(getString(R.string.save));
         }else {
-            output_number.setText(String.format(Locale.getDefault(), "%02d", sqLiteAdapter.getController().length));
+            output_number.setText(String.format(Locale.getDefault(), "%02d", sqLiteAdapter.getController()[0].length + 1));
         }
 
     }
