@@ -63,7 +63,7 @@ public class AdapterLog extends BaseAdapter {
                 outputName[b] = data_controller[1][d];
                 loc[b] = data_controller[2][d];
                 status[b] = data_controller[4][d];
-                num[b] = output_number[d];
+                num[b] = String.format(Locale.getDefault(), "%02d", Integer.parseInt(output_number[d])+1);
                 b++;
             }
         }else {
@@ -114,6 +114,15 @@ public class AdapterLog extends BaseAdapter {
         log_location.setText(loc[position]);
         log_time_stamp.setText(dateString[position]);
         log_number.setText(num[position]);
+
+        convertView.setLongClickable(true);
+        convertView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                sqLiteAdapter.deleteLog();
+                return true;
+            }
+        });
 
         return convertView;
     }

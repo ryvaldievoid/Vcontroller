@@ -18,8 +18,7 @@ import java.util.Locale;
  */
 public class AdapterListIoCommand extends BaseAdapter {
 
-    private String[] output_name={"Lampu Kuning", "Lampu LED", "Lampu Belajar", "Test", "Test", "Test", "Test"};
-
+    public String[] output_name;
     private Context context;
 
     public AdapterListIoCommand(Context ini){

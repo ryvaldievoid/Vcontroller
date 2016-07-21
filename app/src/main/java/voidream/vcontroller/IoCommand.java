@@ -16,13 +16,14 @@ public class IoCommand extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_io_command);
 
-        AdapterListIoCommand adapterListIoCommand = new AdapterListIoCommand(this);
+        final AdapterListIoCommand adapterListIoCommand = new AdapterListIoCommand(this);
         list_io_command = (ListView)findViewById(R.id.listview_io_command_list_output);
         list_io_command.setAdapter(adapterListIoCommand);
         list_io_command.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent io_form = new Intent(IoCommand.this, IoCommandForm.class);
+                io_form.putExtra("id_controller", adapterListIoCommand.output_name[position]);
                 startActivity(io_form);
             }
         });

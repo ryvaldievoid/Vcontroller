@@ -328,6 +328,62 @@ public class SQLiteAdapter extends SQLiteOpenHelper {
         db.close();
     }
 
+    public void addIoCommand(String id_controller_, String on_command_, String off_command_,
+                             String timer_command_){
+        db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        if (!StringUtils.isBlank(id_controller_) & !StringUtils.isBlank(on_command_)
+                & !StringUtils.isBlank(off_command_) & !StringUtils.isBlank(timer_command_)){
+            values.put(id_controller, id_controller_);
+            values.put(on_command, on_command_);
+            values.put(off_command, off_command_);
+            values.put(timer_command, timer_command_);
+        }
+
+        db.insert(tabel_io_command, null, values);
+        db.close();
+    }
+
+    public void editIoCommand(String id_controller_, String on_command_, String off_command_,
+                              String timer_command_){
+        db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        if (!StringUtils.isBlank(id_controller_) & !StringUtils.isBlank(on_command_)
+                & !StringUtils.isBlank(off_command_) & !StringUtils.isBlank(timer_command_)){
+            values.put(id_controller, id_controller_);
+            values.put(on_command, on_command_);
+            values.put(off_command, off_command_);
+            values.put(timer_command, timer_command_);
+        }
+
+        db.insert(tabel_io_command, id_controller + "='" + id_controller_ + "'", values);
+        db.close();
+    }
+
+    public String[][] getIoCommand(){
+        db = this.getReadableDatabase();
+        String[] columns = new String[]{id_controller, on_command, off_command, timer_command};
+        Cursor cursor = db.query(tabel_io_command, columns, null, null, null, null, null);
+        String[][] result = new String[4][(int)getRowCount(tabel_io_command)];
+
+        int a = 0;
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()){
+            result[0][a] = cursor.getString(0);
+            result[1][a] = cursor.getString(1);
+            result[2][a] = cursor.getString(2);
+            result[3][a] = cursor.getString(3);
+            a++;
+            cursor.moveToNext();
+        }
+        cursor.close();
+        db.close();
+
+        return result;
+    }
+
     public void deleteAll(){
         db = this.getWritableDatabase();
         db.delete(tabel_controller, null, null);
