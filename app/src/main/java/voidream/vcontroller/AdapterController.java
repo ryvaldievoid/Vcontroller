@@ -111,15 +111,15 @@ public class AdapterController extends BaseAdapter {
             public void onClick(View v) {
                 if (tcp_or_mqtt){
                     if (!output_image.isChecked()) {
-                        publisher.publishMqttMessage(outputName[position] + "/" + position + "/on");
+                        publisher.publishMqttMessage(outputName[position] + "/" + outputNumber[position] + "/on");
                     }else {
-                        publisher.publishMqttMessage(outputName[position] + "/" + position + "/off");
+                        publisher.publishMqttMessage(outputName[position] + "/" + outputNumber[position] + "/off");
                     }
                 }else {
                     if (!output_image.isChecked()) {
-                        TCPClient.sendData(outputName[position] + "/" + position + "/on");
+                        TCPClient.sendData(outputName[position] + "/" + outputNumber[position] + "/on");
                     }else {
-                        TCPClient.sendData(outputName[position] + "/" + position + "/off");
+                        TCPClient.sendData(outputName[position] + "/" + outputNumber[position] + "/off");
                     }
                 }
                 output_status.setText(context.getString(R.string.wait));

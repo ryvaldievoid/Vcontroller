@@ -100,7 +100,8 @@ public class MqttService extends Service {
                                 @Override
                                 public void run() {
                                     //Toast.makeText(MqttService.this, "hellooo", Toast.LENGTH_SHORT).show();
-                                    if (!message.contains("timer")) {
+                                    //ganti device id nanti
+                                    if (message.contains("/")) {
                                         updateController(message);
                                     }
                                 }
@@ -126,20 +127,45 @@ public class MqttService extends Service {
     }
 
     private void updateController(String message){
-        String output_name = message.split("/")[0];
-        String no = message.split("/")[1];
-        String status = message.split("/")[2];
-        int pos = Integer.parseInt(no);
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm", Locale.getDefault());
-        String timestamp = formatter.format(new Date().getTime());
-        sqLiteAdapter.addControllerStatus(output_name, status, timestamp);
-        if (!AdapterController.status[pos].equals("Waiting Response")) {
-            sqLiteAdapter.addLog(pos, AdapterController.outputName[pos], AdapterController.position[pos]
-                    , AdapterController.power[pos], AdapterController.status[pos],
-                    AdapterController.Id_outputimage[pos], timestamp);
+        if (!message.contains("/timer")) {
+            String output_name = message.split("/")[0];
+            String no = message.split("/")[1];
+            if (no.substring(0, 1).equals("0")){
+                no = "" + no.charAt(1);
+            }
+            String status = message.split("/")[2];
+            int pos = Integer.parseInt(no) - 1;
+            SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm", Locale.getDefault());
+            String timestamp = formatter.format(new Date().getTime());
+            sqLiteAdapter.addControllerStatus(output_name, status, timestamp);
+            if (!AdapterController.status[pos].equals("Waiting Response")) {
+                sqLiteAdapter.addLog(pos, AdapterController.outputName[pos], AdapterController.position[pos]
+                        , AdapterController.power[pos], AdapterController.status[pos],
+                        AdapterController.Id_outputimage[pos], timestamp);
+            }
+            intent_broadcast.putExtra("update_controller", new String[]{output_name, no, status});
+            sendBroadcast(intent_broadcast);
+        }else {
+            String output_name = message.split("/")[0];
+            String no = message.split("/")[1];
+            if (no.substring(0, 1).equals("0")){
+                no = "" + no.charAt(1);
+            }
+            String status = message.split("/")[2];
+            String time_hour = message.split("/")[4];
+            String time_minute = message.split("/")[5];
+            int pos = Integer.parseInt(no) - 1;
+            SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm", Locale.getDefault());
+            String timestamp = formatter.format(new Date().getTime());
+            sqLiteAdapter.addControllerStatus(output_name, status, timestamp);
+            if (!AdapterController.status[pos].equals("Waiting Response")) {
+                sqLiteAdapter.addLog(pos, AdapterController.outputName[pos], AdapterController.position[pos]
+                        , AdapterController.power[pos], AdapterController.status[pos],
+                        AdapterController.Id_outputimage[pos], timestamp);
+            }
+            intent_broadcast.putExtra("update_controller", new String[]{output_name, no, status, time_hour, time_minute});
+            sendBroadcast(intent_broadcast);
         }
-        intent_broadcast.putExtra("update_controller", new String[]{output_name, no, status});
-        sendBroadcast(intent_broadcast);
     }
 
     @Override

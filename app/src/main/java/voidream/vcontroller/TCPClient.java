@@ -17,8 +17,8 @@ import java.net.UnknownHostException;
 
 public class TCPClient {
 
-    static String response;
-    static Context context;
+    private static String response;
+    public static Context context;
 
     static Socket[] socket = {null};
     static DataOutputStream[] dataOutputStream = {null};
@@ -58,50 +58,6 @@ public class TCPClient {
         });send.start();
     }
 
-    /*
-    public String getData(){
-        final String[] respon = {null};
-        Thread get = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    if(socket==null) {
-                        connect();
-                    }else {
-                        ByteArrayOutputStream byteArrayOutputStream =
-                                new ByteArrayOutputStream(1024);
-                        byte[] buffer = new byte[1024];
-                        int bytesRead;
-
-                        while ((bytesRead = dataInputStream[0].read(buffer)) != -1){
-                            byteArrayOutputStream.write(buffer, 0, bytesRead);
-                            respon[0] += byteArrayOutputStream.toString("UTF-8");
-                            Toast.makeText(context.getApplicationContext(), respon[0], Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                } catch (UnknownHostException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-                finally{
-                    if (dataInputStream[0] != null){
-                        try {
-                            dataInputStream[0].close();
-                        } catch (IOException e) {
-                            // TODO Auto-generated catch block
-                            e.printStackTrace();
-                        }
-                    }
-                }
-            }
-        }); get.start();
-        return respon[0];
-    }
-    */
-
     public static void disconnect(){
            Thread disconnect = new Thread(new Runnable() {
                @Override
@@ -109,6 +65,7 @@ public class TCPClient {
                    try {
                        if (socket[0]!=null) {
                            socket[0].close();
+                           TCPClientReceive.stop = true;
                        }
                    } catch (IOException e) {
                        e.printStackTrace();
@@ -136,6 +93,7 @@ public class TCPClient {
                 } catch (IOException e) {
                     Log.e("TCP client connect", e.getMessage());
                 }
+                new TCPClientReceive(context, address, Integer.parseInt(port)).execute();
             }
         }); connect.start();
     }

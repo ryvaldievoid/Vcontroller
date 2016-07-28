@@ -172,6 +172,7 @@ public class FragmentAdapter extends Fragment {
     }
 
     private void connectTCP(){
+        TCPClient.context = this.getActivity().getApplicationContext();
         TCPClient.connect(sqLiteAdapter.getTcpSetting()[0], sqLiteAdapter.getTcpSetting()[1]);
     }
 
@@ -194,7 +195,7 @@ public class FragmentAdapter extends Fragment {
         }
     }
 
-    public final BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
+    private final BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
             updateUI(intent);
