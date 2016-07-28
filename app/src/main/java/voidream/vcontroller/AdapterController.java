@@ -80,7 +80,7 @@ public class AdapterController extends BaseAdapter {
     @SuppressLint({"ViewHolder", "InflateParams"})
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
-        LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        final LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         convertView = inflater.inflate(R.layout.custom_list_controller, null);
 
         final TextView output_number = (TextView)convertView.findViewById(R.id.textview_output_number);
@@ -130,6 +130,11 @@ public class AdapterController extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 Intent intent= new Intent(context, SetTimer.class);
+                intent.putExtra("output_number", outputNumber[position]);
+                intent.putExtra("output_name", outputName[position]);
+                intent.putExtra("output_status", status[position]);
+                intent.putExtra("output_position", AdapterController.position[position]);
+                intent.putExtra("output_power", power[position]);
                 context.startActivity(intent);
             }
         });

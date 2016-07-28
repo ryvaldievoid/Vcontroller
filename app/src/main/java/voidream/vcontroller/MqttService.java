@@ -100,7 +100,9 @@ public class MqttService extends Service {
                                 @Override
                                 public void run() {
                                     //Toast.makeText(MqttService.this, "hellooo", Toast.LENGTH_SHORT).show();
-                                    updateController(message);
+                                    if (!message.contains("timer")) {
+                                        updateController(message);
+                                    }
                                 }
                             };
                             handler.removeCallbacks(sendUpdatesToUI);

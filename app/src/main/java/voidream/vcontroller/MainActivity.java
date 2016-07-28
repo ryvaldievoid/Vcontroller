@@ -25,9 +25,11 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.Toolbar;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.astuetz.PagerSlidingTabStrip;
 import com.astuetz.PagerSlidingTabStrip.IconTabProvider;
@@ -36,22 +38,18 @@ public class MainActivity extends FragmentActivity {
 
 	private final Handler handler = new Handler();
 
-	private PagerSlidingTabStrip tabs;
-	private ViewPager pager;
-	private MyPagerAdapter adapter;
-
-	private Drawable oldBackground = null;
-
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		setTitle("Controller");
+        setTitle("Controller");
+        assert getActionBar() != null;
+        getActionBar().setIcon(R.drawable.ic_launcher);
+        getActionBar().setHomeButtonEnabled(true);
 
-		tabs = (PagerSlidingTabStrip) findViewById(R.id.tabs);
-		pager = (ViewPager) findViewById(R.id.pager);
-		adapter = new MyPagerAdapter(getSupportFragmentManager());
+        PagerSlidingTabStrip tabs = (PagerSlidingTabStrip) findViewById(R.id.tabs);
+        ViewPager pager = (ViewPager) findViewById(R.id.pager);
+        MyPagerAdapter adapter = new MyPagerAdapter(getSupportFragmentManager());
 
 		pager.setAdapter(adapter);
 		tabs.setIndicatorColor(0xFF29B6F6);
@@ -62,7 +60,32 @@ public class MainActivity extends FragmentActivity {
 		pager.setPageMargin(pageMargin);
 
 		tabs.setViewPager(pager);
+        tabs.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                switch (position){
+                    case 1:
+                        setTitle("Log");
+                        break;
+                    case 2:
+                        setTitle("Settings");
+                        break;
+                    default:
+                        setTitle("Controller");
+                        break;
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
 
 	}
 
@@ -76,6 +99,10 @@ public class MainActivity extends FragmentActivity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 
 		switch (item.getItemId()) {
+
+            case R.id.home:
+                startActivity(new Intent(this, AboutUs.class));
+                break;
 
 			case R.id.menu_help:
 				Intent intent_help= new Intent(MainActivity.this, HowItWorks.class);
@@ -105,6 +132,7 @@ public class MainActivity extends FragmentActivity {
 	private Drawable.Callback drawableCallback = new Drawable.Callback() {
 		@Override
 		public void invalidateDrawable(Drawable who) {
+			assert getActionBar() != null;
 			getActionBar().setBackgroundDrawable(who);
 		}
 
