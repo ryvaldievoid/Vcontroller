@@ -101,8 +101,11 @@ public class MqttService extends Service {
                                 public void run() {
                                     //Toast.makeText(MqttService.this, "hellooo", Toast.LENGTH_SHORT).show();
                                     //ganti device id nanti
-                                    if (message.contains("/")) {
-                                        updateController(message);
+                                    int size = sqLiteAdapter.getIoCommand()[0].length;
+                                    for (int a = 0;a<size;a++) {
+                                        if (message.contains(sqLiteAdapter.getIoCommand()[0][a])) {
+                                            updateController(message);
+                                        }
                                     }
                                 }
                             };
