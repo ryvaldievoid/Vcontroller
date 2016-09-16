@@ -1,97 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/window_translucent"
     tools:context="voidream.vcontroller.SettingOutput">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/background_rounded_rectangle_grey"
+        android:layout_weight="0.25"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="60dp">
 
-        <RelativeLayout
+        <ListView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"/>
+            android:id="@+id/listview_setting_output"
+            android:divider="@android:color/transparent"
+            android:layout_above="@+id/relativeLayout13" />
 
-        <RelativeLayout
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_centerHorizontal="true"
-            android:background="@drawable/background_rounded_rectangle_grey"
-            android:layout_weight="0.25"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="6dp"
-            android:layout_marginRight="6dp">
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/relativeLayout13"
+            android:background="@drawable/background_rounded_rectangle_grey">
 
-            <ListView
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/listview_setting_output"
-                android:divider="@android:color/transparent"
-                android:layout_above="@+id/relativeLayout13" />
+                android:layout_toRightOf="@+id/relativeLayout14"
+                android:layout_toEndOf="@+id/relativeLayout14"
+                android:layout_weight="1">
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_alignParentBottom="true"
-                android:id="@+id/relativeLayout13"
-                android:background="@drawable/background_rounded_rectangle_grey">
-
-                <RelativeLayout
+                <Button
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/relativeLayout14"
-                    android:layout_weight="1">
+                    android:layout_height="48dp"
+                    android:text="@string/add_new"
+                    android:height="52dp"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/button_flat"
+                    android:id="@+id/button_setting_output_add"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="6dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="6dp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
 
-                    <CheckBox
-                        android:layout_width="match_parent"
-                        android:layout_height="48dp"
-                        android:text="@string/enable_timer"
-                        android:textColor="@color/color_main_4"
-                        android:button="@drawable/radiobutton_timer"
-                        android:id="@+id/checkbox_setting_output_enable_timer"
-                        android:enabled="true"
-                        android:background="@drawable/border_teal"
-                        android:checked="true"
-                        android:textSize="16sp"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="6dp"
-                        android:gravity="center_vertical|right"
-                        android:paddingRight="12dp"
-                        android:layout_marginRight="3dp" />
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_toRightOf="@+id/relativeLayout14"
-                    android:layout_toEndOf="@+id/relativeLayout14"
-                    android:layout_weight="1">
-
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="48dp"
-                        android:text="@string/add_new"
-                        android:height="52dp"
-                        android:textSize="16sp"
-                        android:textColor="@android:color/white"
-                        android:background="@drawable/button_flat"
-                        android:id="@+id/button_setting_output_add"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="6dp"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="3dp" />
-                </RelativeLayout>
-            </LinearLayout>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"/>
-    </LinearLayout>
-</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@android:color/black"
+        android:layout_gravity="center_horizontal"></RelativeLayout>
+</LinearLayout>

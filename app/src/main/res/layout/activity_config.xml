@@ -8,18 +8,13 @@
     tools:context="voidream.vcontroller.Config">
 
     <RelativeLayout
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="match_parent"
-        android:layout_weight="1"/>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="0.25"
-        android:layout_marginLeft="6dp"
-        android:layout_marginRight="6dp"
         android:layout_gravity="center_horizontal"
-        android:background="@drawable/background_rounded_rectangle_grey" >
+        android:background="@drawable/background_rounded_rectangle_grey"
+        android:layout_weight="1"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="10dp">
 
         <LinearLayout
             android:orientation="vertical"
@@ -46,7 +41,8 @@
                     android:id="@+id/textView24"
                     android:textColor="@color/text2"
                     android:paddingLeft="6dp"
-                    android:paddingTop="2dp" />
+                    android:paddingTop="2dp"
+                    android:textSize="12dp" />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -58,7 +54,8 @@
                     android:paddingLeft="12dp"
                     android:paddingRight="12dp"
                     android:paddingTop="6dp"
-                    android:paddingBottom="6dp" />
+                    android:paddingBottom="6dp"
+                    android:textSize="14dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -67,7 +64,8 @@
                     android:id="@+id/textView28"
                     android:textColor="@color/text2"
                     android:paddingLeft="6dp"
-                    android:paddingTop="2dp" />
+                    android:paddingTop="2dp"
+                    android:textSize="12dp" />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -80,7 +78,8 @@
                     android:paddingRight="12dp"
                     android:paddingTop="6dp"
                     android:paddingBottom="6dp"
-                    android:maxLength="4" />
+                    android:maxLength="4"
+                    android:textSize="14dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -99,7 +98,8 @@
                     android:id="@+id/textView53"
                     android:textColor="@color/text2"
                     android:paddingLeft="6dp"
-                    android:paddingTop="2dp" />
+                    android:paddingTop="2dp"
+                    android:textSize="12dp" />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -111,7 +111,8 @@
                     android:paddingLeft="12dp"
                     android:paddingRight="12dp"
                     android:paddingTop="6dp"
-                    android:paddingBottom="6dp" />
+                    android:paddingBottom="6dp"
+                    android:textSize="14dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -120,7 +121,8 @@
                     android:id="@+id/textView54"
                     android:textColor="@color/text2"
                     android:paddingLeft="6dp"
-                    android:paddingTop="2dp" />
+                    android:paddingTop="2dp"
+                    android:textSize="12dp" />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -133,7 +135,8 @@
                     android:paddingTop="6dp"
                     android:inputType="number"
                     android:paddingBottom="6dp"
-                    android:maxLength="4" />
+                    android:maxLength="4"
+                    android:textSize="14dp" />
 
                 <LinearLayout
                     android:orientation="horizontal"
@@ -153,7 +156,8 @@
                             android:id="@+id/textView55"
                             android:textColor="@color/text2"
                             android:paddingLeft="6dp"
-                            android:paddingTop="2dp" />
+                            android:paddingTop="2dp"
+                            android:textSize="12dp" />
 
                         <EditText
                             android:layout_width="match_parent"
@@ -167,7 +171,8 @@
                             android:paddingTop="6dp"
                             android:inputType="text"
                             android:paddingBottom="6dp"
-                            android:maxLength="15" />
+                            android:maxLength="15"
+                            android:textSize="14dp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -183,7 +188,8 @@
                             android:id="@+id/textView56"
                             android:textColor="@color/text2"
                             android:paddingLeft="6dp"
-                            android:paddingTop="2dp" />
+                            android:paddingTop="2dp"
+                            android:textSize="12dp" />
 
                         <EditText
                             android:layout_width="match_parent"
@@ -196,7 +202,8 @@
                             android:paddingLeft="12dp"
                             android:paddingRight="12dp"
                             android:paddingTop="6dp"
-                            android:paddingBottom="6dp" />
+                            android:paddingBottom="6dp"
+                            android:textSize="14dp" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -207,7 +214,8 @@
                     android:id="@+id/textView57"
                     android:textColor="@color/text2"
                     android:paddingLeft="6dp"
-                    android:paddingTop="2dp" />
+                    android:paddingTop="2dp"
+                    android:textSize="12dp" />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -219,7 +227,8 @@
                     android:paddingLeft="12dp"
                     android:paddingRight="12dp"
                     android:paddingTop="6dp"
-                    android:paddingBottom="6dp" />
+                    android:paddingBottom="6dp"
+                    android:textSize="14dp" />
 
             </LinearLayout>
         </LinearLayout>
@@ -288,6 +297,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1" />
+        android:layout_height="50dp"
+        android:background="@android:color/black"></RelativeLayout>
+
 </LinearLayout>

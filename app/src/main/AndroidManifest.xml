@@ -9,7 +9,10 @@
 
     <supports-screens
         android:anyDensity="true"
-        android:resizeable="true" />
+        android:resizeable="true"
+        android:compatibleWidthLimitDp="320"
+        android:requiresSmallestWidthDp="320"
+        android:largestWidthLimitDp="320"/>
 
     <application
         android:fullBackupContent="true"

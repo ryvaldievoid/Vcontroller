@@ -110,7 +110,7 @@ public class MainActivity extends FragmentActivity {
 				break;
 
 			case R.id.menu_command:
-				Intent intent_io_command= new Intent(MainActivity.this, IoCommand.class);
+				Intent intent_io_command= new Intent(MainActivity.this, AboutUs.class);
 				startActivity(intent_io_command);
 				break;
 

@@ -4,13 +4,12 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="96dp"
+        android:layout_height="75dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:background="@drawable/background_rounded_rectangle"
-        android:layout_marginTop="3dp"
+        android:layout_marginTop="6dp"
         android:elevation="2dp"
-        android:layout_marginBottom="3dp"
         android:layout_marginRight="6dp"
         android:layout_marginLeft="6dp">
 
@@ -40,11 +39,12 @@
                     android:paddingRight="2dp"
                     android:paddingLeft="2dp"
                     android:layout_marginLeft="2dp"
-                    android:layout_marginTop="2dp" />
+                    android:layout_marginTop="2dp"
+                    android:textSize="12dp" />
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="170dp"
+                android:layout_width="150dp"
                 android:layout_height="match_parent"
                 android:layout_toRightOf="@+id/relativeLayout15"
                 android:layout_toEndOf="@+id/relativeLayout15"
@@ -65,7 +65,8 @@
                         android:text="@string/dummy"
                         android:id="@+id/textview_setting_output_name"
                         android:textColor="@color/text1"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:textSize="14dp" />
 
                     <LinearLayout
                         android:orientation="horizontal"
@@ -79,7 +80,8 @@
                             android:maxWidth="35dp"
                             android:id="@+id/textView18"
                             android:width="52dp"
-                            android:textColor="@color/text1" />
+                            android:textColor="@color/text1"
+                            android:textSize="14dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -87,14 +89,16 @@
                             android:text="@string/double_dot"
                             android:id="@+id/textView20"
                             android:paddingRight="4dp"
-                            android:textColor="@color/text1" />
+                            android:textColor="@color/text1"
+                            android:textSize="14dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/dummy"
                             android:id="@+id/textview_setting_output_position"
-                            android:textColor="@color/text1" />
+                            android:textColor="@color/text1"
+                            android:textSize="14dp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -109,7 +113,8 @@
                             android:maxWidth="35dp"
                             android:id="@+id/textView22"
                             android:width="52dp"
-                            android:textColor="@color/text1" />
+                            android:textColor="@color/text1"
+                            android:textSize="14dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -117,14 +122,16 @@
                             android:text="@string/double_dot"
                             android:id="@+id/textView23"
                             android:paddingRight="4dp"
-                            android:textColor="@color/text1" />
+                            android:textColor="@color/text1"
+                            android:textSize="14dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/dummy"
                             android:id="@+id/textview_setting_output_power"
-                            android:textColor="@color/text1" />
+                            android:textColor="@color/text1"
+                            android:textSize="14dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -132,7 +139,8 @@
                             android:text="@string/watt"
                             android:paddingLeft="4dp"
                             android:id="@+id/textView25"
-                            android:textColor="@color/text1" />
+                            android:textColor="@color/text1"
+                            android:textSize="14dp" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -146,13 +154,13 @@
                 android:layout_toRightOf="@+id/relativeLayout16" >
 
                 <Button
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:text="@string/edit"
                     android:background="@drawable/button_grey"
                     android:textColor="@color/color_main_2"
                     android:id="@+id/button_edit_output_edit"
-                    android:textSize="22sp"
+                    android:textSize="18dp"
                     android:layout_centerVertical="true"
                     android:layout_centerHorizontal="true" />
             </RelativeLayout>

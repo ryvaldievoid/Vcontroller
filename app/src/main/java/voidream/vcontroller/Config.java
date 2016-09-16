@@ -2,6 +2,7 @@ package voidream.vcontroller;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
@@ -33,7 +34,7 @@ public class Config extends Activity {
         final EditText broker_url = (EditText)findViewById(R.id.edittext_config_mqtt_broker_url);
         final EditText port = (EditText)findViewById(R.id.edittext_config_mqtt_port);
         final EditText username = (EditText)findViewById(R.id.edittext_config_mqtt_username);
-        final EditText password = (EditText)findViewById(R.id.edittext_config_mqtt_password);
+        final EditText password = (EditText)findViewById(R.id.edittext_config_mqtt_password);password.setTypeface(Typeface.DEFAULT);
         final EditText topic = (EditText)findViewById(R.id.edittext_config_mqtt_topic);
         final EditText ip_domain = (EditText)findViewById(R.id.edittext_config_tcp_ip_or_domain_name);
         final EditText port_tcp = (EditText)findViewById(R.id.edittext_config_tcp_port);
