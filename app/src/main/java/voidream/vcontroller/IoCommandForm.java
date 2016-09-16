@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.apache.commons.lang.ArrayUtils;
 import org.apache.commons.lang.StringUtils;
 import org.w3c.dom.Text;
 
@@ -89,19 +90,8 @@ public class IoCommandForm extends Activity {
                 on_c = on_command.getText().toString();
                 off_c = off_command.getText().toString();
                 if (!StringUtils.isBlank(on_c) && !StringUtils.isBlank(off_c)){
-                    String[][] io_command = sqLiteAdapter.getIoCommand();
-                    int size = io_command[0].length;
-                    for (int a=0;a < size;a++){
-                        if (!io_command[0][a].equals(id_controller)){
-                            sqLiteAdapter.addIoCommand(id_controller, on_c, off_c, t_c);
-                            Toast.makeText(IoCommandForm.this, "Data Saved", Toast.LENGTH_SHORT).show();
-                            a = size;
-                        }else {
-                            sqLiteAdapter.editIoCommand(id_controller, on_c, off_c, t_c);
-                            Toast.makeText(IoCommandForm.this, "Data Edited", Toast.LENGTH_SHORT).show();
-                            a = size;
-                        }
-                    }
+                    sqLiteAdapter.addIoCommand(id_controller, on_c, off_c, t_c);
+                    Toast.makeText(IoCommandForm.this, "Data Saved", Toast.LENGTH_SHORT).show();
                 }else {
                     on_command.setError("Must be filled in");
                     off_command.setError("Must be filled in");

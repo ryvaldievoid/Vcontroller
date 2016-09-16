@@ -333,13 +333,10 @@ public class SQLiteAdapter extends SQLiteOpenHelper {
         db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
 
-        if (!StringUtils.isBlank(id_controller_) & !StringUtils.isBlank(on_command_)
-                & !StringUtils.isBlank(off_command_) & !StringUtils.isBlank(timer_command_)){
-            values.put(id_controller, id_controller_);
-            values.put(on_command, on_command_);
-            values.put(off_command, off_command_);
-            values.put(timer_command, timer_command_);
-        }
+        values.put(id_controller, id_controller_);
+        values.put(on_command, on_command_);
+        values.put(off_command, off_command_);
+        values.put(timer_command, timer_command_);
 
         db.insert(tabel_io_command, null, values);
         db.close();
