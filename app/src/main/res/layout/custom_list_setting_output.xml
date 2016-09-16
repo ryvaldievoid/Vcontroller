@@ -44,7 +44,7 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="150dp"
+                android:layout_width="170dp"
                 android:layout_height="match_parent"
                 android:layout_toRightOf="@+id/relativeLayout15"
                 android:layout_toEndOf="@+id/relativeLayout15"
@@ -80,7 +80,7 @@
                             android:maxWidth="35dp"
                             android:id="@+id/textView18"
                             android:width="52dp"
-                            android:textColor="@color/text1"
+                            android:textColor="@color/text2"
                             android:textSize="14dp" />
 
                         <TextView
@@ -89,7 +89,7 @@
                             android:text="@string/double_dot"
                             android:id="@+id/textView20"
                             android:paddingRight="4dp"
-                            android:textColor="@color/text1"
+                            android:textColor="@color/text2"
                             android:textSize="14dp" />
 
                         <TextView
@@ -113,7 +113,7 @@
                             android:maxWidth="35dp"
                             android:id="@+id/textView22"
                             android:width="52dp"
-                            android:textColor="@color/text1"
+                            android:textColor="@color/text2"
                             android:textSize="14dp" />
 
                         <TextView
@@ -122,7 +122,7 @@
                             android:text="@string/double_dot"
                             android:id="@+id/textView23"
                             android:paddingRight="4dp"
-                            android:textColor="@color/text1"
+                            android:textColor="@color/text2"
                             android:textSize="14dp" />
 
                         <TextView
@@ -154,13 +154,13 @@
                 android:layout_toRightOf="@+id/relativeLayout16" >
 
                 <Button
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
                     android:text="@string/edit"
                     android:background="@drawable/button_grey"
                     android:textColor="@color/color_main_2"
                     android:id="@+id/button_edit_output_edit"
-                    android:textSize="18dp"
+                    android:textSize="14dp"
                     android:layout_centerVertical="true"
                     android:layout_centerHorizontal="true" />
             </RelativeLayout>
