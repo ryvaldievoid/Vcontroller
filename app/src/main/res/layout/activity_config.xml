@@ -31,8 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/linearlayout_config_tcp"
-                android:visibility="visible"
-                >
+                android:visibility="visible">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -55,7 +54,10 @@
                     android:paddingRight="12dp"
                     android:paddingTop="6dp"
                     android:paddingBottom="6dp"
-                    android:textSize="14dp" />
+                    android:textSize="14dp"
+                    android:textColor="@color/text1"
+                    android:textColorHint="@color/text4"
+                    android:hint="@string/example1" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -79,7 +81,10 @@
                     android:paddingTop="6dp"
                     android:paddingBottom="6dp"
                     android:maxLength="4"
-                    android:textSize="14dp" />
+                    android:textSize="14dp"
+                    android:textColor="@color/text1"
+                    android:textColorHint="@color/text4"
+                    android:hint="@string/example2" />
             </LinearLayout>
 
             <LinearLayout
@@ -112,7 +117,10 @@
                     android:paddingRight="12dp"
                     android:paddingTop="6dp"
                     android:paddingBottom="6dp"
-                    android:textSize="14dp" />
+                    android:textSize="14dp"
+                    android:textColor="@color/text1"
+                    android:textColorHint="@color/text4"
+                    android:hint="@string/default_mqtt_broker" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -136,7 +144,10 @@
                     android:inputType="number"
                     android:paddingBottom="6dp"
                     android:maxLength="4"
-                    android:textSize="14dp" />
+                    android:textSize="14dp"
+                    android:textColor="@color/text1"
+                    android:textColorHint="@color/text4"
+                    android:hint="@string/default_mqtt_port" />
 
                 <LinearLayout
                     android:orientation="horizontal"
@@ -172,7 +183,9 @@
                             android:inputType="text"
                             android:paddingBottom="6dp"
                             android:maxLength="15"
-                            android:textSize="14dp" />
+                            android:textSize="14dp"
+                            android:textColor="@color/text1"
+                            android:textColorHint="@color/text4" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -203,7 +216,9 @@
                             android:paddingRight="12dp"
                             android:paddingTop="6dp"
                             android:paddingBottom="6dp"
-                            android:textSize="14dp" />
+                            android:textSize="14dp"
+                            android:textColor="@color/text1"
+                            android:textColorHint="@color/text4" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -228,7 +243,10 @@
                     android:paddingRight="12dp"
                     android:paddingTop="6dp"
                     android:paddingBottom="6dp"
-                    android:textSize="14dp" />
+                    android:textSize="14dp"
+                    android:textColor="@color/text1"
+                    android:textColorHint="@color/text4"
+                    android:hint="@string/topic" />
 
             </LinearLayout>
         </LinearLayout>
@@ -236,7 +254,7 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:layout_alignParentBottom="true"
             android:elevation="2dp"
             android:background="@drawable/background_rounded_rectangle"
@@ -263,7 +281,7 @@
                     android:textSize="18sp"
                     android:checked="true"
                     android:enabled="true"
-                    android:textColor="@color/text1"
+                    android:textColor="@color/color_main_2"
                     android:layout_weight="1" />
 
                 <RadioButton
@@ -274,7 +292,7 @@
                     android:id="@+id/radiobutton_config_mqtt"
                     android:textSize="18dp"
                     android:checked="false"
-                    android:textColor="@color/text1"
+                    android:textColor="@color/color_main_4"
                     android:layout_weight="1" />
             </RadioGroup>
 

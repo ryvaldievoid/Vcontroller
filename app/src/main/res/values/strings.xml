@@ -10,6 +10,8 @@
 
     <string name="help">Help</string>
     <string name="command">I/O Command</string>
+    <string name="command_dummy1">Turn ON Command</string>
+    <string name="command_dummy2">Turn OFF Command</string>
     <string name="about">About Us</string>
 
     <string name="output_name">Name</string>
@@ -52,6 +54,9 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
 
+    <string name="example1">192.168.1.1</string>
+    <string name="example2">8080</string>
+
     <string name="mqtt">MQTT</string>
     <string name="tcp">TCP</string>
     <string name="ip">IP/Domain Name</string>
@@ -84,9 +89,7 @@
     <string name="voidream">Voidream</string>
     <string name="contact">Contact</string>
     <string name="contact1">Instagram: voidream.group</string>
-    <string name="contact2">Instagram: a_bi__</string>
     <string name="contact3">Line: bc180</string>
-    <string name="contact4">Line: ryvaldie</string>
 
     <string name="mqtt_error_toast">Something went wrong! %s</string>
     <string name="update_list_controller">update_list_controller</string>

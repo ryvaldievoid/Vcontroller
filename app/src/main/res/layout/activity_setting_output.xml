@@ -12,48 +12,44 @@
         android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
         android:background="@drawable/background_rounded_rectangle_grey"
-        android:layout_weight="0.25"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="10dp"
-        android:layout_marginTop="60dp">
+        android:layout_marginTop="60dp"
+        android:layout_weight="1">
 
         <ListView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/listview_setting_output"
-            android:divider="@android:color/transparent"
-            android:layout_above="@+id/relativeLayout13" />
+            android:divider="@color/colorGrey300"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_above="@+id/relativeLayout5"
+            android:dividerHeight="5dp" />
 
-        <LinearLayout
-            android:orientation="horizontal"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
-            android:id="@+id/relativeLayout13"
-            android:background="@drawable/background_rounded_rectangle_grey">
+            android:id="@+id/relativeLayout5">
 
-            <RelativeLayout
+            <Button
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_toRightOf="@+id/relativeLayout14"
-                android:layout_toEndOf="@+id/relativeLayout14"
-                android:layout_weight="1">
+                android:layout_height="40dp"
+                android:text="@string/add_new"
+                android:height="52dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/button_flat"
+                android:id="@+id/button_setting_output_add"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp" />
+        </RelativeLayout>
 
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:text="@string/add_new"
-                    android:height="52dp"
-                    android:textSize="16sp"
-                    android:textColor="@android:color/white"
-                    android:background="@drawable/button_flat"
-                    android:id="@+id/button_setting_output_add"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="6dp"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="6dp" />
-            </RelativeLayout>
-        </LinearLayout>
     </RelativeLayout>
 
     <RelativeLayout

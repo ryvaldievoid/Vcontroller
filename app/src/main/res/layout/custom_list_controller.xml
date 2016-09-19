@@ -1,206 +1,194 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="match_parent"
         android:orientation="horizontal"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="6dp"
-        android:layout_marginRight="6dp"
-        android:layout_marginLeft="6dp"
-        android:background="@drawable/background_rounded_rectangle"
-        android:elevation="2dp">
+        android:layout_width="310dp"
+        android:layout_height="95dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@android:color/white"
+        android:elevation="4dp"
+        android:layout_marginTop="5dp">
 
-            <RelativeLayout
+        <RelativeLayout
+            android:layout_width="70dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dummy_number"
+                android:id="@+id/textview_output_number"
+                android:textColor="@color/text2"
+                android:paddingRight="2dp"
+                android:paddingLeft="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="2dp"
+                android:textSize="12dp" />
+
+            <CheckBox
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:clickable="false"
+                android:checked="false"
+                android:button="@drawable/output1_on_off"
+                android:id="@+id/imageview_controller_output_image"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="150dp"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/relativeLayout5"
-                android:layout_weight="1.1"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp">
-
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:clickable="false"
-                    android:checked="false"
-                    android:button="@drawable/output1_on_off"
-                    android:id="@+id/imageview_controller_output_image"
-                    android:layout_alignParentBottom="false"
-                    android:layout_centerInParent="true" />
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="false"
+                android:layout_alignParentLeft="false"
+                android:layout_alignParentStart="false"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/dummy_number"
-                    android:id="@+id/textview_output_number"
-                    android:textColor="@color/text2"
-                    android:paddingRight="2dp"
-                    android:paddingLeft="2dp"
-                    android:layout_marginLeft="2dp"
-                    android:layout_marginTop="2dp"
-                    android:textSize="12dp" />
+                    android:text="@string/dummy"
+                    android:id="@+id/textview_controller_output_name"
+                    android:textColor="@color/text1"
+                    android:textStyle="bold"
+                    android:textIsSelectable="false"
+                    android:textSize="14dp" />
 
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_toRightOf="@+id/relativeLayout5"
-                android:layout_toEndOf="@+id/relativeLayout5"
-                android:id="@+id/relativeLayout6"
-                android:layout_weight="0.6">
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="false"
-                    android:layout_alignParentLeft="false"
-                    android:layout_alignParentStart="false"
-                    android:layout_centerInParent="true">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/dummy"
-                        android:id="@+id/textview_controller_output_name"
-                        android:textColor="@color/text1"
-                        android:textStyle="bold"
-                        android:textIsSelectable="false"
-                        android:textSize="14dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/dummy"
-                        android:id="@+id/textview_controller_output_status"
-                        android:textColor="@color/text2"
-                        android:layout_alignParentBottom="true"
-                        android:layout_alignLeft="@+id/textview_output_number"
-                        android:layout_alignStart="@+id/textview_output_number"
-                        android:textSize="14dp" />
-
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/position"
-                            android:maxWidth="35dp"
-                            android:id="@+id/textView3"
-                            android:width="52dp"
-                            android:textColor="@color/text2"
-                            android:textSize="14dp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/double_dot"
-                            android:id="@+id/textView4"
-                            android:paddingRight="4dp"
-                            android:textColor="@color/text2"
-                            android:textSize="14dp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/dummy"
-                            android:id="@+id/textview_controller_output_position"
-                            android:textColor="@color/text1"
-                            android:textSize="14dp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/power"
-                            android:maxWidth="35dp"
-                            android:id="@+id/textView5"
-                            android:width="52dp"
-                            android:textColor="@color/text2"
-                            android:textSize="14dp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/double_dot"
-                            android:id="@+id/textView6"
-                            android:paddingRight="4dp"
-                            android:textColor="@color/text2"
-                            android:textSize="14dp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/dummy"
-                            android:id="@+id/textview_controller_output_power"
-                            android:textColor="@color/text1"
-                            android:textSize="14dp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/watt"
-                            android:paddingLeft="4dp"
-                            android:id="@+id/textView12"
-                            android:textColor="@color/text2"
-                            android:textSize="14dp" />
-                    </LinearLayout>
-
-                </LinearLayout>
-
-                <ImageButton
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/imagebutton_controller_timer"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="false"
-                    android:background="@drawable/button_timer"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginRight="-4dp" />
-            </RelativeLayout>
+                    android:text="@string/dummy"
+                    android:id="@+id/textview_controller_output_status"
+                    android:textColor="@color/text2"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignLeft="@+id/textview_output_number"
+                    android:layout_alignStart="@+id/textview_output_number"
+                    android:textSize="14dp" />
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_toEndOf="@+id/relativeLayout6"
-                android:id="@+id/relativeLayout10"
-                android:layout_toRightOf="@+id/relativeLayout6"
-                android:layout_weight="0.95">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
 
-                <ImageButton
-                    android:layout_width="75dp"
-                    android:layout_height="75dp"
-                    android:id="@+id/imageButton"
-                    android:background="@drawable/button_round_dead"
-                    android:src="@drawable/push_button"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="6dp"
-                    android:layout_alignParentRight="true" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/position"
+                        android:maxWidth="35dp"
+                        android:id="@+id/textView64"
+                        android:width="52dp"
+                        android:textColor="@color/text2"
+                        android:textSize="14dp" />
 
-                <ImageButton
-                    android:layout_width="75dp"
-                    android:layout_height="75dp"
-                    android:id="@+id/imagebutton_controller_push_button"
-                    android:background="@drawable/button_round"
-                    android:src="@drawable/push_button"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="6dp" />
-            </RelativeLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/double_dot"
+                        android:id="@+id/textView70"
+                        android:paddingRight="4dp"
+                        android:textColor="@color/text2"
+                        android:textSize="14dp" />
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dummy"
+                        android:id="@+id/textview_controller_output_position"
+                        android:textColor="@color/text1"
+                        android:textSize="14dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/power"
+                        android:maxWidth="35dp"
+                        android:id="@+id/textView73"
+                        android:width="52dp"
+                        android:textColor="@color/text2"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/double_dot"
+                        android:id="@+id/textView74"
+                        android:paddingRight="4dp"
+                        android:textColor="@color/text2"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dummy"
+                        android:id="@+id/textview_controller_output_power"
+                        android:textColor="@color/text1"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/watt"
+                        android:paddingLeft="4dp"
+                        android:id="@+id/textView76"
+                        android:textColor="@color/text2"
+                        android:textSize="14dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imagebutton_controller_timer"
+                android:layout_alignParentTop="false"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="false"
+                android:background="@drawable/button_timer"
+                android:layout_alignParentBottom="false"
+                android:layout_alignParentLeft="false"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="-5dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@+id/relativeLayout6"
+            android:id="@+id/relativeLayout21"
+            android:layout_toRightOf="@+id/relativeLayout6" >
+
+            <ImageButton
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:id="@+id/imageButton"
+                android:background="@drawable/button_round_dead"
+                android:src="@drawable/push_button"
+                android:layout_alignParentRight="false"
+                android:layout_centerInParent="true" />
+
+            <ImageButton
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:id="@+id/imagebutton_controller_push_button"
+                android:background="@drawable/button_round"
+                android:src="@drawable/push_button"
+                android:layout_alignParentRight="false"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
     </LinearLayout>
-</RelativeLayout>
+</LinearLayout>

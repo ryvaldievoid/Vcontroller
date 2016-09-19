@@ -1,69 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/window_translucent"
     tools:context="voidream.vcontroller.Statistic">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/background_rounded_rectangle_grey"
+        android:layout_weight="0.25"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="10dp">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="2"/>
+            android:orientation="vertical"
+            android:id="@+id/relativeLayout19">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_centerHorizontal="true"
-            android:background="@drawable/background_rounded_rectangle_grey"
-            android:layout_weight="0.25"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginRight="6dp"
-            android:layout_marginLeft="6dp">
-
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:id="@+id/relativeLayout19">
+                android:layout_height="225dp"
+                android:background="@color/text1"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp">
 
-                <RelativeLayout
+                <com.jjoe64.graphview.GraphView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/text1"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="6dp"
-                    android:layout_marginTop="6dp"
-                    android:layout_marginRight="6dp">
+                    android:id="@+id/graph" />
+            </RelativeLayout>
 
-                    <com.jjoe64.graphview.GraphView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:id="@+id/graph" />
-                </RelativeLayout>
+            <ListView
+                android:scrollbarThumbVertical="@drawable/custom_scollbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/listview_statistic_output"
+                android:divider="@color/colorGrey300"
+                android:background="@android:color/white"
+                android:layout_margin="5dp"
+                android:dividerHeight="5dp" />
+        </LinearLayout>
 
-                <ListView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/listview_statistic_output"
-                    android:layout_weight="1"
-                    android:divider="@android:color/transparent"
-                    android:background="@drawable/background_rounded_rectangle_grey"
-                    android:layout_marginRight="3dp"
-                    android:layout_marginLeft="3dp"
-                    android:layout_marginTop="3dp" />
-            </LinearLayout>
+    </RelativeLayout>
 
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="2"/>
-    </LinearLayout>
-</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@android:color/black"></RelativeLayout>
+</LinearLayout>

@@ -33,8 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
-                android:layout_margin="6dp"
-                android:background="@drawable/background_textfield" >
+                android:layout_margin="6dp">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -49,27 +48,34 @@
                     android:text="@string/dummy_number"
                     android:id="@+id/textView_output_number_output_form"
                     android:textColor="@color/text2"
-                    android:layout_marginLeft="6dp"
-                    android:layout_marginTop="4dp" />
+                    android:textSize="14dp" />
             </RelativeLayout>
 
             <ListView
                 android:fadeScrollbars="false"
-                android:layout_width="@dimen/abc_action_bar_default_height_material"
+                android:scrollbarThumbVertical="@drawable/custom_scollbar"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/listview_output_option"
-                android:background="@drawable/background_textfield"/>
+                android:dividerHeight="0dp"
+                android:divider="@android:color/transparent"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp" />
 
         </LinearLayout>
 
         <ScrollView
             android:fadeScrollbars="false"
+            android:scrollbarThumbVertical="@drawable/custom_scollbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/linearLayout6"
             android:id="@+id/scrollView2"
             android:layout_above="@+id/relativeLayout4"
-            android:layout_marginBottom="6dp">
+            android:layout_marginBottom="6dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginLeft="6dp"
+            android:background="@android:color/white">
 
             <LinearLayout
                 android:orientation="vertical"
@@ -78,147 +84,205 @@
                 android:layout_below="@+id/linearLayout6"
                 android:id="@+id/linearLayout7"
                 android:layout_marginBottom="6dp"
-                android:background="@drawable/background_rounded_rectangle"
                 android:layout_marginRight="6dp"
                 android:layout_marginLeft="6dp"
                 android:elevation="2dp" >
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/output_name_hint"
+                    android:id="@+id/textView59"
+                    android:textColor="@color/text2"
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="6dp"
+                    android:textSize="12dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginLeft="6dp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editText_nama_output"
+                    android:layout_marginRight="6dp"
+                    android:hint="@string/output_name_hint"
+                    android:textColorHint="@color/colorGrey200"
+                    android:textColor="@color/text1"
+                    android:textSize="14dp"
+                    android:layout_gravity="center_vertical"
+                    android:maxLength="14"
+                    android:inputType="textWebEditText|textCapSentences"
+                    android:background="@drawable/background_textfield"
+                    android:linksClickable="false"
+                    android:singleLine="false"
+                    android:layout_marginTop="4dp"
+                    android:padding="8dp"
+                    android:layout_marginLeft="6dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/output_position"
+                    android:id="@+id/textView61"
+                    android:textColor="@color/text2"
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="6dp"
+                    android:textSize="12dp"
+                    android:textIsSelectable="false"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginTop="6dp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:id="@+id/editText_posisi_output"
+                    android:layout_marginRight="6dp"
+                    android:background="@drawable/background_textfield"
+                    android:textColor="@color/text1"
+                    android:textColorHint="@color/colorGrey200"
+                    android:hint="@string/output_position_hint"
+                    android:textSize="14dp"
+                    android:layout_gravity="center_vertical"
+                    android:maxLength="11"
+                    android:inputType="textCapSentences|textWebEditText"
+                    android:layout_marginTop="4dp"
+                    android:padding="8dp"
+                    android:layout_marginLeft="6dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/output_power"
+                    android:id="@+id/textView63"
+                    android:textColor="@color/text2"
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="6dp"
+                    android:textSize="12dp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginTop="6dp" />
+
                 <LinearLayout
-                    android:orientation="vertical"
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginLeft="6dp"
-                    android:layout_marginRight="6dp" >
-
-                    <TextView
-                        android:layout_width="64dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/output_name"
-                        android:id="@+id/textView59"
-                        android:textColor="@color/text2"
-                        android:layout_gravity="center_vertical"
-                        android:paddingLeft="6dp"
-                        android:textSize="12dp" />
+                    android:layout_marginTop="4dp"
+                    android:layout_marginLeft="6dp">
 
                     <EditText
-                        android:layout_width="match_parent"
+                        android:layout_width="100dp"
                         android:layout_height="38dp"
-                        android:id="@+id/editText_nama_output"
+                        android:id="@+id/editText_power_output"
                         android:layout_marginRight="6dp"
-                        android:hint="@string/output_name_hint"
+                        android:hint="@string/output_power_hint"
                         android:textColorHint="@color/colorGrey200"
+                        android:background="@drawable/background_textfield"
                         android:textColor="@color/text1"
                         android:textSize="14dp"
                         android:layout_gravity="center_vertical"
-                        android:maxLength="14"
-                        android:inputType="textWebEditText|textCapSentences"
-                        android:paddingLeft="12dp"
-                        android:paddingTop="6dp"
-                        android:paddingRight="12dp"
-                        android:paddingBottom="6dp"
-                        android:background="@drawable/background_textfield"
-                        android:linksClickable="false"
-                        android:singleLine="false"
-                        android:layout_marginTop="4dp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginRight="6dp"
-                    android:layout_marginLeft="6dp" >
+                        android:maxLength="4"
+                        android:inputType="numberDecimal"
+                        android:padding="8dp" />
 
                     <TextView
-                        android:layout_width="64dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/output_position"
-                        android:id="@+id/textView61"
+                        android:text="@string/watt"
+                        android:id="@+id/textView65"
+                        android:textColor="@color/text2"
+                        android:layout_gravity="center_vertical"
+                        android:paddingLeft="6dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/command"
+                    android:id="@+id/textView10"
+                    android:textColor="@color/text2"
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="6dp"
+                    android:textSize="12dp"
+                    android:textIsSelectable="false"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginTop="6dp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:id="@+id/editText_command"
+                    android:layout_marginRight="6dp"
+                    android:background="@drawable/background_textfield"
+                    android:textColor="@color/text1"
+                    android:textColorHint="@color/colorGrey200"
+                    android:hint="@string/output_position_hint"
+                    android:textSize="14dp"
+                    android:layout_gravity="center_vertical"
+                    android:maxLength="11"
+                    android:inputType="textCapSentences|textWebEditText"
+                    android:layout_marginTop="4dp"
+                    android:padding="8dp"
+                    android:layout_marginLeft="6dp" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="6dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/command_dummy1"
+                        android:id="@+id/textView58"
                         android:textColor="@color/text2"
                         android:layout_gravity="center_vertical"
                         android:paddingLeft="6dp"
                         android:textSize="12dp"
-                        android:textIsSelectable="false" />
+                        android:textIsSelectable="false"
+                        android:layout_marginLeft="6dp" />
 
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="38dp"
-                        android:id="@+id/editText_posisi_output"
-                        android:layout_marginRight="6dp"
-                        android:background="@drawable/background_textfield"
-                        android:textColor="@color/text1"
-                        android:textColorHint="@color/colorGrey200"
-                        android:hint="@string/output_position_hint"
-                        android:textSize="14dp"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView_on_command"
+                        android:textColor="@color/color_main_1"
                         android:layout_gravity="center_vertical"
-                        android:maxLength="11"
-                        android:inputType="textCapSentences|textWebEditText"
-                        android:paddingLeft="12dp"
-                        android:paddingTop="6dp"
-                        android:paddingRight="12dp"
-                        android:paddingBottom="6dp"
-                        android:layout_marginTop="4dp" />
+                        android:paddingLeft="6dp"
+                        android:textSize="12dp"
+                        android:textIsSelectable="false"
+                        android:layout_marginLeft="6dp" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:orientation="vertical"
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginLeft="6dp"
-                    android:layout_marginRight="6dp"
-                    android:layout_marginBottom="6dp" >
+                    android:layout_marginBottom="12dp">
 
                     <TextView
-                        android:layout_width="64dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/output_power"
-                        android:id="@+id/textView63"
+                        android:text="@string/command_dummy2"
+                        android:id="@+id/textView62"
                         android:textColor="@color/text2"
                         android:layout_gravity="center_vertical"
                         android:paddingLeft="6dp"
-                        android:textSize="12dp" />
+                        android:textSize="12dp"
+                        android:textIsSelectable="false"
+                        android:layout_marginLeft="6dp" />
 
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="4dp">
-
-                        <EditText
-                            android:layout_width="100dp"
-                            android:layout_height="38dp"
-                            android:id="@+id/editText_power_output"
-                            android:layout_marginRight="6dp"
-                            android:hint="@string/output_power_hint"
-                            android:textColorHint="@color/colorGrey200"
-                            android:background="@drawable/background_textfield"
-                            android:textColor="@color/text1"
-                            android:textSize="14dp"
-                            android:layout_gravity="center_vertical"
-                            android:maxLength="4"
-                            android:inputType="numberDecimal"
-                            android:paddingLeft="12dp"
-                            android:paddingRight="12dp"
-                            android:paddingTop="6dp"
-                            android:paddingBottom="6dp" />
-
-                        <TextView
-                            android:layout_width="64dp"
-                            android:layout_height="wrap_content"
-                            android:text="@string/watt"
-                            android:id="@+id/textView65"
-                            android:textColor="@color/text2"
-                            android:layout_gravity="center_vertical"
-                            android:paddingLeft="6dp" />
-                    </LinearLayout>
-
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView_off_command"
+                        android:textColor="@color/color_main_2"
+                        android:layout_gravity="center_vertical"
+                        android:paddingLeft="6dp"
+                        android:textSize="12dp"
+                        android:textIsSelectable="false"
+                        android:layout_marginLeft="6dp" />
                 </LinearLayout>
+
             </LinearLayout>
         </ScrollView>
 

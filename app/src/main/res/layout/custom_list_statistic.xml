@@ -1,288 +1,310 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="112dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="290dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:elevation="4dp">
 
         <RelativeLayout
-            android:layout_width="wrap_content"
+            android:layout_width="60dp"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dummy_number"
+                android:id="@+id/textview_statistic_output_number"
+                android:textColor="@color/text2"
+                android:paddingRight="2dp"
+                android:paddingLeft="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="2dp"
+                android:textSize="12dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/out_1"
+                android:id="@+id/imageview_statistic_output_image"
+                android:layout_centerInParent="true" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/relativeLayout23"
-            android:background="@drawable/background_rounded_rectangle"
-            android:elevation="2dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginRight="3dp"
-            android:layout_marginLeft="3dp"
-            android:layout_marginBottom="3dp">
+            android:layout_gravity="center_vertical">
 
-            <RelativeLayout
-                android:layout_width="60dp"
-                android:layout_height="match_parent"
-                android:id="@+id/relativeLayout20" >
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/imageview_statistic_output_image"
-                    android:layout_alignParentBottom="false"
-                    android:layout_centerInParent="true" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/dummy_number"
-                    android:id="@+id/textview_statistic_output_number"
-                    android:textColor="@color/text2"
-                    android:paddingRight="2dp"
-                    android:paddingLeft="2dp"
-                    android:layout_marginLeft="5dp" />
-            </RelativeLayout>
+                    android:text="@string/dummy"
+                    android:id="@+id/textview_statistic_output_name"
+                    android:textColor="@color/text1"
+                    android:textStyle="bold"
+                    android:textSize="12dp" />
 
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_toRightOf="@+id/relativeLayout20"
-                android:layout_toEndOf="@+id/relativeLayout20"
-                android:layout_marginBottom="2dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/kurung_buka"
+                    android:id="@+id/textView4"
+                    android:textColor="@color/text1"
+                    android:layout_below="@+id/textview_statistic_output_name"
+                    android:layout_alignParentLeft="true"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="12dp"
+                    android:layout_marginLeft="4dp" />
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dummy"
+                    android:id="@+id/textview_statistic_output_position"
+                    android:textColor="@color/text1"
+                    android:layout_below="@+id/textview_statistic_output_name"
+                    android:layout_alignParentLeft="true"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="12dp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/dummy"
-                        android:id="@+id/textview_statistic_output_name"
-                        android:textColor="@color/text1"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/kurung_buka"
-                        android:paddingLeft="2dp"
-                        android:id="@+id/textView26"
-                        android:textColor="@color/text1"
-                        android:layout_toRightOf="@+id/textview_statistic_output_name"
-                        android:layout_toEndOf="@+id/textview_statistic_output_name" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/dummy"
-                        android:id="@+id/textview_statistic_output_power"
-                        android:textColor="@color/text1"
-                        android:layout_toRightOf="@+id/textView26"
-                        android:layout_toEndOf="@+id/textView26" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/watt"
-                        android:id="@+id/textView29"
-                        android:textColor="@color/text1"
-                        android:layout_toRightOf="@+id/textview_statistic_output_power"
-                        android:layout_toEndOf="@+id/textview_statistic_output_power"
-                        android:paddingLeft="2dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/kurung_tutup"
-                        android:id="@+id/textView31"
-                        android:textColor="@color/text1"
-                        android:layout_toRightOf="@+id/textView29"
-                        android:layout_toEndOf="@+id/textView29" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/dummy"
-                        android:id="@+id/textview_statistic_output_position"
-                        android:textColor="@color/text1"
-                        android:layout_below="@+id/textview_statistic_output_name"
-                        android:layout_alignParentLeft="true" />
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2.25">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/usage"
-                        android:id="@+id/textView52"
-                        android:textColor="@color/text2"
-                        android:layout_centerVertical="true"
-                        android:layout_centerHorizontal="true" />
-                </RelativeLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:layout_weight="1.6">
-
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1">
-
-                        <LinearLayout
-                            android:orientation="horizontal"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/linearLayout"
-                            android:layout_weight="1"
-                            android:layout_marginLeft="2dp">
-
-                            <TextView
-                                android:layout_width="54dp"
-                                android:layout_height="wrap_content"
-                                android:text="@string/day"
-                                android:id="@+id/textView11"
-                                android:textColor="@color/text2"
-                                android:layout_gravity="center_vertical" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/double_dot"
-                                android:id="@+id/textView15"
-                                android:paddingRight="4dp"
-                                android:textColor="@color/text2"
-                                android:layout_gravity="center_vertical" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/dummy"
-                                android:id="@+id/textview_statistic_day"
-                                android:textColor="@color/color_main_5"
-                                android:layout_gravity="center_vertical" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:orientation="horizontal"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:layout_marginLeft="2dp">
-
-                            <TextView
-                                android:layout_width="54dp"
-                                android:layout_height="wrap_content"
-                                android:text="@string/average"
-                                android:id="@+id/textView27"
-                                android:textColor="@color/text2"
-                                android:layout_gravity="center_vertical" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/double_dot"
-                                android:id="@+id/textView30"
-                                android:paddingRight="4dp"
-                                android:textColor="@color/text2"
-                                android:layout_gravity="center_vertical" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/dummy"
-                                android:id="@+id/textview_statistic_average"
-                                android:textColor="@color/color_main_5"
-                                android:layout_gravity="center_vertical" />
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1">
-
-                        <LinearLayout
-                            android:orientation="horizontal"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/linearLayout3"
-                            android:layout_weight="1">
-
-                            <TextView
-                                android:layout_width="54dp"
-                                android:layout_height="wrap_content"
-                                android:text="@string/week"
-                                android:id="@+id/textView33"
-                                android:textColor="@color/text2"
-                                android:layout_gravity="center_vertical" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/double_dot"
-                                android:id="@+id/textView34"
-                                android:paddingRight="4dp"
-                                android:textColor="@color/text2"
-                                android:layout_gravity="center_vertical" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/dummy"
-                                android:id="@+id/textview_statistic_week"
-                                android:textColor="@color/color_main_5"
-                                android:layout_gravity="center_vertical" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:orientation="horizontal"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/linearLayout4"
-                            android:layout_weight="1">
-
-                            <TextView
-                                android:layout_width="54dp"
-                                android:layout_height="wrap_content"
-                                android:text="@string/month"
-                                android:id="@+id/textView36"
-                                android:textColor="@color/text2"
-                                android:layout_gravity="center_vertical" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/double_dot"
-                                android:id="@+id/textView37"
-                                android:paddingRight="4dp"
-                                android:textColor="@color/text2"
-                                android:layout_gravity="center_vertical" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/dummy"
-                                android:id="@+id/textview_statistic_month"
-                                android:textColor="@color/color_main_5"
-                                android:layout_gravity="center_vertical" />
-                        </LinearLayout>
-
-                    </LinearLayout>
-                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/kurung_tutup"
+                    android:id="@+id/textView6"
+                    android:textColor="@color/text1"
+                    android:layout_below="@+id/textview_statistic_output_name"
+                    android:layout_alignParentLeft="true"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="12dp" />
 
             </LinearLayout>
 
-        </RelativeLayout>
-    </RelativeLayout>
-</RelativeLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/power"
+                    android:id="@+id/textView5"
+                    android:textColor="@color/text2"
+                    android:layout_toRightOf="@+id/textView26"
+                    android:layout_toEndOf="@+id/textView26"
+                    android:textSize="12dp"
+                    android:layout_marginLeft="4dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dummy"
+                    android:id="@+id/textview_statistic_output_power"
+                    android:textColor="@color/text1"
+                    android:layout_toRightOf="@+id/textView26"
+                    android:layout_toEndOf="@+id/textView26"
+                    android:textSize="12dp"
+                    android:layout_marginLeft="4dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/watt"
+                    android:id="@+id/textView12"
+                    android:textColor="@color/text2"
+                    android:layout_toRightOf="@+id/textview_statistic_output_power"
+                    android:layout_toEndOf="@+id/textview_statistic_output_power"
+                    android:paddingLeft="2dp"
+                    android:textSize="12dp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/usage"
+                android:id="@+id/textView48"
+                android:textColor="@color/text2"
+                android:layout_toRightOf="@+id/textview_statistic_output_power"
+                android:layout_toEndOf="@+id/textview_statistic_output_power"
+                android:paddingLeft="2dp"
+                android:textSize="12dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/linearLayout8"
+                        android:layout_weight="1" >
+
+                        <TextView
+                            android:layout_width="54dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/day"
+                            android:id="@+id/textView60"
+                            android:textColor="@color/text2"
+                            android:layout_gravity="center_vertical"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/double_dot"
+                            android:id="@+id/textView71"
+                            android:paddingRight="4dp"
+                            android:textColor="@color/text2"
+                            android:layout_gravity="center_vertical"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dummy"
+                            android:id="@+id/textview_statistic_day"
+                            android:textColor="@color/color_main_2"
+                            android:layout_gravity="center_vertical"
+                            android:textSize="12dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" >
+
+                        <TextView
+                            android:layout_width="54dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/average"
+                            android:id="@+id/textView77"
+                            android:textColor="@color/text2"
+                            android:layout_gravity="center_vertical"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/double_dot"
+                            android:id="@+id/textView78"
+                            android:paddingRight="4dp"
+                            android:textColor="@color/text2"
+                            android:layout_gravity="center_vertical"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dummy"
+                            android:id="@+id/textview_statistic_average"
+                            android:textColor="@color/color_main_2"
+                            android:layout_gravity="center_vertical"
+                            android:textSize="12dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/linearLayout9"
+                        android:layout_weight="1" >
+
+                        <TextView
+                            android:layout_width="54dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/week"
+                            android:id="@+id/textView80"
+                            android:textColor="@color/text2"
+                            android:layout_gravity="center_vertical"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/double_dot"
+                            android:id="@+id/textView81"
+                            android:paddingRight="4dp"
+                            android:textColor="@color/text2"
+                            android:layout_gravity="center_vertical"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dummy"
+                            android:id="@+id/textview_statistic_week"
+                            android:textColor="@color/color_main_2"
+                            android:layout_gravity="center_vertical"
+                            android:textSize="12dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/linearLayout10"
+                        android:layout_weight="1" >
+
+                        <TextView
+                            android:layout_width="54dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/month"
+                            android:id="@+id/textView83"
+                            android:textColor="@color/text2"
+                            android:layout_gravity="center_vertical"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/double_dot"
+                            android:id="@+id/textView84"
+                            android:paddingRight="4dp"
+                            android:textColor="@color/text2"
+                            android:layout_gravity="center_vertical"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dummy"
+                            android:id="@+id/textview_statistic_month"
+                            android:textColor="@color/color_main_2"
+                            android:layout_gravity="center_vertical"
+                            android:textSize="12dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

@@ -9,5 +9,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/imageview_output_option"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/out_1"/>
+        android:src="@drawable/out_1"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp" />
 </LinearLayout>
