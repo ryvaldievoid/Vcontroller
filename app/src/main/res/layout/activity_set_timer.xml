@@ -88,7 +88,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/dummy"
                             android:id="@+id/textview_timer_output_status"
-                            android:textColor="@color/text2"
+                            android:textColor="@color/color_main_2"
                             android:layout_alignParentBottom="true"
                             android:layout_alignLeft="@+id/textview_output_number"
                             android:layout_alignStart="@+id/textview_output_number" />
