@@ -53,13 +53,10 @@ public class MqttService extends Service {
     public void onStart(Intent intent, int startId) {
         StrictMode.enableDefaults();
         sqLiteAdapter = new SQLiteAdapter(this);
-        // Ambil data array
-        // 0 = url,
-        // Ambil Device ID
         String android_id = Settings.Secure.getString(this.getContentResolver(), Settings.Secure.ANDROID_ID);
         String deviceId = Md5.md5(android_id).toUpperCase();
         final String clientId = deviceId.substring(deviceId.length() - 20);
-        deviceId = deviceId.substring(deviceId.length() - 25);
+        //deviceId = deviceId.substring(deviceId.length() - 25);
 
         if (intent != null) {
             data_intent = intent.getStringArrayExtra(this.getResources().getString(R.string.data_mqtt));
@@ -99,12 +96,10 @@ public class MqttService extends Service {
                             Runnable sendUpdatesToUI = new Runnable() {
                                 @Override
                                 public void run() {
-                                    //Toast.makeText(MqttService.this, "hellooo", Toast.LENGTH_SHORT).show();
-                                    //ganti device id nanti
-                                    int size = sqLiteAdapter.getIoCommand()[0].length;
+                                    int size = sqLiteAdapter.getController()[0].length;
                                     for (int a = 0;a<size;a++) {
-                                        if (message.contains(sqLiteAdapter.getIoCommand()[0][a])) {
-                                            updateController(message);
+                                        if (message.contains(sqLiteAdapter.getController()[0][a])) {
+                                            updateController(a, message);
                                         }
                                     }
                                 }
@@ -129,24 +124,19 @@ public class MqttService extends Service {
         super.onStart(intent, startId);
     }
 
-    private void updateController(String message){
-        if (!message.contains("/timer")) {
+    private void updateController(int position, String message){
+        if (!message.contains("timer")) {
             String output_name = message.split("/")[0];
-            String no = message.split("/")[1];
-            if (no.substring(0, 1).equals("0")){
-                no = "" + no.charAt(1);
-            }
-            String status = message.split("/")[2];
-            int pos = Integer.parseInt(no) - 1;
+            String status = message.split("/")[1].toUpperCase();
             SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm", Locale.getDefault());
             String timestamp = formatter.format(new Date().getTime());
             sqLiteAdapter.addControllerStatus(output_name, status, timestamp);
-            if (!AdapterController.status[pos].equals("Waiting Response")) {
-                sqLiteAdapter.addLog(pos, AdapterController.outputName[pos], AdapterController.position[pos]
-                        , AdapterController.power[pos], AdapterController.status[pos],
-                        AdapterController.Id_outputimage[pos], timestamp);
+            if (!AdapterController.status[position].equals("Waiting Response")) {
+                sqLiteAdapter.addLog(position, AdapterController.outputName[position], AdapterController.position[position]
+                        , AdapterController.power[position], AdapterController.status[position],
+                        AdapterController.Id_outputimage[position], timestamp);
             }
-            intent_broadcast.putExtra("update_controller", new String[]{output_name, no, status});
+            intent_broadcast.putExtra("update_controller", new String[]{output_name, ""+position, status});
             sendBroadcast(intent_broadcast);
         }else {
             String output_name = message.split("/")[0];
@@ -154,7 +144,7 @@ public class MqttService extends Service {
             if (no.substring(0, 1).equals("0")){
                 no = "" + no.charAt(1);
             }
-            String status = message.split("/")[2];
+            String status = message.split("/")[2].toUpperCase();
             String time_hour = message.split("/")[4];
             String time_minute = message.split("/")[5];
             int pos = Integer.parseInt(no) - 1;

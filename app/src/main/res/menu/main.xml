@@ -6,7 +6,7 @@
             android:title="@string/help"
             android:showAsAction="ifRoom" />
         <item
-            android:id="@+id/menu_command"
+            android:id="@+id/menu_about"
             android:orderInCategory="100"
             android:title="@string/about"
             android:showAsAction="ifRoom" />

@@ -57,7 +57,6 @@
             android:theme="@style/AppTheme.CustomTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -74,18 +73,7 @@
             android:theme="@style/AppTheme.CustomTheme"
             android:windowSoftInputMode="stateHidden|adjustPan" />
         <activity
-            android:name=".IoCommandForm"
-            android:configChanges="orientation"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.CustomTheme"
-            android:windowSoftInputMode="stateHidden|adjustPan" />
-        <activity
             android:name=".HowItWorks"
-            android:configChanges="orientation"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.CustomTheme" />
-        <activity
-            android:name=".IoCommand"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.CustomTheme" />

@@ -7,18 +7,18 @@ import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import org.apache.commons.lang.ArrayUtils;
 import org.apache.commons.lang.StringUtils;
 
 /**
  * Created by Ryvaldie on 21/10/15.
+ * VoidMaerd.Group
  */
 
 public class SQLiteAdapter extends SQLiteOpenHelper {
 
     private SQLiteDatabase db;
     private static final String database_name = "VcontrollerDB";
-    private static final int database_version = 3;//naikin setiap ada perubahan
+    private static final int database_version = 6;//naikin setiap ada perubahan
 
     public SQLiteAdapter(Context context) {
         super(context, database_name, null, database_version);
@@ -27,25 +27,21 @@ public class SQLiteAdapter extends SQLiteOpenHelper {
     private static final String timestamp = "timestamp";
 
     private static final String key_id = "id", tabel_controller = "controller"
-            , tabel_timer = "timer", tabel_log = "log", tabel_setting_mqtt = "mqtt_settings"
-            , tabel_setting_tcp = "tcp_settings", tabel_io_command = "io_command";
-
+            , tabel_log = "log", tabel_setting_mqtt = "mqtt_settings"
+            , tabel_setting_tcp = "tcp_settings";
+    private static final String on_command = "on_command", off_command = "off_command";
     private static final String nama = "nama", posisi = "posisi", power = "power"
-            , timer = "timer", id_image = "id_image", status = "status", number = "number";
+            , id_image = "id_image", status = "status", number = "number";
     private static final String create_tabel_controller =
             "create table " + tabel_controller + " (" + key_id + " INTEGER PRIMARY KEY,"
                     + nama + " TEXT," + posisi + " TEXT,"
-                    + power + " TEXT," + status + " TEXT," + timestamp + " TEXT," + id_image + " TEXT" + ")";
+                    + power + " TEXT," + status + " TEXT," + id_image + " TEXT,"
+                    + timestamp + " TEXT," + on_command + " TEXT," + off_command + " TEXT" + ")";
 
     private static final String create_tabel_log =
             "create table " + tabel_log + " (" + key_id + " INTEGER PRIMARY KEY,"
                     + number + " TEXT," + nama + " TEXT," + posisi + " TEXT,"
                     + power + " TEXT," + status + " TEXT," + timestamp + " TEXT," + id_image + " TEXT" + ")";
-
-    private static final String id_controller = "id_controller", action = "action", time = "time";
-    private static final String create_tabel_timer =
-            "create table " + tabel_timer + " (" + key_id + " INTEGER PRIMARY KEY,"
-                    + id_controller + " TEXT," + action + " TEXT," + time + " TEXT" + ")";
 
     private static final String broker_url = "broker_url", port = "port", username = "username"
             , password = "password", topic = "topic";
@@ -59,46 +55,41 @@ public class SQLiteAdapter extends SQLiteOpenHelper {
             "create table " + tabel_setting_tcp+ " (" + key_id + " INTEGER PRIMARY KEY,"
                     + ip_or_domain + " TEXT," + port + " TEXT" + ")";
 
-    private static final String on_command = "on_command", off_command = "off_command"
-            , timer_command = "timer_command";
-    private static final String create_tabel_io_command =
-            "create table " + tabel_io_command + " (" + key_id + " INTEGER PRIMARY KEY,"
-                    + id_controller + " TEXT," + on_command + " TEXT,"
-                    + off_command + " TEXT," + timer_command + " TEXT" + ")";
-
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(create_tabel_controller);
-        db.execSQL(create_tabel_io_command);
         db.execSQL(create_tabel_log);
         db.execSQL(create_tabel_setting_mqtt);
         db.execSQL(create_tabel_setting_tcp);
-        db.execSQL(create_tabel_timer);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + tabel_controller);
-        db.execSQL("DROP TABLE IF EXIST " + tabel_io_command);
-        db.execSQL("DROP TABLE IF EXIST " + tabel_log);
-        db.execSQL("DROP TABLE IF EXIST " + tabel_setting_tcp);
-        db.execSQL("DROP TABLE IF EXIST " + tabel_timer);
-        db.execSQL("DROP TABLE IF EXIST " + tabel_setting_mqtt);
+        db.execSQL("DROP TABLE IF EXISTS " + tabel_log);
+        db.execSQL("DROP TABLE IF EXISTS " + tabel_setting_tcp);
+        db.execSQL("DROP TABLE IF EXISTS " + tabel_setting_mqtt);
         onCreate(db);
     }
 
 
     public void AddController(String nama_, String posisi_, String power_, int id_image_){
         db = this.getWritableDatabase();
+        String on_command_;
+        String off_command_;
 
         ContentValues values = new ContentValues();
         if(nama_!=null & posisi_!=null & power_!=null & id_image_!= 0){
+            on_command_ = nama_ + "/on";
+            off_command_ = nama_ + "/off";
             values.put(nama, nama_);
             values.put(posisi, posisi_);
             values.put(power, power_);
             values.put(status, "Waiting Response");
             values.put(id_image, id_image_);
             values.put(timestamp, "Waiting Response");
+            values.put(on_command, on_command_);
+            values.put(off_command, off_command_);
         }
 
         db.insert(tabel_controller, null, values);
@@ -108,12 +99,13 @@ public class SQLiteAdapter extends SQLiteOpenHelper {
     public String[][] getController(){
         db = this.getReadableDatabase();
 
-        String[] columns = new String[]{nama, posisi, power, status, id_image, timestamp};
+        String[] columns = new String[]{nama, posisi, power, status, id_image, timestamp, on_command
+                , off_command};
         Cursor cursor = db.query(tabel_controller, columns,
                 null, null, null, null, null);
 
         int size = (int)getRowCount(tabel_controller);
-        String[][] result = new String[6][size];
+        String[][] result = new String[8][size];
 
         int a = 0;
         cursor.moveToFirst();
@@ -124,6 +116,8 @@ public class SQLiteAdapter extends SQLiteOpenHelper {
             result[3][a] = cursor.getString(3);//status
             result[4][a] = cursor.getString(4);//id_image
             result[5][a] = cursor.getString(5);//timestamp
+            result[6][a] = cursor.getString(6);//on command
+            result[7][a] = cursor.getString(7);//off command
             a++;
             cursor.moveToNext();
         }
@@ -151,6 +145,28 @@ public class SQLiteAdapter extends SQLiteOpenHelper {
 
         assert check != null;
         return StringUtils.isBlank(check);
+    }
+
+    public String[] getIOCommand(String nama_){
+        db = this.getReadableDatabase();
+
+        String[] columns = new String[]{nama, posisi, power, status, id_image, timestamp, on_command
+                , off_command};
+        Cursor cursor = db.query(tabel_controller, columns,
+                nama + "='" + nama_ + "'", null, null, null, null);
+
+        String[] result = new String[2];
+
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()){
+            result[0] = cursor.getString(6);//on command
+            result[1] = cursor.getString(7);//off command
+            cursor.moveToNext();
+        }
+        cursor.close();
+        db.close();
+
+        return result;
     }
 
     public void addControllerStatus(String nama_, String status_, String timestamp_){
@@ -328,67 +344,12 @@ public class SQLiteAdapter extends SQLiteOpenHelper {
         db.close();
     }
 
-    public void addIoCommand(String id_controller_, String on_command_, String off_command_,
-                             String timer_command_){
-        db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-
-        values.put(id_controller, id_controller_);
-        values.put(on_command, on_command_);
-        values.put(off_command, off_command_);
-        values.put(timer_command, timer_command_);
-
-        db.insert(tabel_io_command, null, values);
-        db.close();
-    }
-
-    public void editIoCommand(String id_controller_, String on_command_, String off_command_,
-                              String timer_command_){
-        db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-
-        if (!StringUtils.isBlank(id_controller_) & !StringUtils.isBlank(on_command_)
-                & !StringUtils.isBlank(off_command_) & !StringUtils.isBlank(timer_command_)){
-            values.put(id_controller, id_controller_);
-            values.put(on_command, on_command_);
-            values.put(off_command, off_command_);
-            values.put(timer_command, timer_command_);
-        }
-
-        db.insert(tabel_io_command, id_controller + "='" + id_controller_ + "'", values);
-        db.close();
-    }
-
-    public String[][] getIoCommand(){
-        db = this.getReadableDatabase();
-        String[] columns = new String[]{id_controller, on_command, off_command, timer_command};
-        Cursor cursor = db.query(tabel_io_command, columns, null, null, null, null, null);
-        String[][] result = new String[4][(int)getRowCount(tabel_io_command)];
-
-        int a = 0;
-        cursor.moveToFirst();
-        while (!cursor.isAfterLast()){
-            result[0][a] = cursor.getString(0);
-            result[1][a] = cursor.getString(1);
-            result[2][a] = cursor.getString(2);
-            result[3][a] = cursor.getString(3);
-            a++;
-            cursor.moveToNext();
-        }
-        cursor.close();
-        db.close();
-
-        return result;
-    }
-
     public void deleteAll(){
         db = this.getWritableDatabase();
         db.delete(tabel_controller, null, null);
-        db.delete(tabel_io_command, null, null);
         db.delete(tabel_log, null, null);
         db.delete(tabel_setting_mqtt, null, null);
         db.delete(tabel_setting_tcp, null, null);
-        db.delete(tabel_timer, null, null);
         db.close();
     }
 

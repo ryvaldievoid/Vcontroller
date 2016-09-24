@@ -25,12 +25,9 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.widget.Toolbar;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-
 import com.astuetz.PagerSlidingTabStrip;
 import com.astuetz.PagerSlidingTabStrip.IconTabProvider;
 
@@ -109,8 +106,8 @@ public class MainActivity extends FragmentActivity {
 				startActivity(intent_help);
 				break;
 
-			case R.id.menu_command:
-				Intent intent_io_command= new Intent(MainActivity.this, IoCommand.class);
+			case R.id.menu_about:
+				Intent intent_io_command= new Intent(MainActivity.this, AboutUs.class);
 				startActivity(intent_io_command);
 				break;
 
@@ -128,24 +125,6 @@ public class MainActivity extends FragmentActivity {
 	protected void onRestoreInstanceState(Bundle savedInstanceState) {
 		super.onRestoreInstanceState(savedInstanceState);
 	}
-
-	private Drawable.Callback drawableCallback = new Drawable.Callback() {
-		@Override
-		public void invalidateDrawable(Drawable who) {
-			assert getActionBar() != null;
-			getActionBar().setBackgroundDrawable(who);
-		}
-
-		@Override
-		public void scheduleDrawable(Drawable who, Runnable what, long when) {
-			handler.postAtTime(what, when);
-		}
-
-		@Override
-		public void unscheduleDrawable(Drawable who, Runnable what) {
-			handler.removeCallbacks(what);
-		}
-	};
 
 	public static final class MyPagerAdapter extends FragmentPagerAdapter implements IconTabProvider{
 
