@@ -15,6 +15,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -26,6 +27,7 @@ import java.util.Locale;
 public class SettingOutputForm extends Activity {
 
     private static String nama_temp = null;
+    private static Boolean show_command = true;
     public static final String BROADCAST_ACTION = SettingOutput.class.getSimpleName();
     private Intent intent;
 
@@ -35,6 +37,21 @@ public class SettingOutputForm extends Activity {
         setContentView(R.layout.activity_setting_output_form);
 
         intent = new Intent(BROADCAST_ACTION);
+
+        final TextView io_command = (TextView) findViewById(R.id.io_command);
+        final LinearLayout io_command_layout = (LinearLayout) findViewById(R.id.command_layout);
+
+        io_command.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(show_command){
+                io_command_layout.setVisibility(View.VISIBLE);
+                show_command=false;}
+                else {
+                    io_command_layout.setVisibility(View.GONE);
+                    show_command=true;}
+            }
+        });
 
         TextView output_number = (TextView)findViewById(R.id.textView_output_number_output_form);
         final ImageView image_set = (ImageView)findViewById(R.id.imageview_setting_output_image_selected);

@@ -106,5 +106,6 @@
     <string name="port_tcp">8080</string>
     <string name="wait">Waiting Response</string>
     <string name="optional">optional</string>
+    <string name="i_o_command">I/O Command</string>
 
 </resources>

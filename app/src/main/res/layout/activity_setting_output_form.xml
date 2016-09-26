@@ -91,219 +91,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/command"
-                    android:id="@+id/textView10"
-                    android:textColor="@color/color_main_4"
-                    android:layout_gravity="center_vertical"
-                    android:paddingLeft="6dp"
-                    android:textSize="12dp"
-                    android:textIsSelectable="false"
-                    android:layout_marginLeft="6dp"
-                    android:layout_marginTop="12dp" />
-
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:layout_width="125dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/command_dummy1"
-                        android:id="@+id/textView58"
-                        android:textColor="@color/text2"
-                        android:layout_gravity="center_vertical"
-                        android:paddingLeft="8dp"
-                        android:textSize="12dp"
-                        android:textIsSelectable="false"
-                        android:layout_marginLeft="6dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/textView_on_command"
-                        android:textColor="@color/color_main_1"
-                        android:layout_gravity="center_vertical"
-                        android:paddingLeft="6dp"
-                        android:textSize="12dp"
-                        android:textIsSelectable="false"
-                        android:layout_marginLeft="6dp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:layout_width="125dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/command_dummy2"
-                        android:id="@+id/textView62"
-                        android:textColor="@color/text2"
-                        android:layout_gravity="center_vertical"
-                        android:paddingLeft="8dp"
-                        android:textSize="12dp"
-                        android:textIsSelectable="false"
-                        android:layout_marginLeft="6dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/textView_off_command"
-                        android:textColor="@color/color_main_2"
-                        android:layout_gravity="center_vertical"
-                        android:paddingLeft="6dp"
-                        android:textSize="12dp"
-                        android:textIsSelectable="false"
-                        android:layout_marginLeft="6dp" />
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/command1"
-                    android:id="@+id/textView3"
-                    android:textColor="@color/color_main_4"
-                    android:layout_gravity="center_vertical"
-                    android:paddingLeft="6dp"
-                    android:textSize="12dp"
-                    android:textIsSelectable="false"
-                    android:layout_marginLeft="6dp"
-                    android:layout_marginTop="6dp" />
-
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
-
-                    <TextView
-                        android:layout_width="125dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/command_dummy1"
-                        android:id="@+id/textView11"
-                        android:textColor="@color/text2"
-                        android:layout_gravity="center_vertical"
-                        android:paddingLeft="8dp"
-                        android:textSize="12dp"
-                        android:textIsSelectable="false"
-                        android:layout_marginLeft="6dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/textView_on_command_receive"
-                        android:textColor="@color/color_main_1"
-                        android:layout_gravity="center_vertical"
-                        android:paddingLeft="6dp"
-                        android:textSize="12dp"
-                        android:textIsSelectable="false"
-                        android:layout_marginLeft="6dp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
-
-                    <TextView
-                        android:layout_width="125dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/command_dummy2"
-                        android:id="@+id/textView27"
-                        android:textColor="@color/text2"
-                        android:layout_gravity="center_vertical"
-                        android:paddingLeft="8dp"
-                        android:textSize="12dp"
-                        android:textIsSelectable="false"
-                        android:layout_marginLeft="6dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/textView_off_command_receive"
-                        android:textColor="@color/color_main_2"
-                        android:layout_gravity="center_vertical"
-                        android:paddingLeft="6dp"
-                        android:textSize="12dp"
-                        android:textIsSelectable="false"
-                        android:layout_marginLeft="6dp" />
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/command2"
-                    android:id="@+id/textView30"
-                    android:textColor="@color/color_main_4"
-                    android:layout_gravity="center_vertical"
-                    android:paddingLeft="6dp"
-                    android:textSize="12dp"
-                    android:textIsSelectable="false"
-                    android:layout_marginLeft="6dp"
-                    android:layout_marginTop="6dp" />
-
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
-
-                    <TextView
-                        android:layout_width="125dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/command_dummy1"
-                        android:id="@+id/textView31"
-                        android:textColor="@color/text2"
-                        android:layout_gravity="center_vertical"
-                        android:paddingLeft="8dp"
-                        android:textSize="12dp"
-                        android:textIsSelectable="false"
-                        android:layout_marginLeft="6dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/textView_on_command_timer"
-                        android:textColor="@color/color_main_1"
-                        android:layout_gravity="center_vertical"
-                        android:paddingLeft="6dp"
-                        android:textSize="12dp"
-                        android:textIsSelectable="false"
-                        android:layout_marginLeft="6dp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
-
-                    <TextView
-                        android:layout_width="125dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/command_dummy2"
-                        android:id="@+id/textView34"
-                        android:textColor="@color/text2"
-                        android:layout_gravity="center_vertical"
-                        android:paddingLeft="8dp"
-                        android:textSize="12dp"
-                        android:textIsSelectable="false"
-                        android:layout_marginLeft="6dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/textView_off_command_timer"
-                        android:textColor="@color/color_main_2"
-                        android:layout_gravity="center_vertical"
-                        android:paddingLeft="6dp"
-                        android:textSize="12dp"
-                        android:textIsSelectable="false"
-                        android:layout_marginLeft="6dp" />
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:text="@string/output_name_hint"
                     android:id="@+id/textView59"
                     android:textColor="@color/text2"
@@ -331,6 +118,239 @@
                     android:layout_marginTop="4dp"
                     android:padding="8dp"
                     android:layout_marginLeft="6dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/i_o_command"
+                    android:id="@+id/io_command"
+                    android:textColor="@color/color_main_4"
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="6dp"
+                    android:textSize="12dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginLeft="6dp" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/command_layout"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/command"
+                        android:id="@+id/textView10"
+                        android:textColor="@color/color_main_4"
+                        android:layout_gravity="center_vertical"
+                        android:paddingLeft="6dp"
+                        android:textSize="12dp"
+                        android:textIsSelectable="false"
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginTop="6dp" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="125dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/command_dummy1"
+                            android:id="@+id/textView58"
+                            android:textColor="@color/text2"
+                            android:layout_gravity="center_vertical"
+                            android:paddingLeft="8dp"
+                            android:textSize="12dp"
+                            android:textIsSelectable="false"
+                            android:layout_marginLeft="6dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textView_on_command"
+                            android:textColor="@color/color_main_1"
+                            android:layout_gravity="center_vertical"
+                            android:paddingLeft="6dp"
+                            android:textSize="12dp"
+                            android:textIsSelectable="false"
+                            android:layout_marginLeft="6dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="125dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/command_dummy2"
+                            android:id="@+id/textView62"
+                            android:textColor="@color/text2"
+                            android:layout_gravity="center_vertical"
+                            android:paddingLeft="8dp"
+                            android:textSize="12dp"
+                            android:textIsSelectable="false"
+                            android:layout_marginLeft="6dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textView_off_command"
+                            android:textColor="@color/color_main_2"
+                            android:layout_gravity="center_vertical"
+                            android:paddingLeft="6dp"
+                            android:textSize="12dp"
+                            android:textIsSelectable="false"
+                            android:layout_marginLeft="6dp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/command1"
+                        android:id="@+id/textView3"
+                        android:textColor="@color/color_main_4"
+                        android:layout_gravity="center_vertical"
+                        android:paddingLeft="6dp"
+                        android:textSize="12dp"
+                        android:textIsSelectable="false"
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginTop="6dp" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <TextView
+                            android:layout_width="125dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/command_dummy1"
+                            android:id="@+id/textView11"
+                            android:textColor="@color/text2"
+                            android:layout_gravity="center_vertical"
+                            android:paddingLeft="8dp"
+                            android:textSize="12dp"
+                            android:textIsSelectable="false"
+                            android:layout_marginLeft="6dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textView_on_command_receive"
+                            android:textColor="@color/color_main_1"
+                            android:layout_gravity="center_vertical"
+                            android:paddingLeft="6dp"
+                            android:textSize="12dp"
+                            android:textIsSelectable="false"
+                            android:layout_marginLeft="6dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <TextView
+                            android:layout_width="125dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/command_dummy2"
+                            android:id="@+id/textView27"
+                            android:textColor="@color/text2"
+                            android:layout_gravity="center_vertical"
+                            android:paddingLeft="8dp"
+                            android:textSize="12dp"
+                            android:textIsSelectable="false"
+                            android:layout_marginLeft="6dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textView_off_command_receive"
+                            android:textColor="@color/color_main_2"
+                            android:layout_gravity="center_vertical"
+                            android:paddingLeft="6dp"
+                            android:textSize="12dp"
+                            android:textIsSelectable="false"
+                            android:layout_marginLeft="6dp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/command2"
+                        android:id="@+id/textView30"
+                        android:textColor="@color/color_main_4"
+                        android:layout_gravity="center_vertical"
+                        android:paddingLeft="6dp"
+                        android:textSize="12dp"
+                        android:textIsSelectable="false"
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginTop="6dp" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <TextView
+                            android:layout_width="125dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/command_dummy1"
+                            android:id="@+id/textView31"
+                            android:textColor="@color/text2"
+                            android:layout_gravity="center_vertical"
+                            android:paddingLeft="8dp"
+                            android:textSize="12dp"
+                            android:textIsSelectable="false"
+                            android:layout_marginLeft="6dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textView_on_command_timer"
+                            android:textColor="@color/color_main_1"
+                            android:layout_gravity="center_vertical"
+                            android:paddingLeft="6dp"
+                            android:textSize="12dp"
+                            android:textIsSelectable="false"
+                            android:layout_marginLeft="6dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <TextView
+                            android:layout_width="125dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/command_dummy2"
+                            android:id="@+id/textView34"
+                            android:textColor="@color/text2"
+                            android:layout_gravity="center_vertical"
+                            android:paddingLeft="8dp"
+                            android:textSize="12dp"
+                            android:textIsSelectable="false"
+                            android:layout_marginLeft="6dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textView_off_command_timer"
+                            android:textColor="@color/color_main_2"
+                            android:layout_gravity="center_vertical"
+                            android:paddingLeft="6dp"
+                            android:textSize="12dp"
+                            android:textIsSelectable="false"
+                            android:layout_marginLeft="6dp" />
+                    </LinearLayout>
+                </LinearLayout>
 
                 <TextView
                     android:layout_width="wrap_content"
