@@ -9,7 +9,9 @@
     <string name="load">Load/Save</string>
 
     <string name="help">Help</string>
-    <string name="command">I/O Command</string>
+    <string name="command">Send Command</string>
+    <string name="command1">Receive Command</string>
+    <string name="command2">Timer Command</string>
     <string name="command_dummy1">Turn ON Command</string>
     <string name="command_dummy2">Turn OFF Command</string>
     <string name="about">About Us</string>
