@@ -94,7 +94,7 @@ public class AdapterController extends BaseAdapter {
 
         output_number.setText(outputNumber[position]);
         output_image.setButtonDrawable(Id_outputimage[position]);
-        if (status[position].equals("on")) {
+        if (status[position].equals("ON")) {
             output_image.setChecked(true);
         }else {
             output_image.setChecked(false);
@@ -111,15 +111,15 @@ public class AdapterController extends BaseAdapter {
             public void onClick(View v) {
                 if (tcp_or_mqtt){
                     if (!output_image.isChecked()) {
-                        publisher.publishMqttMessage(outputName[position] + "/" + outputNumber[position] + "/on");
+                        publisher.publishMqttMessage(sqLiteAdapter.getIOCommand(outputName[position])[0]);
                     }else {
-                        publisher.publishMqttMessage(outputName[position] + "/" + outputNumber[position] + "/off");
+                        publisher.publishMqttMessage(sqLiteAdapter.getIOCommand(outputName[position])[1]);
                     }
                 }else {
                     if (!output_image.isChecked()) {
-                        TCPClient.sendData(outputName[position] + "/" + outputNumber[position] + "/on");
+                        TCPClient.sendData(sqLiteAdapter.getIOCommand(outputName[position])[0]);
                     }else {
-                        TCPClient.sendData(outputName[position] + "/" + outputNumber[position] + "/off");
+                        TCPClient.sendData(sqLiteAdapter.getIOCommand(outputName[position])[1]);
                     }
                 }
                 output_status.setText(context.getString(R.string.wait));
@@ -135,6 +135,7 @@ public class AdapterController extends BaseAdapter {
                 intent.putExtra("output_status", status[position]);
                 intent.putExtra("output_position", AdapterController.position[position]);
                 intent.putExtra("output_power", power[position]);
+                intent.putExtra("output_icon", Id_outputimage[position]);
                 context.startActivity(intent);
             }
         });

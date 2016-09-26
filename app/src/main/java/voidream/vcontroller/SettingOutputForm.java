@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
@@ -14,6 +17,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.text.SimpleDateFormat;
 import java.util.Locale;
@@ -39,6 +44,8 @@ public class SettingOutputForm extends Activity {
         final EditText power_output = (EditText)findViewById(R.id.editText_power_output);
         final ListView list_ouput = (ListView)findViewById(R.id.listview_output_option);
         final Button add = (Button)findViewById(R.id.button_add);
+        final TextView on_command = (TextView)findViewById(R.id.textView_on_command);
+        final TextView off_command = (TextView)findViewById(R.id.textView_off_command);
 
         final CustomListOutputOptions customListOutputOptions = new CustomListOutputOptions(this);
         list_ouput.setAdapter(customListOutputOptions);
@@ -53,6 +60,26 @@ public class SettingOutputForm extends Activity {
             }
         });
 
+        nama_ouput.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                String on_c = nama_ouput.getText().toString() + "/on";
+                String off_c = nama_ouput.getText().toString() + "/off";
+                on_command.setText(on_c);
+                off_command.setText(off_c);
+            }
+        });
+
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,7 +91,7 @@ public class SettingOutputForm extends Activity {
                         String posisi_output_ = posisi_output.getText().toString();
                         String power_output_ = power_output.getText().toString();
                         sqLiteAdapter.deleteController(nama_temp);
-                        sqLiteAdapter.AddController(nama_output_, posisi_output_, power_output_, id_image);
+                        sqLiteAdapter.AddController(nama_output_, posisi_output_, power_output_,id_image);
                         intent.putExtra(getString(R.string.update_list_controller), true);
                         sendBroadcast(intent);
                         finish();
