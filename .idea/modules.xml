@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/VController.iml" filepath="$PROJECT_DIR$/VController.iml" />
       <module fileurl="file://$PROJECT_DIR$/Vcontroller.iml" filepath="$PROJECT_DIR$/Vcontroller.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
