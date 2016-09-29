@@ -63,6 +63,10 @@ public class SettingOutputForm extends Activity {
         final Button add = (Button)findViewById(R.id.button_add);
         final TextView on_command = (TextView)findViewById(R.id.textView_on_command);
         final TextView off_command = (TextView)findViewById(R.id.textView_off_command);
+        final TextView on_r_command = (TextView)findViewById(R.id.textView_on_command_receive);
+        final TextView off_r_command = (TextView)findViewById(R.id.textView_off_command_receive);
+        final TextView timer_on = (TextView)findViewById(R.id.textView_on_command_timer);
+        final TextView timer_off = (TextView)findViewById(R.id.textView_off_command_timer);
 
         final CustomListOutputOptions customListOutputOptions = new CustomListOutputOptions(this);
         list_ouput.setAdapter(customListOutputOptions);
@@ -90,10 +94,19 @@ public class SettingOutputForm extends Activity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                String on_c = nama_ouput.getText().toString() + "/on";
-                String off_c = nama_ouput.getText().toString() + "/off";
-                on_command.setText(on_c);
-                off_command.setText(off_c);
+                String nama_ = nama_ouput.getText().toString();
+                String on_command_ = nama_ + "/on";
+                String off_command_ = nama_ + "/off";
+                String timer_on_ = "timer/" + nama_ + "/on";
+                String timer_off_ = "timer/" + nama_ + "/off";
+                String on_r = "r/" + nama_ + "/on";
+                String off_r = "r/" + nama_ + "/off";
+                on_command.setText(on_command_);
+                off_command.setText(off_command_);
+                on_r_command.setText(on_r);
+                off_r_command.setText(off_r);
+                timer_on.setText(timer_on_);
+                timer_off.setText(timer_off_);
             }
         });
 
