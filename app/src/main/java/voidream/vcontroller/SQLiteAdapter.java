@@ -18,7 +18,7 @@ public class SQLiteAdapter extends SQLiteOpenHelper {
 
     private SQLiteDatabase db;
     private static final String database_name = "VcontrollerDB";
-    private static final int database_version = 7;//naikin setiap ada perubahan
+    private static final int database_version = 8;//naikin setiap ada perubahan
 
     public SQLiteAdapter(Context context) {
         super(context, database_name, null, database_version);
@@ -112,7 +112,8 @@ public class SQLiteAdapter extends SQLiteOpenHelper {
         db = this.getReadableDatabase();
 
         String[] columns = new String[]{nama, posisi, power, status, id_image, timestamp, on_command
-                , off_command};
+                , off_command, timer_on_command, timer_off_command, on_receive_command
+                , off_receive_command};
         Cursor cursor = db.query(tabel_controller, columns,
                 null, null, null, null, null);
 
