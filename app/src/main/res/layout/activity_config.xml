@@ -1,37 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:background="@color/window_translucent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="voidream.vcontroller.Config">
 
     <RelativeLayout
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/background_rounded_rectangle_grey"
-        android:layout_weight="1"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="10dp">
+        android:layout_above="@+id/relativeLayout">
 
         <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="6dp"
-            android:layout_marginRight="6dp"
-            android:layout_marginTop="6dp"
-            android:layout_above="@+id/linearLayout5"
-            android:background="@drawable/background_rounded_rectangle">
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/background_rounded_rectangle"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="10dp"
+            android:layout_centerInParent="true">
 
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/linearlayout_config_tcp"
-                android:visibility="visible">
+                android:visibility="gone">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -91,10 +86,7 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/linearlayout_config_mqtt"
-                android:visibility="gone"
-                android:background="@drawable/background_rounded_rectangle"
-                >
+                android:id="@+id/linearlayout_config_mqtt">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -104,7 +96,9 @@
                     android:textColor="@color/text2"
                     android:paddingLeft="6dp"
                     android:paddingTop="2dp"
-                    android:textSize="12dp" />
+                    android:textSize="12dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginLeft="5dp" />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -112,7 +106,6 @@
                     android:id="@+id/edittext_config_mqtt_broker_url"
                     android:inputType="textWebEditText"
                     android:background="@drawable/background_textfield"
-                    android:layout_margin="6dp"
                     android:paddingLeft="12dp"
                     android:paddingRight="12dp"
                     android:paddingTop="6dp"
@@ -120,7 +113,11 @@
                     android:textSize="14dp"
                     android:textColor="@color/text1"
                     android:textColorHint="@color/text4"
-                    android:hint="@string/default_mqtt_broker" />
+                    android:hint="@string/default_mqtt_broker"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="2.5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -130,14 +127,14 @@
                     android:textColor="@color/text2"
                     android:paddingLeft="6dp"
                     android:paddingTop="2dp"
-                    android:textSize="12dp" />
+                    android:textSize="12dp"
+                    android:layout_marginLeft="5dp" />
 
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:id="@+id/edittext_config_mqtt_port"
                     android:background="@drawable/background_textfield"
-                    android:layout_margin="6dp"
                     android:paddingLeft="12dp"
                     android:paddingRight="12dp"
                     android:paddingTop="6dp"
@@ -147,7 +144,11 @@
                     android:textSize="14dp"
                     android:textColor="@color/text1"
                     android:textColorHint="@color/text4"
-                    android:hint="@string/default_mqtt_port" />
+                    android:hint="@string/default_mqtt_port"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="2.5dp" />
 
                 <LinearLayout
                     android:orientation="horizontal"
@@ -168,14 +169,14 @@
                             android:textColor="@color/text2"
                             android:paddingLeft="6dp"
                             android:paddingTop="2dp"
-                            android:textSize="12dp" />
+                            android:textSize="12dp"
+                            android:layout_marginLeft="5dp" />
 
                         <EditText
                             android:layout_width="match_parent"
                             android:layout_height="38dp"
                             android:id="@+id/edittext_config_mqtt_username"
                             android:background="@drawable/background_textfield"
-                            android:layout_margin="6dp"
                             android:hint="@string/optional"
                             android:paddingLeft="12dp"
                             android:paddingRight="12dp"
@@ -185,7 +186,11 @@
                             android:maxLength="15"
                             android:textSize="14dp"
                             android:textColor="@color/text1"
-                            android:textColorHint="@color/text4" />
+                            android:textColorHint="@color/text4"
+                            android:layout_marginTop="2.5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginBottom="5dp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -202,14 +207,14 @@
                             android:textColor="@color/text2"
                             android:paddingLeft="6dp"
                             android:paddingTop="2dp"
-                            android:textSize="12dp" />
+                            android:textSize="12dp"
+                            android:layout_marginLeft="5dp" />
 
                         <EditText
                             android:layout_width="match_parent"
                             android:layout_height="38dp"
                             android:id="@+id/edittext_config_mqtt_password"
                             android:background="@drawable/background_textfield"
-                            android:layout_margin="6dp"
                             android:hint="@string/optional"
                             android:inputType="textPassword"
                             android:paddingLeft="12dp"
@@ -218,7 +223,11 @@
                             android:paddingBottom="6dp"
                             android:textSize="14dp"
                             android:textColor="@color/text1"
-                            android:textColorHint="@color/text4" />
+                            android:textColorHint="@color/text4"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="2.5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginBottom="5dp" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -230,7 +239,8 @@
                     android:textColor="@color/text2"
                     android:paddingLeft="6dp"
                     android:paddingTop="2dp"
-                    android:textSize="12dp" />
+                    android:textSize="12dp"
+                    android:layout_marginLeft="5dp" />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -238,7 +248,6 @@
                     android:id="@+id/edittext_config_mqtt_topic"
                     android:inputType="text"
                     android:background="@drawable/background_textfield"
-                    android:layout_margin="6dp"
                     android:paddingLeft="12dp"
                     android:paddingRight="12dp"
                     android:paddingTop="6dp"
@@ -246,76 +255,69 @@
                     android:textSize="14dp"
                     android:textColor="@color/text1"
                     android:textColorHint="@color/text4"
-                    android:hint="@string/topic" />
+                    android:hint="@string/topic"
+                    android:layout_marginTop="2.5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:orientation="horizontal"
+                    android:id="@+id/radiogroup_config"
+                    android:layout_weight="1"
+                    android:visibility="gone">
+
+                    <RadioButton
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/tcp"
+                        android:button="@drawable/radiobutton_config"
+                        android:id="@+id/radiobutton_config_tcp"
+                        android:textSize="18sp"
+                        android:checked="true"
+                        android:enabled="true"
+                        android:textColor="@color/color_main_2"
+                        android:layout_weight="1" />
+
+                    <RadioButton
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/mqtt"
+                        android:button="@drawable/radiobutton_config"
+                        android:id="@+id/radiobutton_config_mqtt"
+                        android:textSize="18dp"
+                        android:checked="false"
+                        android:textColor="@color/color_main_4"
+                        android:layout_weight="1" />
+                </RadioGroup>
 
             </LinearLayout>
-        </LinearLayout>
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_alignParentBottom="true"
-            android:elevation="2dp"
-            android:background="@drawable/background_rounded_rectangle"
-            android:layout_marginLeft="6dp"
-            android:layout_marginRight="6dp"
-            android:layout_marginBottom="6dp"
-            android:id="@+id/linearLayout5">
-
-            <RadioGroup
+            <Button
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:orientation="horizontal"
-                android:id="@+id/radiogroup_config"
-                android:layout_weight="1">
+                android:layout_height="38dp"
+                android:text="@string/set_config"
+                android:id="@+id/button_config_set"
+                android:background="@drawable/button_flat"
+                android:textColor="@android:color/white"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp" />
 
-                <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="@string/tcp"
-                    android:button="@drawable/radiobutton_config"
-                    android:id="@+id/radiobutton_config_tcp"
-                    android:textSize="18sp"
-                    android:checked="true"
-                    android:enabled="true"
-                    android:textColor="@color/color_main_2"
-                    android:layout_weight="1" />
-
-                <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="@string/mqtt"
-                    android:button="@drawable/radiobutton_config"
-                    android:id="@+id/radiobutton_config_mqtt"
-                    android:textSize="18dp"
-                    android:checked="false"
-                    android:textColor="@color/color_main_4"
-                    android:layout_weight="1" />
-            </RadioGroup>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="2">
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="@string/set_config"
-                    android:id="@+id/button_config_set"
-                    android:layout_margin="6dp"
-                    android:background="@drawable/button_flat"
-                    android:textColor="@android:color/white" />
-            </RelativeLayout>
         </LinearLayout>
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@android:color/black"></RelativeLayout>
+        android:background="@android:color/black"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/relativeLayout"></RelativeLayout>
 
-</LinearLayout>
+</RelativeLayout>

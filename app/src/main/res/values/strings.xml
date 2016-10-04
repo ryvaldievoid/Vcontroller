@@ -4,7 +4,7 @@
     <string name="app_name">VController</string>
     <string name="app_version">VController 1.0</string>
     <string name="statistic">Output Statistic</string>
-    <string name="configure">TCP/MQTT</string>
+    <string name="configure">MQTT Setting</string>
     <string name="controller">Output Manager</string>
     <string name="load">Load/Save</string>
 
@@ -78,11 +78,11 @@
 
     <string name="how_it_works">How it works?</string>
 
-    <string name="designer">Designer &amp; Front-End Programmer</string>
+    <string name="designer">Designer and Front-End Programmer</string>
     <string name="name1">Abi Karami Wijaya</string>
-    <string name="debugger">Debugger &amp; Back-End Programmer</string>
+    <string name="debugger">Engineer and Back-End Programmer</string>
     <string name="name2">Ryvaldie Ishaq Hamdallah</string>
-    <string name="additional">Additional Library</string>
+    <string name="additional">Additi2onal Library</string>
     <string name="lib1">com.astuetz:pagerslidingtabstrip:1.0.1</string>
     <string name="thanks">Thanks To</string>
     <string name="thanks1">Adobe, Google, Github,</string>
@@ -106,6 +106,6 @@
     <string name="port_tcp">8080</string>
     <string name="wait">Waiting Response</string>
     <string name="optional">optional</string>
-    <string name="i_o_command">I/O Command …</string>
+    <string name="i_o_command">I/O Command . . .</string>
 
 </resources>

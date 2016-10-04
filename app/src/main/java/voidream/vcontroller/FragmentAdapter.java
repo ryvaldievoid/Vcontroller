@@ -29,6 +29,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
@@ -44,7 +45,7 @@ public class FragmentAdapter extends Fragment {
     private AdapterController adapterController;
     private AdapterLog adapterLog;
     private ListView controller, log_list;
-    private View controller_view, log_view, customize_view;
+    private View controller_view, log_view, customize_view, footer;
     private RelativeLayout statistic, config, setting, load_save;
     //private Handler handler;
 
@@ -64,6 +65,7 @@ public class FragmentAdapter extends Fragment {
         Context context = getContext();
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         getActivity().registerReceiver(broadcastReceiver, new IntentFilter(MqttService.BROADCAST_ACTION));
+        getActivity().registerReceiver(broadcastReceiver, new IntentFilter(SettingOutputForm.BROADCAST_ACTION));
         //handler = new Handler(Looper.getMainLooper());
 		position = getArguments().getInt(ARG_POSITION);
         sqLiteAdapter = new SQLiteAdapter(getActivity());
@@ -71,6 +73,16 @@ public class FragmentAdapter extends Fragment {
         adapterController = new AdapterController(getActivity());
         controller_view = inflater.inflate(R.layout.controller, null,false);
         controller = (ListView)controller_view.findViewById(R.id.listController);
+        footer = inflater.inflate(R.layout.custom_list_addnew, null);
+        controller.addFooterView(footer);
+        Button add_new = (Button)footer.findViewById(R.id.button);
+        add_new.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent setting_output_form = new Intent(getActivity(), SettingOutputForm.class);
+                startActivity(setting_output_form);
+            }
+        });
 
         adapterLog = new AdapterLog(getActivity());
         log_view = inflater.inflate(R.layout.log, null, false);
@@ -181,17 +193,22 @@ public class FragmentAdapter extends Fragment {
     }
 
     private void updateUI(Intent intent){
-        String[] getData = new String[0];
-        if (intent != null) {
-            getData = intent.getStringArrayExtra("update_controller");
-        }
-        if (!ArrayUtils.isEmpty(getData)) {
-            //int pos = Integer.parseInt(getData[1]);
-            //String status_ = getData[2];
-            adapterLog.updateData();
+        if (intent.hasExtra(getString(R.string.update_list_controller))){
             adapterController.updateData();
             controller.setAdapter(adapterController);
-            log_list.setAdapter(adapterLog);
+        }else {
+            String[] getData = new String[0];
+            if (intent != null) {
+                getData = intent.getStringArrayExtra("update_controller");
+            }
+            if (!ArrayUtils.isEmpty(getData)) {
+                //int pos = Integer.parseInt(getData[1]);
+                //String status_ = getData[2];
+                adapterLog.updateData();
+                adapterController.updateData();
+                controller.setAdapter(adapterController);
+                log_list.setAdapter(adapterLog);
+            }
         }
     }
 

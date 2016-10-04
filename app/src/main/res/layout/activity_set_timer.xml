@@ -7,12 +7,10 @@
     tools:context="voidream.vcontroller.SetTimer">
 
     <RelativeLayout
-        android:layout_width="match_parent"
+        android:layout_width="310dp"
         android:layout_height="wrap_content"
         android:background="@drawable/background_rounded_rectangle_grey"
-        android:layout_centerInParent="true"
-        android:layout_marginRight="6dp"
-        android:layout_marginLeft="6dp">
+        android:layout_centerInParent="true">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -239,7 +237,8 @@
                     android:textSize="26sp"
                     android:layout_centerHorizontal="true"
                     android:layout_marginRight="6dp"
-                    android:layout_marginLeft="6dp" />
+                    android:layout_marginLeft="6dp"
+                    android:elevation="2dp" />
 
                 <Button
                     android:layout_width="match_parent"
@@ -254,7 +253,8 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginLeft="6dp"
                     android:layout_marginTop="6dp"
-                    android:layout_marginRight="6dp" />
+                    android:layout_marginRight="6dp"
+                    android:elevation="2dp" />
             </RelativeLayout>
         </RelativeLayout>
     </RelativeLayout>

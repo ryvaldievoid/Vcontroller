@@ -12,33 +12,31 @@
         android:layout_above="@+id/relativeLayout2">
 
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="113dp"
+            android:layout_width="310dp"
+            android:layout_height="91dp"
             android:background="@drawable/background_rounded_rectangle"
-            android:layout_centerInParent="true"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp">
+            android:layout_centerInParent="true">
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="38dp"
                 android:text="@string/loaddata"
                 android:background="@drawable/button_flat"
                 android:textColor="@android:color/white"
                 android:id="@+id/button_load_setting"
-                android:layout_marginLeft="6dp"
-                android:layout_marginRight="6dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 android:layout_marginBottom="5dp"
                 android:layout_alignParentBottom="true" />
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="38dp"
                 android:text="@string/savedata"
                 android:id="@+id/button_save_setting"
                 android:background="@drawable/button_flat"
                 android:textColor="@android:color/white"
-                android:layout_margin="6dp" />
+                android:layout_margin="5dp" />
         </RelativeLayout>
     </RelativeLayout>
 
