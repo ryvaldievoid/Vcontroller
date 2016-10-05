@@ -3,12 +3,18 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="1dp"
+        android:id="@+id/imageView9"
+        android:layout_gravity="center_horizontal"
+        android:src="@color/colorGrey200" />
+
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_width="290dp"
+        android:layout_width="300dp"
         android:layout_height="100dp"
-        android:layout_gravity="center_horizontal"
-        android:elevation="4dp">
+        android:layout_gravity="center_horizontal">
 
         <RelativeLayout
             android:layout_width="60dp"

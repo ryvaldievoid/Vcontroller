@@ -14,9 +14,9 @@
             android:id="@+id/relativeLayout18">
 
             <RelativeLayout
-                android:layout_width="60dp"
+                android:layout_width="80dp"
                 android:layout_height="match_parent"
-                android:id="@+id/relativeLayout15" >
+                android:id="@+id/relativeLayout15">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -33,9 +33,9 @@
                     android:textColor="@color/text2"
                     android:paddingRight="2dp"
                     android:paddingLeft="2dp"
-                    android:layout_marginLeft="2dp"
-                    android:layout_marginTop="2dp"
-                    android:textSize="12dp" />
+                    android:layout_marginTop="5dp"
+                    android:textSize="12dp"
+                    android:layout_marginLeft="5dp" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -149,15 +149,17 @@
                 android:layout_toRightOf="@+id/relativeLayout16" >
 
                 <Button
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:text="@string/edit"
                     android:background="@drawable/button_grey"
                     android:textColor="@color/color_main_2"
                     android:id="@+id/button_edit_output_edit"
                     android:textSize="14dp"
                     android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true" />
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="false"
+                    android:layout_margin="10dp" />
             </RelativeLayout>
         </RelativeLayout>
     </RelativeLayout>

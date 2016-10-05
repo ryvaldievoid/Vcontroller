@@ -7,48 +7,44 @@
     android:background="@color/window_translucent"
     tools:context="voidream.vcontroller.Statistic">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="300dp"
         android:layout_height="match_parent"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/background_rounded_rectangle_grey"
-        android:layout_weight="0.25"
-        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        android:id="@+id/relativeLayout19"
+        android:layout_weight="1"
         android:layout_marginTop="60dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@android:color/white"
         android:layout_marginBottom="10dp">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:id="@+id/relativeLayout19">
+            android:layout_height="225dp"
+            android:background="@color/text1">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="225dp"
-                android:background="@color/text1"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="5dp">
-
-                <com.jjoe64.graphview.GraphView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/graph" />
-            </RelativeLayout>
-
-            <ListView
-                android:scrollbarThumbVertical="@drawable/custom_scollbar"
+            <com.jjoe64.graphview.GraphView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/listview_statistic_output"
-                android:divider="@color/colorGrey300"
-                android:background="@android:color/white"
-                android:layout_margin="5dp"
-                android:dividerHeight="5dp" />
-        </LinearLayout>
+                android:id="@+id/graph" />
+        </RelativeLayout>
 
-    </RelativeLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:id="@+id/imageView10"
+            android:layout_gravity="center_horizontal"
+            android:src="@color/color_main_2"
+            android:layout_marginTop="5dp" />
+
+        <ListView
+            android:scrollbarThumbVertical="@drawable/custom_scollbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/listview_statistic_output"
+            android:divider="@android:color/transparent"
+            android:background="@android:color/white" />
+    </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"

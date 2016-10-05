@@ -41,7 +41,7 @@ public class MainActivity extends FragmentActivity {
 		setContentView(R.layout.activity_main);
         setTitle("Controller");
         assert getActionBar() != null;
-        getActionBar().setIcon(R.drawable.ic_launcher);
+        getActionBar().setIcon(R.drawable.toolbar_icon);
         getActionBar().setHomeButtonEnabled(true);
 
         PagerSlidingTabStrip tabs = (PagerSlidingTabStrip) findViewById(R.id.tabs);

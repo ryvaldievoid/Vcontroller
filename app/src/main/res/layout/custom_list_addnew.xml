@@ -5,14 +5,12 @@
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="34dp"
+        android:layout_height="48dp"
         android:text="+"
         android:id="@+id/button"
         android:background="@drawable/button_add_new"
         android:textColor="@color/text4"
         android:layout_gravity="center_horizontal"
         android:textSize="18dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="5dp" />
+        android:layout_margin="5dp" />
 </LinearLayout>
