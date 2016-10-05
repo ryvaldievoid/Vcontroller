@@ -155,7 +155,7 @@
                     android:background="@drawable/button_grey"
                     android:textColor="@color/color_main_2"
                     android:id="@+id/button_edit_output_edit"
-                    android:textSize="14dp"
+                    android:textSize="12dp"
                     android:layout_centerVertical="true"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="false"
