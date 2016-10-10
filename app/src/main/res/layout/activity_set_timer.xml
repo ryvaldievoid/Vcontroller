@@ -25,8 +25,7 @@
                 android:layout_marginRight="6dp"
                 android:layout_marginBottom="6dp"
                 android:background="@drawable/background_rounded_rectangle"
-                android:layout_marginTop="1dp"
-                android:elevation="2dp">
+                android:layout_marginTop="1dp">
 
                 <RelativeLayout
                     android:layout_width="60dp"
@@ -50,7 +49,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/dummy_number"
                         android:id="@+id/textview_output_number"
-                        android:textColor="@color/text2"
+                        android:textColor="@color/text4"
                         android:paddingRight="2dp"
                         android:paddingLeft="2dp"
                         android:layout_marginLeft="2dp"
@@ -79,17 +78,19 @@
                             android:text="@string/dummy"
                             android:id="@+id/textview_timer_output_name"
                             android:textColor="@color/text1"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:textSize="12dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/dummy"
                             android:id="@+id/textview_timer_output_status"
-                            android:textColor="@color/color_main_2"
+                            android:textColor="@color/text4"
                             android:layout_alignParentBottom="true"
                             android:layout_alignLeft="@+id/textview_output_number"
-                            android:layout_alignStart="@+id/textview_output_number" />
+                            android:layout_alignStart="@+id/textview_output_number"
+                            android:textSize="12dp" />
 
                         <LinearLayout
                             android:orientation="horizontal"
@@ -103,7 +104,8 @@
                                 android:maxWidth="35dp"
                                 android:id="@+id/textView13"
                                 android:width="52dp"
-                                android:textColor="@color/text2" />
+                                android:textColor="@color/text2"
+                                android:textSize="12dp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -111,14 +113,16 @@
                                 android:text="@string/double_dot"
                                 android:id="@+id/textView14"
                                 android:paddingRight="4dp"
-                                android:textColor="@color/text2" />
+                                android:textColor="@color/text2"
+                                android:textSize="12dp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/dummy"
                                 android:id="@+id/textview_timer_output_position"
-                                android:textColor="@color/text1" />
+                                android:textColor="@color/text1"
+                                android:textSize="12dp" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -133,7 +137,8 @@
                                 android:maxWidth="35dp"
                                 android:id="@+id/textView16"
                                 android:width="52dp"
-                                android:textColor="@color/text2" />
+                                android:textColor="@color/text2"
+                                android:textSize="12dp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -141,14 +146,16 @@
                                 android:text="@string/double_dot"
                                 android:id="@+id/textView17"
                                 android:paddingRight="4dp"
-                                android:textColor="@color/text2" />
+                                android:textColor="@color/text2"
+                                android:textSize="12dp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/dummy"
                                 android:id="@+id/textview_timer_output_power"
-                                android:textColor="@color/text1" />
+                                android:textColor="@color/text1"
+                                android:textSize="12dp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -156,7 +163,8 @@
                                 android:text="@string/watt"
                                 android:paddingLeft="4dp"
                                 android:id="@+id/textView19"
-                                android:textColor="@color/text2" />
+                                android:textColor="@color/text2"
+                                android:textSize="12dp" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -177,12 +185,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/action"
-                            android:textColor="@color/text1"
+                            android:textColor="@color/text2"
                             android:id="@+id/textView9"
                             android:layout_centerHorizontal="true"
                             android:textStyle="bold"
                             android:paddingLeft="4dp"
-                            android:paddingBottom="4dp" />
+                            android:paddingBottom="4dp"
+                            android:textSize="12dp" />
 
                         <RadioGroup
                             android:layout_width="wrap_content"
@@ -194,11 +203,11 @@
                             android:clickable="false">
                             <RadioButton
                                 android:layout_width="wrap_content"
-                                android:layout_height="26dp"
+                                android:layout_height="wrap_content"
                                 android:text="@string/on"
                                 android:button="@drawable/radiobutton_timer"
                                 android:id="@+id/radiobutton_timer_action_on"
-                                android:textSize="14sp"
+                                android:textSize="12dp"
                                 android:textColor="@color/text1"
                                 android:checked="true"
                                 android:enabled="true"
@@ -210,7 +219,7 @@
                                 android:text="@string/off"
                                 android:button="@drawable/radiobutton_timer"
                                 android:id="@+id/radiobutton_timer_action_off"
-                                android:textSize="14sp"
+                                android:textSize="12dp"
                                 android:textColor="@color/text1"
                                 android:layout_marginLeft="-2dp" />
                         </RadioGroup>
@@ -222,19 +231,19 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="108dp"
+                android:layout_height="88dp"
                 android:layout_below="@+id/relativeLayout12"
                 android:layout_alignParentBottom="false">
 
                 <Button
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
+                    android:layout_height="38dp"
                     android:text="@string/clock"
                     android:id="@+id/button_timer_pick_time"
                     android:textColor="@android:color/white"
                     android:background="@drawable/button_flat1"
                     android:textStyle="bold"
-                    android:textSize="26sp"
+                    android:textSize="14dp"
                     android:layout_centerHorizontal="true"
                     android:layout_marginRight="6dp"
                     android:layout_marginLeft="6dp"
@@ -242,13 +251,13 @@
 
                 <Button
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
+                    android:layout_height="38dp"
                     android:text="@string/set_timer"
                     android:id="@+id/button_timer_set_timer"
                     android:textColor="@android:color/white"
                     android:background="@drawable/button_flat"
                     android:textStyle="bold"
-                    android:textSize="20sp"
+                    android:textSize="14dp"
                     android:layout_below="@+id/button_timer_pick_time"
                     android:layout_centerHorizontal="true"
                     android:layout_marginLeft="6dp"

@@ -30,7 +30,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/dummy_number"
                     android:id="@+id/textview_setting_output_number"
-                    android:textColor="@color/text2"
+                    android:textColor="@color/text4"
                     android:paddingRight="2dp"
                     android:paddingLeft="2dp"
                     android:layout_marginTop="5dp"
@@ -61,7 +61,7 @@
                         android:id="@+id/textview_setting_output_name"
                         android:textColor="@color/text1"
                         android:textStyle="bold"
-                        android:textSize="14dp" />
+                        android:textSize="12dp" />
 
                     <LinearLayout
                         android:orientation="horizontal"
@@ -76,7 +76,7 @@
                             android:id="@+id/textView18"
                             android:width="52dp"
                             android:textColor="@color/text2"
-                            android:textSize="14dp" />
+                            android:textSize="12dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -85,7 +85,7 @@
                             android:id="@+id/textView20"
                             android:paddingRight="4dp"
                             android:textColor="@color/text2"
-                            android:textSize="14dp" />
+                            android:textSize="12dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -93,7 +93,7 @@
                             android:text="@string/dummy"
                             android:id="@+id/textview_setting_output_position"
                             android:textColor="@color/text1"
-                            android:textSize="14dp" />
+                            android:textSize="12dp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -109,7 +109,7 @@
                             android:id="@+id/textView22"
                             android:width="52dp"
                             android:textColor="@color/text2"
-                            android:textSize="14dp" />
+                            android:textSize="12dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -118,7 +118,7 @@
                             android:id="@+id/textView23"
                             android:paddingRight="4dp"
                             android:textColor="@color/text2"
-                            android:textSize="14dp" />
+                            android:textSize="12dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -126,7 +126,7 @@
                             android:text="@string/dummy"
                             android:id="@+id/textview_setting_output_power"
                             android:textColor="@color/text1"
-                            android:textSize="14dp" />
+                            android:textSize="12dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -135,7 +135,7 @@
                             android:paddingLeft="4dp"
                             android:id="@+id/textView25"
                             android:textColor="@color/text2"
-                            android:textSize="14dp" />
+                            android:textSize="12dp" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -149,17 +149,15 @@
                 android:layout_toRightOf="@+id/relativeLayout16" >
 
                 <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
                     android:text="@string/edit"
                     android:background="@drawable/button_grey"
-                    android:textColor="@color/color_main_2"
+                    android:textColor="@color/text4"
                     android:id="@+id/button_edit_output_edit"
                     android:textSize="12dp"
                     android:layout_centerVertical="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="false"
-                    android:layout_margin="10dp" />
+                    android:layout_centerHorizontal="true" />
             </RelativeLayout>
         </RelativeLayout>
     </RelativeLayout>

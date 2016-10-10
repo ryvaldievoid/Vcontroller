@@ -20,21 +20,23 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="225dp"
-            android:background="@color/text1">
+            android:layout_height="225dp">
 
             <com.jjoe64.graphview.GraphView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/graph" />
+                android:id="@+id/graph"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="30dp" />
         </RelativeLayout>
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="0.5dp"
             android:id="@+id/imageView10"
             android:layout_gravity="center_horizontal"
-            android:src="@color/color_main_2"
+            android:src="@color/colorGrey200"
             android:layout_marginTop="5dp" />
 
         <ListView

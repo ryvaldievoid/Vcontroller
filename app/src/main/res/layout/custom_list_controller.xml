@@ -13,7 +13,7 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="310dp"
-        android:layout_height="96dp"
+        android:layout_height="86dp"
         android:layout_gravity="center_horizontal">
 
         <RelativeLayout
@@ -25,7 +25,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/dummy_number"
                 android:id="@+id/textview_output_number"
-                android:textColor="@color/text2"
+                android:textColor="@color/text4"
                 android:paddingRight="2dp"
                 android:paddingLeft="2dp"
                 android:layout_marginLeft="2dp"
@@ -60,23 +60,21 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/dummy"
                     android:id="@+id/textview_controller_output_name"
                     android:textColor="@color/text1"
                     android:textStyle="bold"
                     android:textIsSelectable="false"
-                    android:textSize="14dp" />
+                    android:textSize="12dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/dummy"
                     android:id="@+id/textview_controller_output_status"
-                    android:textColor="@color/color_main_2"
+                    android:textColor="@color/text4"
                     android:layout_alignParentBottom="true"
                     android:layout_alignLeft="@+id/textview_output_number"
                     android:layout_alignStart="@+id/textview_output_number"
-                    android:textSize="14dp" />
+                    android:textSize="10dp" />
 
                 <LinearLayout
                     android:orientation="horizontal"
@@ -91,7 +89,7 @@
                         android:id="@+id/textView64"
                         android:width="52dp"
                         android:textColor="@color/text2"
-                        android:textSize="14dp" />
+                        android:textSize="12dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -100,15 +98,14 @@
                         android:id="@+id/textView70"
                         android:paddingRight="4dp"
                         android:textColor="@color/text2"
-                        android:textSize="14dp" />
+                        android:textSize="12dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/dummy"
                         android:id="@+id/textview_controller_output_position"
                         android:textColor="@color/text1"
-                        android:textSize="14dp" />
+                        android:textSize="12dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -124,7 +121,7 @@
                         android:id="@+id/textView73"
                         android:width="52dp"
                         android:textColor="@color/text2"
-                        android:textSize="14dp" />
+                        android:textSize="12dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -133,15 +130,14 @@
                         android:id="@+id/textView74"
                         android:paddingRight="4dp"
                         android:textColor="@color/text2"
-                        android:textSize="14dp" />
+                        android:textSize="12dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/dummy"
                         android:id="@+id/textview_controller_output_power"
                         android:textColor="@color/text1"
-                        android:textSize="14dp" />
+                        android:textSize="12dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -150,7 +146,7 @@
                         android:paddingLeft="4dp"
                         android:id="@+id/textView76"
                         android:textColor="@color/text2"
-                        android:textSize="14dp" />
+                        android:textSize="12dp" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -176,8 +172,8 @@
             android:layout_toRightOf="@+id/relativeLayout6" >
 
             <ImageButton
-                android:layout_width="75dp"
-                android:layout_height="75dp"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
                 android:id="@+id/imageButton"
                 android:background="@drawable/button_round_dead"
                 android:src="@drawable/push_button"
@@ -185,8 +181,8 @@
                 android:layout_centerInParent="true" />
 
             <ImageButton
-                android:layout_width="75dp"
-                android:layout_height="75dp"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
                 android:id="@+id/imagebutton_controller_push_button"
                 android:background="@drawable/button_round"
                 android:src="@drawable/push_button"

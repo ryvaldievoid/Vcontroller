@@ -102,22 +102,20 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="38dp"
+                    android:layout_height="wrap_content"
                     android:id="@+id/edittext_config_mqtt_broker_url"
                     android:inputType="textWebEditText"
                     android:background="@drawable/background_textfield"
-                    android:paddingLeft="12dp"
-                    android:paddingRight="12dp"
-                    android:paddingTop="6dp"
-                    android:paddingBottom="6dp"
-                    android:textSize="14dp"
+                    android:textSize="12dp"
                     android:textColor="@color/text1"
                     android:textColorHint="@color/text4"
                     android:hint="@string/default_mqtt_broker"
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="2.5dp"
                     android:layout_marginRight="5dp"
-                    android:layout_marginBottom="5dp" />
+                    android:layout_marginBottom="5dp"
+                    android:padding="8dp"
+                    android:maxLines="1" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -132,23 +130,21 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="38dp"
+                    android:layout_height="wrap_content"
                     android:id="@+id/edittext_config_mqtt_port"
                     android:background="@drawable/background_textfield"
-                    android:paddingLeft="12dp"
-                    android:paddingRight="12dp"
-                    android:paddingTop="6dp"
                     android:inputType="number"
-                    android:paddingBottom="6dp"
                     android:maxLength="4"
-                    android:textSize="14dp"
+                    android:textSize="12dp"
                     android:textColor="@color/text1"
                     android:textColorHint="@color/text4"
                     android:hint="@string/default_mqtt_port"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:layout_marginBottom="5dp"
-                    android:layout_marginTop="2.5dp" />
+                    android:layout_marginTop="2.5dp"
+                    android:padding="8dp"
+                    android:maxLines="1" />
 
                 <LinearLayout
                     android:orientation="horizontal"
@@ -174,23 +170,20 @@
 
                         <EditText
                             android:layout_width="match_parent"
-                            android:layout_height="38dp"
+                            android:layout_height="wrap_content"
                             android:id="@+id/edittext_config_mqtt_username"
                             android:background="@drawable/background_textfield"
                             android:hint="@string/optional"
-                            android:paddingLeft="12dp"
-                            android:paddingRight="12dp"
-                            android:paddingTop="6dp"
                             android:inputType="text"
-                            android:paddingBottom="6dp"
-                            android:maxLength="15"
-                            android:textSize="14dp"
+                            android:textSize="12dp"
                             android:textColor="@color/text1"
                             android:textColorHint="@color/text4"
                             android:layout_marginTop="2.5dp"
                             android:layout_marginLeft="5dp"
                             android:layout_marginRight="5dp"
-                            android:layout_marginBottom="5dp" />
+                            android:layout_marginBottom="5dp"
+                            android:padding="8dp"
+                            android:maxLines="1" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -212,22 +205,20 @@
 
                         <EditText
                             android:layout_width="match_parent"
-                            android:layout_height="38dp"
+                            android:layout_height="wrap_content"
                             android:id="@+id/edittext_config_mqtt_password"
                             android:background="@drawable/background_textfield"
                             android:hint="@string/optional"
                             android:inputType="textPassword"
-                            android:paddingLeft="12dp"
-                            android:paddingRight="12dp"
-                            android:paddingTop="6dp"
-                            android:paddingBottom="6dp"
-                            android:textSize="14dp"
+                            android:textSize="12dp"
                             android:textColor="@color/text1"
                             android:textColorHint="@color/text4"
                             android:layout_marginLeft="5dp"
                             android:layout_marginTop="2.5dp"
                             android:layout_marginRight="5dp"
-                            android:layout_marginBottom="5dp" />
+                            android:layout_marginBottom="5dp"
+                            android:padding="8dp"
+                            android:maxLines="1" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -244,22 +235,20 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="38dp"
+                    android:layout_height="wrap_content"
                     android:id="@+id/edittext_config_mqtt_topic"
                     android:inputType="text"
                     android:background="@drawable/background_textfield"
-                    android:paddingLeft="12dp"
-                    android:paddingRight="12dp"
-                    android:paddingTop="6dp"
-                    android:paddingBottom="6dp"
-                    android:textSize="14dp"
+                    android:textSize="12dp"
                     android:textColor="@color/text1"
                     android:textColorHint="@color/text4"
                     android:hint="@string/topic"
                     android:layout_marginTop="2.5dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
-                    android:layout_marginBottom="5dp" />
+                    android:layout_marginBottom="5dp"
+                    android:padding="8dp"
+                    android:maxLines="1" />
 
                 <RadioGroup
                     android:layout_width="match_parent"
@@ -307,7 +296,8 @@
                 android:layout_marginRight="5dp"
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="5dp"
-                android:layout_marginTop="5dp" />
+                android:layout_marginTop="5dp"
+                android:textSize="14dp" />
 
         </LinearLayout>
     </RelativeLayout>

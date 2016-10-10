@@ -4,13 +4,15 @@
     android:layout_height="match_parent">
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="48dp"
         android:layout_height="48dp"
         android:text="+"
         android:id="@+id/button"
         android:background="@drawable/button_add_new"
-        android:textColor="@color/text4"
+        android:textColor="@color/colorGrey300"
         android:layout_gravity="center_horizontal"
-        android:textSize="18dp"
-        android:layout_margin="5dp" />
+        android:textSize="32dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:typeface="serif" />
 </LinearLayout>

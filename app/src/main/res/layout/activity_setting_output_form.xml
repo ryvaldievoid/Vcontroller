@@ -42,8 +42,8 @@
                     android:layout_height="wrap_content"
                     android:text="@string/dummy_number"
                     android:id="@+id/textView_output_number_output_form"
-                    android:textColor="@color/text2"
-                    android:textSize="14dp" />
+                    android:textColor="@color/text4"
+                    android:textSize="12dp" />
             </RelativeLayout>
 
             <ListView
@@ -96,22 +96,23 @@
                     android:hint="@string/output_name_hint"
                     android:textColorHint="@color/colorGrey200"
                     android:textColor="@color/text1"
-                    android:textSize="14dp"
+                    android:textSize="12dp"
                     android:layout_gravity="center_vertical"
-                    android:maxLength="14"
+                    android:maxLength="16"
                     android:inputType="textWebEditText|textCapSentences"
                     android:background="@drawable/background_textfield"
                     android:linksClickable="false"
                     android:singleLine="false"
                     android:layout_marginTop="2.5dp"
-                    android:padding="8dp" />
+                    android:padding="8dp"
+                    android:maxLines="1" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/i_o_command"
                     android:id="@+id/io_command"
-                    android:textColor="@color/color_main_4"
+                    android:textColor="@color/color_main_2"
                     android:layout_gravity="center_vertical"
                     android:paddingLeft="6dp"
                     android:textSize="12dp"
@@ -130,7 +131,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/command"
                         android:id="@+id/textView10"
-                        android:textColor="@color/color_main_4"
+                        android:textColor="@color/color_main_2"
                         android:layout_gravity="center_vertical"
                         android:paddingLeft="6dp"
                         android:textSize="12dp"
@@ -148,7 +149,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/command_dummy1"
                             android:id="@+id/textView58"
-                            android:textColor="@color/text2"
+                            android:textColor="@color/text4"
                             android:layout_gravity="center_vertical"
                             android:paddingLeft="8dp"
                             android:textSize="12dp"
@@ -159,7 +160,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/textView_on_command"
-                            android:textColor="@color/color_main_1"
+                            android:textColor="@color/text2"
                             android:layout_gravity="center_vertical"
                             android:paddingLeft="6dp"
                             android:textSize="12dp"
@@ -177,7 +178,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/command_dummy2"
                             android:id="@+id/textView62"
-                            android:textColor="@color/text2"
+                            android:textColor="@color/text4"
                             android:layout_gravity="center_vertical"
                             android:paddingLeft="8dp"
                             android:textSize="12dp"
@@ -188,7 +189,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/textView_off_command"
-                            android:textColor="@color/color_main_2"
+                            android:textColor="@color/text2"
                             android:layout_gravity="center_vertical"
                             android:paddingLeft="6dp"
                             android:textSize="12dp"
@@ -201,7 +202,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/command1"
                         android:id="@+id/textView3"
-                        android:textColor="@color/color_main_4"
+                        android:textColor="@color/color_main_2"
                         android:layout_gravity="center_vertical"
                         android:paddingLeft="6dp"
                         android:textSize="12dp"
@@ -219,7 +220,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/command_dummy1"
                             android:id="@+id/textView11"
-                            android:textColor="@color/text2"
+                            android:textColor="@color/text4"
                             android:layout_gravity="center_vertical"
                             android:paddingLeft="8dp"
                             android:textSize="12dp"
@@ -230,7 +231,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/textView_on_command_receive"
-                            android:textColor="@color/color_main_1"
+                            android:textColor="@color/text2"
                             android:layout_gravity="center_vertical"
                             android:paddingLeft="6dp"
                             android:textSize="12dp"
@@ -248,7 +249,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/command_dummy2"
                             android:id="@+id/textView27"
-                            android:textColor="@color/text2"
+                            android:textColor="@color/text4"
                             android:layout_gravity="center_vertical"
                             android:paddingLeft="8dp"
                             android:textSize="12dp"
@@ -259,7 +260,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/textView_off_command_receive"
-                            android:textColor="@color/color_main_2"
+                            android:textColor="@color/text2"
                             android:layout_gravity="center_vertical"
                             android:paddingLeft="6dp"
                             android:textSize="12dp"
@@ -272,7 +273,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/command2"
                         android:id="@+id/textView30"
-                        android:textColor="@color/color_main_4"
+                        android:textColor="@color/color_main_2"
                         android:layout_gravity="center_vertical"
                         android:paddingLeft="6dp"
                         android:textSize="12dp"
@@ -290,7 +291,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/command_dummy1"
                             android:id="@+id/textView31"
-                            android:textColor="@color/text2"
+                            android:textColor="@color/text4"
                             android:layout_gravity="center_vertical"
                             android:paddingLeft="8dp"
                             android:textSize="12dp"
@@ -301,7 +302,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/textView_on_command_timer"
-                            android:textColor="@color/color_main_1"
+                            android:textColor="@color/text2"
                             android:layout_gravity="center_vertical"
                             android:paddingLeft="6dp"
                             android:textSize="12dp"
@@ -319,7 +320,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/command_dummy2"
                             android:id="@+id/textView34"
-                            android:textColor="@color/text2"
+                            android:textColor="@color/text4"
                             android:layout_gravity="center_vertical"
                             android:paddingLeft="8dp"
                             android:textSize="12dp"
@@ -330,7 +331,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/textView_off_command_timer"
-                            android:textColor="@color/color_main_2"
+                            android:textColor="@color/text2"
                             android:layout_gravity="center_vertical"
                             android:paddingLeft="6dp"
                             android:textSize="12dp"
@@ -359,12 +360,13 @@
                     android:textColor="@color/text1"
                     android:textColorHint="@color/colorGrey200"
                     android:hint="@string/output_position_hint"
-                    android:textSize="14dp"
+                    android:textSize="12dp"
                     android:layout_gravity="center_vertical"
-                    android:maxLength="11"
+                    android:maxLength="13"
                     android:inputType="textCapSentences|textWebEditText"
                     android:layout_marginTop="2.5dp"
-                    android:padding="8dp" />
+                    android:padding="8dp"
+                    android:maxLines="1" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -385,18 +387,19 @@
 
                     <EditText
                         android:layout_width="100dp"
-                        android:layout_height="38dp"
+                        android:layout_height="wrap_content"
                         android:id="@+id/editText_power_output"
                         android:layout_marginRight="6dp"
                         android:hint="@string/output_power_hint"
                         android:textColorHint="@color/colorGrey200"
                         android:background="@drawable/background_textfield"
                         android:textColor="@color/text1"
-                        android:textSize="14dp"
+                        android:textSize="12dp"
                         android:layout_gravity="center_vertical"
                         android:maxLength="4"
                         android:inputType="numberDecimal"
-                        android:padding="8dp" />
+                        android:padding="8dp"
+                        android:maxLines="1" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -405,7 +408,8 @@
                         android:id="@+id/textView65"
                         android:textColor="@color/text2"
                         android:layout_gravity="center_vertical"
-                        android:paddingLeft="6dp" />
+                        android:paddingLeft="6dp"
+                        android:textSize="12dp" />
                 </LinearLayout>
 
                 <TextView
@@ -422,19 +426,19 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="38dp"
+                    android:layout_height="wrap_content"
                     android:id="@+id/editText_topic"
                     android:background="@drawable/background_textfield"
                     android:textColor="@color/text1"
                     android:textColorHint="@color/colorGrey200"
                     android:hint="@string/topic"
-                    android:textSize="14dp"
+                    android:textSize="12dp"
                     android:layout_gravity="center_vertical"
-                    android:maxLength="11"
                     android:inputType="textCapSentences|textWebEditText"
                     android:layout_marginTop="2.5dp"
                     android:padding="8dp"
-                    android:layout_marginBottom="5dp" />
+                    android:layout_marginBottom="5dp"
+                    android:maxLines="1" />
 
             </LinearLayout>
         </ScrollView>
@@ -460,7 +464,6 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_marginBottom="5dp"
-                android:elevation="2dp"
                 android:layout_marginTop="5dp" />
         </RelativeLayout>
 

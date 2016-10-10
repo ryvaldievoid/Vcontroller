@@ -26,12 +26,12 @@
             android:layout_weight="1.5">
 
             <TextView
-                android:layout_width="32dp"
-                android:layout_height="32dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/dummy_number"
-                android:textColor="@color/text2"
+                android:textColor="@color/text4"
                 android:id="@+id/textview_log_number"
-                android:textSize="18dp"
+                android:textSize="14dp"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
                 android:gravity="center" />
@@ -65,22 +65,25 @@
                         android:id="@+id/textview_log_output"
                         android:textStyle="bold"
                         android:paddingRight="5dp"
-                        android:textColor="@color/text1" />
+                        android:textColor="@color/text1"
+                        android:textSize="12dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/textview_log_explanation"
                         android:text="@string/dummy"
-                        android:textColor="@color/color_main_2"
-                        android:paddingRight="3dp" />
+                        android:textColor="@color/text4"
+                        android:paddingRight="3dp"
+                        android:textSize="12dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/dummy"
                         android:id="@+id/textview_log_time_ago"
-                        android:textColor="@color/text2"/>
+                        android:textColor="@color/text2"
+                        android:textSize="12dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -94,7 +97,8 @@
                         android:layout_height="wrap_content"
                         android:text="@string/dummy"
                         android:id="@+id/textview_log_location"
-                        android:textColor="@color/text2" />
+                        android:textColor="@color/text2"
+                        android:textSize="12dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -102,7 +106,8 @@
                         android:text="@string/dummy"
                         android:paddingLeft="5dp"
                         android:id="@+id/textview_log_time_stamp"
-                        android:textColor="@color/text2"/>
+                        android:textColor="@color/text2"
+                        android:textSize="12dp" />
                 </LinearLayout>
 
             </RelativeLayout>

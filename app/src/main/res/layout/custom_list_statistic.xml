@@ -25,7 +25,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/dummy_number"
                 android:id="@+id/textview_statistic_output_number"
-                android:textColor="@color/text2"
+                android:textColor="@color/text4"
                 android:paddingRight="2dp"
                 android:paddingLeft="2dp"
                 android:layout_marginLeft="2dp"
@@ -66,7 +66,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/kurung_buka"
                     android:id="@+id/textView4"
-                    android:textColor="@color/text1"
+                    android:textColor="@color/text2"
                     android:layout_below="@+id/textview_statistic_output_name"
                     android:layout_alignParentLeft="true"
                     android:layout_gravity="center_horizontal"
@@ -78,7 +78,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/dummy"
                     android:id="@+id/textview_statistic_output_position"
-                    android:textColor="@color/text1"
+                    android:textColor="@color/text2"
                     android:layout_below="@+id/textview_statistic_output_name"
                     android:layout_alignParentLeft="true"
                     android:layout_gravity="center_horizontal"
@@ -89,7 +89,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/kurung_tutup"
                     android:id="@+id/textView6"
-                    android:textColor="@color/text1"
+                    android:textColor="@color/text2"
                     android:layout_below="@+id/textview_statistic_output_name"
                     android:layout_alignParentLeft="true"
                     android:layout_gravity="center_horizontal"
@@ -142,7 +142,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/usage"
                 android:id="@+id/textView48"
-                android:textColor="@color/text2"
+                android:textColor="@color/text4"
                 android:layout_toRightOf="@+id/textview_statistic_output_power"
                 android:layout_toEndOf="@+id/textview_statistic_output_power"
                 android:paddingLeft="2dp"
@@ -172,7 +172,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/day"
                             android:id="@+id/textView60"
-                            android:textColor="@color/text2"
+                            android:textColor="@color/text4"
                             android:layout_gravity="center_vertical"
                             android:textSize="12dp" />
 
@@ -182,7 +182,7 @@
                             android:text="@string/double_dot"
                             android:id="@+id/textView71"
                             android:paddingRight="4dp"
-                            android:textColor="@color/text2"
+                            android:textColor="@color/text4"
                             android:layout_gravity="center_vertical"
                             android:textSize="12dp" />
 
@@ -191,7 +191,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/dummy"
                             android:id="@+id/textview_statistic_day"
-                            android:textColor="@color/color_main_2"
+                            android:textColor="@color/text2"
                             android:layout_gravity="center_vertical"
                             android:textSize="12dp" />
                     </LinearLayout>
@@ -207,7 +207,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/average"
                             android:id="@+id/textView77"
-                            android:textColor="@color/text2"
+                            android:textColor="@color/text4"
                             android:layout_gravity="center_vertical"
                             android:textSize="12dp" />
 
@@ -217,7 +217,7 @@
                             android:text="@string/double_dot"
                             android:id="@+id/textView78"
                             android:paddingRight="4dp"
-                            android:textColor="@color/text2"
+                            android:textColor="@color/text4"
                             android:layout_gravity="center_vertical"
                             android:textSize="12dp" />
 
@@ -226,7 +226,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/dummy"
                             android:id="@+id/textview_statistic_average"
-                            android:textColor="@color/color_main_2"
+                            android:textColor="@color/text2"
                             android:layout_gravity="center_vertical"
                             android:textSize="12dp" />
                     </LinearLayout>
@@ -249,7 +249,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/week"
                             android:id="@+id/textView80"
-                            android:textColor="@color/text2"
+                            android:textColor="@color/text4"
                             android:layout_gravity="center_vertical"
                             android:textSize="12dp" />
 
@@ -259,7 +259,7 @@
                             android:text="@string/double_dot"
                             android:id="@+id/textView81"
                             android:paddingRight="4dp"
-                            android:textColor="@color/text2"
+                            android:textColor="@color/text4"
                             android:layout_gravity="center_vertical"
                             android:textSize="12dp" />
 
@@ -268,7 +268,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/dummy"
                             android:id="@+id/textview_statistic_week"
-                            android:textColor="@color/color_main_2"
+                            android:textColor="@color/text2"
                             android:layout_gravity="center_vertical"
                             android:textSize="12dp" />
                     </LinearLayout>
@@ -285,7 +285,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/month"
                             android:id="@+id/textView83"
-                            android:textColor="@color/text2"
+                            android:textColor="@color/text4"
                             android:layout_gravity="center_vertical"
                             android:textSize="12dp" />
 
@@ -295,7 +295,7 @@
                             android:text="@string/double_dot"
                             android:id="@+id/textView84"
                             android:paddingRight="4dp"
-                            android:textColor="@color/text2"
+                            android:textColor="@color/text4"
                             android:layout_gravity="center_vertical"
                             android:textSize="12dp" />
 
@@ -304,7 +304,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/dummy"
                             android:id="@+id/textview_statistic_month"
-                            android:textColor="@color/color_main_2"
+                            android:textColor="@color/text2"
                             android:layout_gravity="center_vertical"
                             android:textSize="12dp" />
                     </LinearLayout>

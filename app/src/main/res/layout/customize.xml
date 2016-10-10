@@ -52,7 +52,8 @@
                                 android:layout_below="@+id/imageView2"
                                 android:layout_centerHorizontal="true"
                                 android:textColor="@color/color_main_2"
-                                android:layout_marginTop="2dp" />
+                                android:layout_marginTop="2dp"
+                                android:textSize="12dp" />
                         </RelativeLayout>
                     </RelativeLayout>
                 </RelativeLayout>
@@ -90,7 +91,8 @@
                                 android:layout_below="@+id/imageView3"
                                 android:layout_centerHorizontal="true"
                                 android:textColor="@color/color_main_2"
-                                android:layout_marginTop="2dp" />
+                                android:layout_marginTop="2dp"
+                                android:textSize="12dp" />
                         </RelativeLayout>
                     </RelativeLayout>
                 </RelativeLayout>
@@ -135,7 +137,8 @@
                                 android:layout_below="@+id/imageView4"
                                 android:layout_centerHorizontal="true"
                                 android:textColor="@color/color_main_2"
-                                android:layout_marginTop="2dp" />
+                                android:layout_marginTop="2dp"
+                                android:textSize="12dp" />
                         </RelativeLayout>
                     </RelativeLayout>
                 </RelativeLayout>
@@ -173,7 +176,8 @@
                                 android:layout_below="@+id/imageView5"
                                 android:layout_centerHorizontal="true"
                                 android:textColor="@color/color_main_2"
-                                android:layout_marginTop="2dp" />
+                                android:layout_marginTop="2dp"
+                                android:textSize="12dp" />
                         </RelativeLayout>
                     </RelativeLayout>
                 </RelativeLayout>
