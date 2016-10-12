@@ -1,16 +1,11 @@
 package voidream.vcontroller;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.KeyEvent;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,9 +14,8 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import org.apache.commons.lang.StringUtils;
 
-import java.text.SimpleDateFormat;
 import java.util.Locale;
 
 public class SettingOutputForm extends Activity {
@@ -59,6 +53,7 @@ public class SettingOutputForm extends Activity {
         final EditText nama_ouput = (EditText) findViewById(R.id.editText_nama_output);
         final EditText posisi_output = (EditText) findViewById(R.id.editText_posisi_output);
         final EditText power_output = (EditText)findViewById(R.id.editText_power_output);
+        final EditText topic = (EditText)findViewById(R.id.editText_topic);
         final ListView list_ouput = (ListView)findViewById(R.id.listview_output_option);
         final Button add = (Button)findViewById(R.id.button_add);
         final TextView on_command = (TextView)findViewById(R.id.textView_on_command);
@@ -113,28 +108,31 @@ public class SettingOutputForm extends Activity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                int id_image = image_set.getId();
+                String nama_output_ = nama_ouput.getText().toString();
+                String posisi_output_ = posisi_output.getText().toString();
+                String power_output_ = power_output.getText().toString();
+                String topic_ = topic.getText().toString();
                 if (add.getText().toString().equals(getString(R.string.save))){
-                    if (image_set.getId() != 0 & !isEmpty(nama_ouput) & !isEmpty(posisi_output)
-                            & !isEmpty(power_output)) {
-                        int id_image = image_set.getId();
-                        String nama_output_ = nama_ouput.getText().toString();
-                        String posisi_output_ = posisi_output.getText().toString();
-                        String power_output_ = power_output.getText().toString();
+                    if (id_image != 0 && !StringUtils.isBlank(nama_output_)
+                            && !StringUtils.isBlank(posisi_output_)
+                            && !StringUtils.isBlank(power_output_)
+                            && !StringUtils.isBlank(topic_)) {
                         sqLiteAdapter.deleteController(nama_temp);
-                        sqLiteAdapter.AddController(nama_output_, posisi_output_, power_output_,id_image);
+                        sqLiteAdapter.AddController(nama_output_, posisi_output_, power_output_
+                                ,id_image, topic_);
                         intent.putExtra(getString(R.string.update_list_controller), true);
                         sendBroadcast(intent);
                         finish();
                     }
                 }else {
-                    if (image_set.getId() != 0 & !isEmpty(nama_ouput) & !isEmpty(posisi_output)
-                            & !isEmpty(power_output)) {
+                    if (id_image != 0 && !StringUtils.isBlank(nama_output_)
+                            && !StringUtils.isBlank(posisi_output_)
+                            && !StringUtils.isBlank(power_output_)
+                            && !StringUtils.isBlank(topic_)) {
                         if (sqLiteAdapter.getValidController(nama_ouput.getText().toString())) {
-                            int id_image = image_set.getId();
-                            String nama_output_ = nama_ouput.getText().toString();
-                            String posisi_output_ = posisi_output.getText().toString();
-                            String power_output_ = power_output.getText().toString();
-                            sqLiteAdapter.AddController(nama_output_, posisi_output_, power_output_, id_image);
+                            sqLiteAdapter.AddController(nama_output_, posisi_output_, power_output_
+                                    , id_image, topic_);
                             intent.putExtra(getString(R.string.update_list_controller), true);
                             sendBroadcast(intent);
                             finish();
@@ -161,10 +159,6 @@ public class SettingOutputForm extends Activity {
             output_number.setText(String.format(Locale.getDefault(), "%02d", sqLiteAdapter.getController()[0].length + 1));
         }
 
-    }
-
-    private boolean isEmpty(EditText edit_text) {
-        return edit_text.getText().toString().trim().length() == 0;
     }
 
 }

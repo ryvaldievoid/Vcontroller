@@ -1,17 +1,11 @@
 package voidream.vcontroller;
 
 import android.annotation.SuppressLint;
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
-import android.os.Handler;
-import android.os.Looper;
-import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
@@ -29,7 +23,6 @@ public class AdapterController extends BaseAdapter {
     public static String[] power;
     public static String[] status;
     public static String[] outputNumber;
-    public static boolean tcp_or_mqtt;
 
     private static Context context;
     private SQLiteAdapter sqLiteAdapter;
@@ -89,7 +82,7 @@ public class AdapterController extends BaseAdapter {
         final TextView output_position = (TextView)convertView.findViewById(R.id.textview_controller_output_position);
         final TextView output_power = (TextView)convertView.findViewById(R.id.textview_controller_output_power);
         final TextView output_status = (TextView) convertView.findViewById(R.id.textview_controller_output_status);
-        ImageButton button_push = (ImageButton)convertView.findViewById(R.id.imagebutton_controller_push_button);
+        final ImageButton button_push = (ImageButton)convertView.findViewById(R.id.imagebutton_controller_push_button);
         ImageButton button_timer = (ImageButton)convertView.findViewById(R.id.imagebutton_controller_timer);
 
         output_number.setText(outputNumber[position]);
@@ -105,24 +98,20 @@ public class AdapterController extends BaseAdapter {
         output_power.setText(power[position]);
         output_status.setText(status[position]);
 
+        button_push.setVisibility(View.VISIBLE);
         final MqttPublisher publisher = new MqttPublisher(context);
         button_push.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (tcp_or_mqtt){
-                    if (!output_image.isChecked()) {
-                        publisher.publishMqttMessage(sqLiteAdapter.getIOCommand(outputName[position])[0]);
-                    }else {
-                        publisher.publishMqttMessage(sqLiteAdapter.getIOCommand(outputName[position])[1]);
-                    }
+                if (!output_image.isChecked()) {
+                    publisher.publishMqttMessage(sqLiteAdapter.getIOCommand(outputName[position])[0]
+                            , position);
                 }else {
-                    if (!output_image.isChecked()) {
-                        TCPClient.sendData(sqLiteAdapter.getIOCommand(outputName[position])[0]);
-                    }else {
-                        TCPClient.sendData(sqLiteAdapter.getIOCommand(outputName[position])[1]);
-                    }
+                    publisher.publishMqttMessage(sqLiteAdapter.getIOCommand(outputName[position])[1]
+                            , position);
                 }
                 output_status.setText(context.getString(R.string.wait));
+                button_push.setVisibility(View.GONE);
             }
         });
 

@@ -2,7 +2,6 @@ package voidream.vcontroller;
 
 import android.app.Activity;
 import android.app.TimePickerDialog;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,11 +10,9 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.TimePicker;
-import android.widget.Toast;
 
 import java.util.Calendar;
 import java.util.Locale;
-import java.util.StringTokenizer;
 
 public class SetTimer extends Activity {
 
@@ -106,23 +103,12 @@ public class SetTimer extends Activity {
 
             @Override
             public void onClick(View v) {
-                //Toast.makeText(getApplicationContext(), "Timer set", Toast.LENGTH_SHORT).show();
-                if (AdapterController.tcp_or_mqtt){
-                    if (on_off) {
-                        publisher.publishMqttMessage(name + "/" + number + "/on/timer/" + time_hour
-                                + "/" + time_minute);
-                    }else {
-                        publisher.publishMqttMessage(name + "/" + number + "/off/timer/" + time_hour
-                                + "/" + time_minute);
-                    }
+                if (on_off) {
+                    publisher.publishMqttMessage(name + "/" + number + "/on/timer/" + time_hour
+                            + "/" + time_minute, Integer.parseInt(position));
                 }else {
-                    if (on_off) {
-                        TCPClient.sendData(name + "/" + number + "/on/timer/" + time_hour
-                                + "/" + time_minute);
-                    }else {
-                        TCPClient.sendData(name + "/" + number + "/off/timer/" + time_hour
-                                + "/" + time_minute);
-                    }
+                    publisher.publishMqttMessage(name + "/" + number + "/off/timer/" + time_hour
+                            + "/" + time_minute, Integer.parseInt(position));
                 }
                 finish();
             }

@@ -2,7 +2,6 @@ package voidream.vcontroller;
 
 import android.content.Context;
 import android.provider.Settings;
-import android.util.Log;
 
 import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
@@ -23,14 +22,14 @@ public class MqttPublisher {
         data_intent = new SQLiteAdapter(context).getMqttSetting();
     }
 
-    public void publishMqttMessage(String message){
+    public void publishMqttMessage(String message, int position){
         // Ambil Device ID
         String android_id = Settings.Secure.getString(context.getContentResolver(), Settings.Secure.ANDROID_ID);
         String deviceId = Md5.md5(android_id).toUpperCase();
         final String clientId = deviceId.substring(deviceId.length()-20) + "p";
         final String broker_url = context.getResources().getString(R.string.broker_url_string
                 , data_intent[0], data_intent[1]);
-        final String topic = data_intent[2];//R.string.set_topic, deviceId,
+        final String topic = new SQLiteAdapter(context).getController()[12][position];
         final MqttMessage mqttMessage = new MqttMessage();
         mqttMessage.setPayload(message.getBytes());
         try {
