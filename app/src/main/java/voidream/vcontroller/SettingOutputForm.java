@@ -154,6 +154,7 @@ public class SettingOutputForm extends Activity {
             power_output.setText(edit[3]);
             image_set.setImageResource(id_image);
             image_set.setId(id_image);
+            topic.setText(edit[4]);
             add.setText(getString(R.string.save));
         }else {
             output_number.setText(String.format(Locale.getDefault(), "%02d", sqLiteAdapter.getController()[0].length + 1));

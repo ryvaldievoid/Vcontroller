@@ -1,14 +1,18 @@
 package voidream.vcontroller;
 
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import org.apache.commons.lang.ArrayUtils;
@@ -84,6 +88,7 @@ public class AdapterController extends BaseAdapter {
         final TextView output_status = (TextView) convertView.findViewById(R.id.textview_controller_output_status);
         final ImageButton button_push = (ImageButton)convertView.findViewById(R.id.imagebutton_controller_push_button);
         ImageButton button_timer = (ImageButton)convertView.findViewById(R.id.imagebutton_controller_timer);
+        RelativeLayout open_menu = (RelativeLayout)convertView.findViewById(R.id.longclick_item);
 
         output_number.setText(outputNumber[position]);
         output_image.setButtonDrawable(Id_outputimage[position]);
@@ -126,6 +131,54 @@ public class AdapterController extends BaseAdapter {
                 intent.putExtra("output_power", power[position]);
                 intent.putExtra("output_icon", Id_outputimage[position]);
                 context.startActivity(intent);
+            }
+        });
+
+        open_menu.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                View view = inflater.inflate(R.layout.popup1, null);
+                final Dialog dialog = new Dialog(context, R.style.AppTheme_PopUp);
+                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                dialog.setCanceledOnTouchOutside(true);
+                dialog.setCancelable(true);
+                dialog.setContentView(view);
+
+                TextView title = (TextView)view.findViewById(R.id.textview_title);
+                Button edit = (Button)view.findViewById(R.id.button_edit);
+                Button delete = (Button)view.findViewById(R.id.button_delete);
+                assert title != null;
+                assert edit != null;
+                assert delete != null;
+                title.setText(outputName[position]);
+
+                edit.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                        Intent intent= new Intent(context, SettingOutputForm.class);
+                        String[] edit = new String[]{outputNumber[position], outputName[position]
+                                , AdapterController.position[position], power[position]
+                                , sqLiteAdapter.getController()[12][position]};
+                        intent.putExtra(context.getString(R.string.edit_controller), edit);
+                        intent.putExtra(context.getString(R.string.edit_controller_id_image), Id_outputimage[position]);
+                        context.startActivity(intent);
+                    }
+                });
+
+                delete.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                        sqLiteAdapter.deleteController(outputName[position]);
+                        Intent intent = new Intent(SettingOutputForm.BROADCAST_ACTION);
+                        intent.putExtra(context.getString(R.string.update_list_controller), true);
+                        context.sendBroadcast(intent);
+                    }
+                });
+
+                dialog.show();
+                return true;
             }
         });
 
