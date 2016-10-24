@@ -3,12 +3,13 @@
     <style name="AppBaseTheme" parent="android:Theme.Light"/>
 
     <style name="AppTheme" parent="AppBaseTheme">
+        <item name="android:textSize">12dp</item>
         <item name="android:windowBackground">@color/background_window</item>
         <item name="android:actionBarStyle">@style/ActionBarStyle</item>
-        <item name="android:textColor">@android:color/white</item>
-        <item name="colorPrimary">@android:color/white</item>
-        <item name="colorPrimaryDark">@android:color/white</item>
-        <item name="colorAccent">@android:color/white</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="colorPrimary">@android:color/black</item>
+        <item name="colorPrimaryDark">@android:color/black</item>
+        <item name="colorAccent">@android:color/black</item>
         <item name="android:textColorPrimary">@android:color/black</item>
         <item name="android:textColorPrimaryInverse">@android:color/white</item>
     </style>

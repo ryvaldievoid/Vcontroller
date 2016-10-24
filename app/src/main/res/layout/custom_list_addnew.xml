@@ -3,11 +3,11 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
+    <ImageButton
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:text="+"
         android:id="@+id/button"
+        android:src="@drawable/add_new"
         android:background="@drawable/button_add_new"
         android:textColor="@color/colorGrey300"
         android:layout_gravity="center_horizontal"

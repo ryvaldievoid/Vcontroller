@@ -107,5 +107,7 @@
     <string name="wait">Waiting Response</string>
     <string name="optional">optional</string>
     <string name="i_o_command">I/O Command . . .</string>
+    <string name="mqtt_setting">MQTT Setting</string>
+    <string name="load_save_setting">Load/Save Setting</string>
 
 </resources>

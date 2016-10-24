@@ -30,6 +30,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
@@ -75,7 +76,7 @@ public class FragmentAdapter extends Fragment {
         controller = (ListView)controller_view.findViewById(R.id.listController);
         footer = inflater.inflate(R.layout.custom_list_addnew, null);
         controller.addFooterView(footer);
-        Button add_new = (Button)footer.findViewById(R.id.button);
+        ImageButton add_new = (ImageButton)footer.findViewById(R.id.button);
         add_new.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

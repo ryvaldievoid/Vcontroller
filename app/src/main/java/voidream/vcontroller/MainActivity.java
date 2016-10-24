@@ -66,14 +66,11 @@ public class MainActivity extends FragmentActivity {
             @Override
             public void onPageSelected(int position) {
                 switch (position){
+                    case 0:
+                        setTitle("Controller");
+                        break;
                     case 1:
                         setTitle("Log");
-                        break;
-                    case 2:
-                        setTitle("Settings");
-                        break;
-                    default:
-                        setTitle("Controller");
                         break;
                 }
             }
@@ -97,13 +94,19 @@ public class MainActivity extends FragmentActivity {
 
 		switch (item.getItemId()) {
 
-            case R.id.home:
-                startActivity(new Intent(this, AboutUs.class));
-                break;
+			case R.id.mqtt_setting:
+				Intent intent_mqtt_setting= new Intent(MainActivity.this, Config.class);
+				startActivity(intent_mqtt_setting);
+				break;
 
-			case R.id.menu_help:
-				Intent intent_help= new Intent(MainActivity.this, HowItWorks.class);
-				startActivity(intent_help);
+			case R.id.load_save:
+				Intent intent_load_save= new Intent(MainActivity.this, LoadSave.class);
+				startActivity(intent_load_save);
+				break;
+
+			case R.id.statistic:
+				Intent intent_statistic= new Intent(MainActivity.this, Statistic.class);
+				startActivity(intent_statistic);
 				break;
 
 			case R.id.menu_about:
@@ -132,8 +135,7 @@ public class MainActivity extends FragmentActivity {
 			super(fm);
 		}
 
-		public static int [] TITLES = {R.drawable.ic_controller, R.drawable.ic_log,
-				R.drawable.ic_customize};
+		public static int [] TITLES = {R.drawable.ic_controller, R.drawable.ic_log};
 
 		@Override
 		public int getCount() {
