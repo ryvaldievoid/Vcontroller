@@ -1,13 +1,5 @@
 package voidream.vcontroller;
 
-import org.eclipse.paho.client.mqttv3.MqttCallback;
-import org.eclipse.paho.client.mqttv3.MqttClient;
-import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
-import org.eclipse.paho.client.mqttv3.MqttDeliveryToken;
-import org.eclipse.paho.client.mqttv3.MqttException;
-import org.eclipse.paho.client.mqttv3.MqttMessage;
-import org.eclipse.paho.client.mqttv3.MqttTopic;
-import org.eclipse.paho.client.mqttv3.internal.MemoryPersistence;
 import android.app.Service;
 import android.content.Intent;
 import android.os.Handler;
@@ -17,6 +9,15 @@ import android.os.StrictMode;
 import android.provider.Settings;
 import android.util.Log;
 import android.widget.Toast;
+
+import org.eclipse.paho.client.mqttv3.MqttCallback;
+import org.eclipse.paho.client.mqttv3.MqttClient;
+import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
+import org.eclipse.paho.client.mqttv3.MqttDeliveryToken;
+import org.eclipse.paho.client.mqttv3.MqttException;
+import org.eclipse.paho.client.mqttv3.MqttMessage;
+import org.eclipse.paho.client.mqttv3.MqttTopic;
+import org.eclipse.paho.client.mqttv3.internal.MemoryPersistence;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -35,7 +36,8 @@ public class MqttService extends Service {
     private Intent intent_broadcast;
     private String[] data_intent;
     private Handler handler;
-    private String broker_url, topic;
+    private String broker_url;
+    private String[] topic;
 
     public IBinder onBind(Intent intent) {
         return null;
@@ -58,12 +60,19 @@ public class MqttService extends Service {
         final String clientId = deviceId.substring(deviceId.length() - 20);
         //deviceId = deviceId.substring(deviceId.length() - 25);
 
+        int size = sqLiteAdapter.getController()[12].length;
+        topic = new String[size];
+        for (int a = 0;a < size;a++) {
+            if (sqLiteAdapter.getController()[12][a] != null) {
+                topic[a] = sqLiteAdapter.getController()[12][a];
+            }
+        }
+
         if (intent != null) {
             data_intent = intent.getStringArrayExtra(this.getResources().getString(R.string.data_mqtt));
             // Ambil url dan topic
             broker_url = this.getResources().getString(R.string.broker_url_string
                     , data_intent[0], data_intent[1]);
-            topic = data_intent[2];//this.getResources().getString(R.string.set_topic, deviceId,
         }
         new Thread(new Runnable() {
             @Override
@@ -75,9 +84,9 @@ public class MqttService extends Service {
                     mqttConnectOptions.setWill(mqttClient.getTopic("Error")
                             , "something went wrong!".getBytes(), 1, true);
                     //untuk connect ke broker sendiri
-                    if (data_intent.length > 3) {
-                        mqttConnectOptions.setUserName(data_intent[3]);
-                        mqttConnectOptions.setPassword(data_intent[4].toCharArray());
+                    if (data_intent.length > 2) {
+                        mqttConnectOptions.setUserName(data_intent[2]);
+                        mqttConnectOptions.setPassword(data_intent[3].toCharArray());
                         mqttConnectOptions.setCleanSession(true);
                     }
                     mqttClient.connect(mqttConnectOptions);

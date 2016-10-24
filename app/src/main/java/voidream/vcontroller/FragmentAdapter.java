@@ -22,8 +22,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -33,7 +31,6 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import org.apache.commons.lang.ArrayUtils;
 
@@ -104,12 +101,6 @@ public class FragmentAdapter extends Fragment {
             if (PreferenceManager.getDefaultSharedPreferences(getActivity())
                     .getString("tcp_mqtt", "").equals("mqtt")){
                 startMqttService();
-                AdapterController.tcp_or_mqtt = true;
-            }
-            if (PreferenceManager.getDefaultSharedPreferences(getActivity())
-                    .getString("tcp_mqtt", "").equals("tcp")){
-                connectTCP();
-                AdapterController.tcp_or_mqtt = false;
             }
             adapterController.updateData();
             controller.setAdapter(adapterController);
@@ -184,24 +175,12 @@ public class FragmentAdapter extends Fragment {
         }
     }
 
-    private void connectTCP(){
-        TCPClient.context = this.getActivity().getApplicationContext();
-        TCPClient.connect(sqLiteAdapter.getTcpSetting()[0], sqLiteAdapter.getTcpSetting()[1]);
-    }
-
-    private void disconnectTCP(){
-        TCPClient.disconnect();
-    }
-
     private void updateUI(Intent intent){
         if (intent.hasExtra(getString(R.string.update_list_controller))){
             adapterController.updateData();
             controller.setAdapter(adapterController);
         }else {
-            String[] getData = new String[0];
-            if (intent != null) {
-                getData = intent.getStringArrayExtra("update_controller");
-            }
+            String[] getData = intent.getStringArrayExtra("update_controller");
             if (!ArrayUtils.isEmpty(getData)) {
                 //int pos = Integer.parseInt(getData[1]);
                 //String status_ = getData[2];
@@ -230,7 +209,6 @@ public class FragmentAdapter extends Fragment {
     public void onDestroy(){
         super.onDestroy();
         stopMqttService();
-        disconnectTCP();
         getActivity().unregisterReceiver(broadcastReceiver);
     }
 

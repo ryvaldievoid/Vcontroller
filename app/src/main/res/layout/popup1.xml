@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/window_translucent">
@@ -23,7 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:text="Output 1"
-                android:id="@+id/textView29"
+                android:id="@+id/textview_title"
                 android:textSize="14dp"
                 android:textColor="@color/text1"
                 android:gravity="center_vertical"
@@ -34,7 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="38dp"
                 android:text="Edit"
-                android:id="@+id/button2"
+                android:id="@+id/button_edit"
                 android:textSize="14dp"
                 android:background="@drawable/button_transparent"
                 android:gravity="center_vertical|left"
@@ -45,7 +44,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="38dp"
                 android:text="Delete"
-                android:id="@+id/button3"
+                android:id="@+id/button_delete"
                 android:textSize="14dp"
                 android:background="@drawable/button_transparent"
                 android:gravity="center_vertical|left"
