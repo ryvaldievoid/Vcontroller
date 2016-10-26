@@ -14,8 +14,9 @@
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:id="@+id/imageView11"
+        android:id="@+id/imageview_empty"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/empty_log" />
+        android:src="@drawable/empty_log"
+        android:contentDescription="@string/background_image"/>
 </RelativeLayout>

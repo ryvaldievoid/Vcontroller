@@ -109,5 +109,6 @@
     <string name="i_o_command">I/O Command . . .</string>
     <string name="mqtt_setting">MQTT Setting</string>
     <string name="load_save_setting">Load/Save Setting</string>
+    <string name="background_image">background_image</string>
 
 </resources>

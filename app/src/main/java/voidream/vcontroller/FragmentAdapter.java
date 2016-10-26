@@ -27,10 +27,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
 
 import org.apache.commons.lang.ArrayUtils;
 
@@ -43,8 +42,9 @@ public class FragmentAdapter extends Fragment {
     private AdapterController adapterController;
     private AdapterLog adapterLog;
     private ListView controller, log_list;
-    private View controller_view, log_view, customize_view, footer;
-    private RelativeLayout statistic, config, setting, load_save;
+    private View controller_view;
+    private View log_view;
+    public static ImageView background_empty;
     //private Handler handler;
 
 	public static FragmentAdapter newInstance(int position) {
@@ -71,26 +71,26 @@ public class FragmentAdapter extends Fragment {
         adapterController = new AdapterController(getActivity());
         controller_view = inflater.inflate(R.layout.controller, null,false);
         controller = (ListView)controller_view.findViewById(R.id.listController);
-        footer = inflater.inflate(R.layout.custom_list_addnew, null);
+        View footer = inflater.inflate(R.layout.custom_list_addnew, null);
         controller.addFooterView(footer);
-        ImageButton add_new = (ImageButton)footer.findViewById(R.id.button);
+        ImageButton add_new = (ImageButton) footer.findViewById(R.id.button);
         add_new.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent setting_output_form = new Intent(getActivity(), SettingOutputForm.class);
-                startActivity(setting_output_form);
+                if (ArrayUtils.isEmpty(sqLiteAdapter.getMqttSetting())){
+                    Intent intent_mqtt_setting= new Intent(getActivity(), Config.class);
+                    startActivity(intent_mqtt_setting);
+                }else {
+                    Intent setting_output_form = new Intent(getActivity(), SettingOutputForm.class);
+                    startActivity(setting_output_form);
+                }
             }
         });
 
         adapterLog = new AdapterLog(getActivity());
         log_view = inflater.inflate(R.layout.log, null, false);
         log_list = (ListView)log_view.findViewById(R.id.loglist);
-
-        customize_view = inflater.inflate(R.layout.customize, null,false);
-        statistic = (RelativeLayout) customize_view.findViewById(R.id.relativelayout_customize_statistic);
-        config = (RelativeLayout) customize_view.findViewById(R.id.relativelayout_customize_config);
-        setting = (RelativeLayout) customize_view.findViewById(R.id.relativelayout_customize_controller);
-        load_save = (RelativeLayout) customize_view.findViewById(R.id.relativelayout_customize_loadsave);
+        background_empty = (ImageView)log_view.findViewById(R.id.imageview_empty);
 
     }
 
@@ -115,48 +115,6 @@ public class FragmentAdapter extends Fragment {
 
 			return  log_view;
 		}
-
-		//Customize
-		if(position==2){
-            getActivity().runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    statistic.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            Intent intent= new Intent(getActivity(), Statistic.class);
-                            getActivity().startActivity(intent);
-                        }
-                    });
-
-                    config.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            Intent intent= new Intent(getActivity(), Config.class);
-                            getActivity().startActivity(intent);
-                        }
-                    });
-
-                    setting.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            Intent intent= new Intent(getActivity(), SettingOutput.class);
-                            getActivity().startActivity(intent);
-                        }
-                    });
-
-                    load_save.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            Intent intent= new Intent(getActivity(),LoadSave.class);
-                            getActivity().startActivity(intent);
-                        }
-                    });
-                }
-            });
-
-			return  customize_view;
-        }
 
 		return  null;
 

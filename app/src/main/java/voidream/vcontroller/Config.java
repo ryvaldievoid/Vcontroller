@@ -58,6 +58,8 @@ public class Config extends Activity {
                 String username_ = username.getText().toString();
                 String password_ = password.getText().toString();
                 if (!StringUtils.isBlank(url) & !StringUtils.isBlank(port_)) {
+                    url = broker_url.getHint().toString();
+                    port_ = port.getHint().toString();
                     sqLiteAdapter.addMqttSetting(url, port_, username_, password_);
                     PreferenceManager.getDefaultSharedPreferences(Config.this).edit()
                             .putString("tcp_mqtt", "mqtt").apply();

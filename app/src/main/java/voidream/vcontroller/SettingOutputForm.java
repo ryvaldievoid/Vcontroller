@@ -141,6 +141,7 @@ public class SettingOutputForm extends Activity {
                         }
                     }
                 }
+                startMqttService();
             }
         });
 
@@ -160,6 +161,12 @@ public class SettingOutputForm extends Activity {
             output_number.setText(String.format(Locale.getDefault(), "%02d", sqLiteAdapter.getController()[0].length + 1));
         }
 
+    }
+
+    private void startMqttService(){
+        Intent start_service = new Intent(SettingOutputForm.this, MqttService.class);
+        start_service.putExtra(getString(R.string.data_mqtt), new SQLiteAdapter(SettingOutputForm.this).getMqttSetting());
+        startService(start_service);
     }
 
 }

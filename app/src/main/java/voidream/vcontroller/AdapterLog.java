@@ -2,9 +2,6 @@ package voidream.vcontroller;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.Intent;
-import android.os.Handler;
-import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.apache.commons.lang.ArrayUtils;
-import org.apache.commons.lang.StringEscapeUtils;
 import org.apache.commons.lang.StringUtils;
 
 import java.text.SimpleDateFormat;
@@ -75,8 +71,14 @@ public class AdapterLog extends BaseAdapter {
     @Override
     public int getCount() {
         if (ArrayUtils.isEmpty(outputName)){
+            if (FragmentAdapter.background_empty != null){
+                FragmentAdapter.background_empty.setVisibility(View.VISIBLE);
+            }
             return 0;
         }else {
+            if (FragmentAdapter.background_empty != null){
+                FragmentAdapter.background_empty.setVisibility(View.GONE);
+            }
             return outputName.length;
         }
     }
