@@ -135,8 +135,10 @@ public class FragmentAdapter extends Fragment {
 
     private void updateUI(Intent intent){
         if (intent.hasExtra(getString(R.string.update_list_controller))){
+            adapterLog.updateData();
             adapterController.updateData();
             controller.setAdapter(adapterController);
+            log_list.setAdapter(adapterLog);
         }else {
             String[] getData = intent.getStringArrayExtra("update_controller");
             if (!ArrayUtils.isEmpty(getData)) {

@@ -2,6 +2,7 @@ package voidream.vcontroller;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,9 +27,11 @@ public class AdapterLog extends BaseAdapter {
     private String[] dateString;
     private String[] num;
 
+    private Intent intent;
     private Context context;
     private SQLiteAdapter sqLiteAdapter;
     public AdapterLog(Context ini){
+        intent = new Intent(SettingOutputForm.BROADCAST_ACTION);
         context = ini;
         sqLiteAdapter = new SQLiteAdapter(context);
     }
@@ -121,7 +124,9 @@ public class AdapterLog extends BaseAdapter {
         convertView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                sqLiteAdapter.deleteLog();
+                sqLiteAdapter.deleteLog(outputName[position]);
+                intent.putExtra(context.getString(R.string.update_list_controller), true);
+                context.sendBroadcast(intent);
                 return true;
             }
         });

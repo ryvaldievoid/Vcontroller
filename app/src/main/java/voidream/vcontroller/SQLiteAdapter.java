@@ -251,9 +251,9 @@ public class SQLiteAdapter extends SQLiteOpenHelper {
         return result;
     }
 
-    public void deleteLog(){
+    public void deleteLog(String nama_){
         db = this.getWritableDatabase();
-        db.delete(tabel_log, null, null);
+        db.delete(tabel_log, nama + "='" + nama_ + "'", null);
         db.close();
     }
 
