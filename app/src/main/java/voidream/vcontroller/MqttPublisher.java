@@ -37,9 +37,12 @@ public class MqttPublisher {
                 final MqttConnectOptions mqttConnectOptions = new MqttConnectOptions();
                 mqttConnectOptions.setKeepAliveInterval(30);
                 mqttConnectOptions.setWill(mqttClientPublish.getTopic("Error"), "something went wrong!".getBytes(), 1, true);
-                //untuk connect ke geeknesia.com
-                //mqttConnectOptions.setUserName(ini.getString(R.string.user_name_mqtt));
-                //mqttConnectOptions.setPassword(ini.getString(R.string.password_mqtt).toCharArray());
+                //untuk connect ke broker sendiri
+                if (data_intent.length > 2) {
+                    mqttConnectOptions.setUserName(data_intent[2]);
+                    mqttConnectOptions.setPassword(data_intent[3].toCharArray());
+                    mqttConnectOptions.setCleanSession(true);
+                }
                 Thread connect = new Thread(new Runnable() {
                     @Override
                     public void run() {
