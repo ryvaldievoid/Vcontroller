@@ -18,7 +18,6 @@ public class SetTimer extends Activity {
 
     private boolean on_off = true;
     private int time_hour, time_minute;
-    private String number;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,12 +34,13 @@ public class SetTimer extends Activity {
         final Button timer_pick_time = (Button)findViewById(R.id.button_timer_pick_time);
         Button timer_set = (Button)findViewById(R.id.button_timer_set_timer);
 
-        number = getIntent().getStringExtra("output_number");
+        String number = getIntent().getStringExtra("output_number");
         final String name = getIntent().getStringExtra("output_name");
         String status = getIntent().getStringExtra("output_status");
         final String position = getIntent().getStringExtra("output_position");
         String power = getIntent().getStringExtra("output_power");
         int id_icon = getIntent().getIntExtra("output_icon", 0);
+        final int pos = getIntent().getIntExtra("position", 0);
 
         output_number.setText(number);
         output_name.setText(name);
@@ -104,11 +104,9 @@ public class SetTimer extends Activity {
             @Override
             public void onClick(View v) {
                 if (on_off) {
-                    publisher.publishMqttMessage(name + "/" + number + "/on/timer/" + time_hour
-                            + "/" + time_minute, Integer.parseInt(position));
+                    publisher.publishMqttMessage(getString(R.string.timer_command, time_hour, time_minute, name, "on"), pos);
                 }else {
-                    publisher.publishMqttMessage(name + "/" + number + "/off/timer/" + time_hour
-                            + "/" + time_minute, Integer.parseInt(position));
+                    publisher.publishMqttMessage(getString(R.string.timer_command, time_hour, time_minute, name, "off"), pos);
                 }
                 finish();
             }

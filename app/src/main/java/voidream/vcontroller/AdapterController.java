@@ -92,7 +92,7 @@ public class AdapterController extends BaseAdapter {
 
         output_number.setText(outputNumber[position]);
         output_image.setButtonDrawable(Id_outputimage[position]);
-        if (status[position].equals("ON")) {
+        if (status[position].equals("on")) {
             output_image.setChecked(true);
         }else {
             output_image.setChecked(false);
@@ -130,6 +130,7 @@ public class AdapterController extends BaseAdapter {
                 intent.putExtra("output_position", AdapterController.position[position]);
                 intent.putExtra("output_power", power[position]);
                 intent.putExtra("output_icon", Id_outputimage[position]);
+                intent.putExtra("position", position);
                 context.startActivity(intent);
             }
         });
@@ -171,6 +172,7 @@ public class AdapterController extends BaseAdapter {
                     public void onClick(View v) {
                         dialog.dismiss();
                         sqLiteAdapter.deleteController(outputName[position]);
+                        sqLiteAdapter.deleteLog(outputName[position]);
                         Intent intent = new Intent(SettingOutputForm.BROADCAST_ACTION);
                         intent.putExtra(context.getString(R.string.update_list_controller), true);
                         context.sendBroadcast(intent);

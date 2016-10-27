@@ -78,8 +78,8 @@ public class SQLiteAdapter extends SQLiteOpenHelper {
         if(nama_!=null & posisi_!=null & power_!=null & id_image_!= 0){
             on_command_ = nama_ + "/on";
             off_command_ = nama_ + "/off";
-            timer_on = "timer/" + nama_ + "/on";
-            timer_off = "timer/" + nama_ + "/off";
+            timer_on = "00:00/" + nama_ + "/on";
+            timer_off = "00:00/" + nama_ + "/off";
             on_r = "r/" + nama_ + "/on";
             off_r = "r/" + nama_ + "/off";
             values.put(nama, nama_);

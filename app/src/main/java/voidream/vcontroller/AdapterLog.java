@@ -120,17 +120,6 @@ public class AdapterLog extends BaseAdapter {
         log_time_stamp.setText(dateString[position]);
         log_number.setText(num[position]);
 
-        convertView.setLongClickable(true);
-        convertView.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                sqLiteAdapter.deleteLog(outputName[position]);
-                intent.putExtra(context.getString(R.string.update_list_controller), true);
-                context.sendBroadcast(intent);
-                return true;
-            }
-        });
-
         return convertView;
     }
 }

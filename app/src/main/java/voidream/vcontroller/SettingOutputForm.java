@@ -92,8 +92,8 @@ public class SettingOutputForm extends Activity {
                 String nama_ = nama_ouput.getText().toString();
                 String on_command_ = nama_ + "/on";
                 String off_command_ = nama_ + "/off";
-                String timer_on_ = "timer/" + nama_ + "/on";
-                String timer_off_ = "timer/" + nama_ + "/off";
+                String timer_on_ = "00:00/" + nama_ + "/on";
+                String timer_off_ = "00:00/" + nama_ + "/off";
                 String on_r = "r/" + nama_ + "/on";
                 String off_r = "r/" + nama_ + "/off";
                 on_command.setText(on_command_);

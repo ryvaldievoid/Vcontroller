@@ -105,10 +105,16 @@ public class MqttService extends Service {
                             Runnable sendUpdatesToUI = new Runnable() {
                                 @Override
                                 public void run() {
-                                    int size = sqLiteAdapter.getController()[0].length;
+                                    String[][] data = sqLiteAdapter.getController();
+                                    int size = data[0].length;
                                     for (int a = 0;a<size;a++) {
                                         if (message.contains(sqLiteAdapter.getController()[0][a])) {
-                                            updateController(a, message);
+                                            String nama = sqLiteAdapter.getController()[0][a];
+                                            if (message.equals(sqLiteAdapter.getIOCommand(nama)[4])){
+                                                updateController(a, nama, "on");
+                                            }else if (message.equals(sqLiteAdapter.getIOCommand(nama)[5])) {
+                                                updateController(a, nama, "off");
+                                            }
                                         }
                                     }
                                 }
@@ -133,41 +139,17 @@ public class MqttService extends Service {
         super.onStart(intent, startId);
     }
 
-    private void updateController(int position, String message){
-        if (!message.contains("timer")) {
-            String output_name = message.split("/")[0];
-            String status = message.split("/")[1].toUpperCase();
-            SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm", Locale.getDefault());
-            String timestamp = formatter.format(new Date().getTime());
-            sqLiteAdapter.addControllerStatus(output_name, status, timestamp);
-            if (!AdapterController.status[position].equals("Waiting Response")) {
-                sqLiteAdapter.addLog(position, AdapterController.outputName[position], AdapterController.position[position]
-                        , AdapterController.power[position], AdapterController.status[position],
-                        AdapterController.Id_outputimage[position], timestamp);
-            }
-            intent_broadcast.putExtra("update_controller", new String[]{output_name, ""+position, status});
-            sendBroadcast(intent_broadcast);
-        }else {
-            String output_name = message.split("/")[0];
-            String no = message.split("/")[1];
-            if (no.substring(0, 1).equals("0")){
-                no = "" + no.charAt(1);
-            }
-            String status = message.split("/")[2].toUpperCase();
-            String time_hour = message.split("/")[4];
-            String time_minute = message.split("/")[5];
-            int pos = Integer.parseInt(no) - 1;
-            SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm", Locale.getDefault());
-            String timestamp = formatter.format(new Date().getTime());
-            sqLiteAdapter.addControllerStatus(output_name, status, timestamp);
-            if (!AdapterController.status[pos].equals("Waiting Response")) {
-                sqLiteAdapter.addLog(pos, AdapterController.outputName[pos], AdapterController.position[pos]
-                        , AdapterController.power[pos], AdapterController.status[pos],
-                        AdapterController.Id_outputimage[pos], timestamp);
-            }
-            intent_broadcast.putExtra("update_controller", new String[]{output_name, no, status, time_hour, time_minute});
-            sendBroadcast(intent_broadcast);
+    private void updateController(int position, String output_name, String status){
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm", Locale.getDefault());
+        String timestamp = formatter.format(new Date().getTime());
+        sqLiteAdapter.addControllerStatus(output_name, status, timestamp);
+        if (!AdapterController.status[position].equals("Waiting Response")) {
+            sqLiteAdapter.addLog(position, AdapterController.outputName[position], AdapterController.position[position]
+                    , AdapterController.power[position], AdapterController.status[position],
+                    AdapterController.Id_outputimage[position], timestamp);
         }
+        intent_broadcast.putExtra("update_controller", new String[]{output_name, ""+position, status});
+        sendBroadcast(intent_broadcast);
     }
 
     @Override

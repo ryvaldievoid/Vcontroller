@@ -110,5 +110,6 @@
     <string name="mqtt_setting">MQTT Setting</string>
     <string name="load_save_setting">Load/Save Setting</string>
     <string name="background_image">background_image</string>
+    <string name="timer_command" formatted="false">%s:%s/%s/%s</string>
 
 </resources>
