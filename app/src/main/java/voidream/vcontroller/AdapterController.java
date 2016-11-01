@@ -1,6 +1,7 @@
 package voidream.vcontroller;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -108,15 +109,17 @@ public class AdapterController extends BaseAdapter {
         button_push.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!output_image.isChecked()) {
-                    publisher.publishMqttMessage(sqLiteAdapter.getIOCommand(outputName[position])[0]
-                            , position);
-                }else {
-                    publisher.publishMqttMessage(sqLiteAdapter.getIOCommand(outputName[position])[1]
-                            , position);
+                if (CheckConnection.data((Activity)context)) {
+                    if (!output_image.isChecked()) {
+                        publisher.publishMqttMessage(sqLiteAdapter.getIOCommand(outputName[position])[0]
+                                , position);
+                    } else {
+                        publisher.publishMqttMessage(sqLiteAdapter.getIOCommand(outputName[position])[1]
+                                , position);
+                    }
+                    output_status.setText(context.getString(R.string.wait));
+                    button_push.setVisibility(View.GONE);
                 }
-                output_status.setText(context.getString(R.string.wait));
-                button_push.setVisibility(View.GONE);
             }
         });
 

@@ -103,12 +103,14 @@ public class SetTimer extends Activity {
 
             @Override
             public void onClick(View v) {
-                if (on_off) {
-                    publisher.publishMqttMessage(getString(R.string.timer_command, time_hour, time_minute, name, "on"), pos);
-                }else {
-                    publisher.publishMqttMessage(getString(R.string.timer_command, time_hour, time_minute, name, "off"), pos);
+                if (CheckConnection.data(SetTimer.this)) {
+                    if (on_off) {
+                        publisher.publishMqttMessage(getString(R.string.timer_command, time_hour, time_minute, name, "on"), pos);
+                    } else {
+                        publisher.publishMqttMessage(getString(R.string.timer_command, time_hour, time_minute, name, "off"), pos);
+                    }
+                    finish();
                 }
-                finish();
             }
         });
 

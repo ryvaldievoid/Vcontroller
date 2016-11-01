@@ -141,7 +141,9 @@ public class SettingOutputForm extends Activity {
                         }
                     }
                 }
-                startMqttService();
+                if (CheckConnection.data(SettingOutputForm.this)) {
+                    startMqttService();
+                }
             }
         });
 

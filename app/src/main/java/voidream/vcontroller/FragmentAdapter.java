@@ -100,7 +100,9 @@ public class FragmentAdapter extends Fragment {
 		if(position==0){
             if (PreferenceManager.getDefaultSharedPreferences(getActivity())
                     .getString("tcp_mqtt", "").equals("mqtt")){
-                startMqttService();
+                if (CheckConnection.data(getActivity())) {
+                    startMqttService();
+                }
             }
             adapterController.updateData();
             controller.setAdapter(adapterController);
