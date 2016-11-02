@@ -110,6 +110,35 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="Output ID"
+                    android:id="@+id/textView24"
+                    android:textColor="@color/text2"
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="6dp"
+                    android:textSize="12dp"
+                    android:layout_marginTop="5dp"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editText_id_output"
+                    android:hint="Output ID"
+                    android:textColorHint="@color/colorGrey200"
+                    android:textColor="@color/text1"
+                    android:textSize="12dp"
+                    android:layout_gravity="center_vertical"
+                    android:maxLength="16"
+                    android:inputType="textWebEditText|textCapSentences"
+                    android:background="@drawable/background_textfield"
+                    android:linksClickable="false"
+                    android:singleLine="false"
+                    android:layout_marginTop="2.5dp"
+                    android:padding="8dp"
+                    android:maxLines="1"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="@string/i_o_command"
                     android:id="@+id/io_command"
                     android:textColor="@color/color_main_2"
