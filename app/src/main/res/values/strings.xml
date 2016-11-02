@@ -17,7 +17,8 @@
     <string name="about">About Us</string>
 
     <string name="output_name">Name</string>
-    <string name="output_name_hint">Output Name</string>
+    <string name="output_name_hint">Display Name</string>
+    <string name="output_id">Output ID</string>
     <string name="output_position">Position</string>
     <string name="output_position_hint">Position</string>
     <string name="output_power">Power</string>

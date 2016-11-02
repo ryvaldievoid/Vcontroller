@@ -3,6 +3,7 @@ package voidream.vcontroller;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -50,7 +51,8 @@ public class SettingOutputForm extends Activity {
         TextView output_number = (TextView)findViewById(R.id.textView_output_number_output_form);
         final ImageView image_set = (ImageView)findViewById(R.id.imageview_setting_output_image_selected);
         image_set.setId(0);
-        final EditText nama_ouput = (EditText) findViewById(R.id.editText_nama_output);
+        final EditText nama_ouput = (EditText) findViewById(R.id.editText_nama_display);
+        final EditText id_ouput = (EditText) findViewById(R.id.editText_id_output);
         final EditText posisi_output = (EditText) findViewById(R.id.editText_posisi_output);
         final EditText power_output = (EditText)findViewById(R.id.editText_power_output);
         final EditText topic = (EditText)findViewById(R.id.editText_topic);
@@ -68,6 +70,11 @@ public class SettingOutputForm extends Activity {
 
         final SQLiteAdapter sqLiteAdapter = new SQLiteAdapter(this);
 
+        String deviceId = Md5.md5(Settings.Secure.getString(this.getContentResolver()
+                , Settings.Secure.ANDROID_ID)).toUpperCase();
+        final String clientId = deviceId.subSequence(0, 6).toString();
+        topic.setText(clientId);
+
         list_ouput.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -76,7 +83,7 @@ public class SettingOutputForm extends Activity {
             }
         });
 
-        nama_ouput.addTextChangedListener(new TextWatcher() {
+        id_ouput.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -89,7 +96,7 @@ public class SettingOutputForm extends Activity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                String nama_ = nama_ouput.getText().toString();
+                String nama_ = id_ouput.getText().toString();
                 String on_command_ = nama_ + "/on";
                 String off_command_ = nama_ + "/off";
                 String timer_on_ = "00:00/" + nama_ + "/on";
@@ -113,6 +120,7 @@ public class SettingOutputForm extends Activity {
                 String posisi_output_ = posisi_output.getText().toString();
                 String power_output_ = power_output.getText().toString();
                 String topic_ = topic.getText().toString();
+                String id_ = id_ouput.getText().toString();
                 if (add.getText().toString().equals(getString(R.string.save))){
                     if (id_image != 0 && !StringUtils.isBlank(nama_output_)
                             && !StringUtils.isBlank(posisi_output_)
@@ -120,7 +128,7 @@ public class SettingOutputForm extends Activity {
                             && !StringUtils.isBlank(topic_)) {
                         sqLiteAdapter.deleteController(nama_temp);
                         sqLiteAdapter.AddController(nama_output_, posisi_output_, power_output_
-                                ,id_image, topic_);
+                                ,id_image, topic_, id_);
                         intent.putExtra(getString(R.string.update_list_controller), true);
                         sendBroadcast(intent);
                         finish();
@@ -130,9 +138,9 @@ public class SettingOutputForm extends Activity {
                             && !StringUtils.isBlank(posisi_output_)
                             && !StringUtils.isBlank(power_output_)
                             && !StringUtils.isBlank(topic_)) {
-                        if (sqLiteAdapter.getValidController(nama_ouput.getText().toString())) {
+                        if (sqLiteAdapter.getValidController(nama_output_)) {
                             sqLiteAdapter.AddController(nama_output_, posisi_output_, power_output_
-                                    , id_image, topic_);
+                                    , id_image, topic_, id_);
                             intent.putExtra(getString(R.string.update_list_controller), true);
                             sendBroadcast(intent);
                             finish();
@@ -158,6 +166,7 @@ public class SettingOutputForm extends Activity {
             image_set.setImageResource(id_image);
             image_set.setId(id_image);
             topic.setText(edit[4]);
+            id_ouput.setText(edit[5]);
             add.setText(getString(R.string.save));
         }else {
             output_number.setText(String.format(Locale.getDefault(), "%02d", sqLiteAdapter.getController()[0].length + 1));

@@ -108,7 +108,7 @@ public class MqttService extends Service {
                                     String[][] data = sqLiteAdapter.getController();
                                     int size = data[0].length;
                                     for (int a = 0;a<size;a++) {
-                                        if (message.contains(sqLiteAdapter.getController()[0][a])) {
+                                        if (message.contains(sqLiteAdapter.getController()[13][a])) {
                                             String nama = sqLiteAdapter.getController()[0][a];
                                             if (message.equals(sqLiteAdapter.getIOCommand(nama)[4])){
                                                 updateController(a, nama, "on");

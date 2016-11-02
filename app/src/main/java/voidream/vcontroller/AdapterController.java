@@ -128,7 +128,7 @@ public class AdapterController extends BaseAdapter {
             public void onClick(View v) {
                 Intent intent= new Intent(context, SetTimer.class);
                 intent.putExtra("output_number", outputNumber[position]);
-                intent.putExtra("output_name", outputName[position]);
+                intent.putExtra("output_name", sqLiteAdapter.getController()[13][position]);
                 intent.putExtra("output_status", status[position]);
                 intent.putExtra("output_position", AdapterController.position[position]);
                 intent.putExtra("output_power", power[position]);
@@ -163,7 +163,8 @@ public class AdapterController extends BaseAdapter {
                         Intent intent= new Intent(context, SettingOutputForm.class);
                         String[] edit = new String[]{outputNumber[position], outputName[position]
                                 , AdapterController.position[position], power[position]
-                                , sqLiteAdapter.getController()[12][position]};
+                                , sqLiteAdapter.getController()[12][position]
+                                , sqLiteAdapter.getController()[13][position]};
                         intent.putExtra(context.getString(R.string.edit_controller), edit);
                         intent.putExtra(context.getString(R.string.edit_controller_id_image), Id_outputimage[position]);
                         context.startActivity(intent);

@@ -18,7 +18,7 @@ public class SQLiteAdapter extends SQLiteOpenHelper {
 
     private SQLiteDatabase db;
     private static final String database_name = "VcontrollerDB";
-    private static final int database_version = 9;//naikin setiap ada perubahan
+    private static final int database_version = 10;//naikin setiap ada perubahan
 
     public SQLiteAdapter(Context context) {
         super(context, database_name, null, database_version);
@@ -30,7 +30,7 @@ public class SQLiteAdapter extends SQLiteOpenHelper {
             , tabel_log = "log", tabel_setting_mqtt = "mqtt_settings",  on_command = "on_command"
             , off_command = "off_command", timer_on_command = "timer_command"
             , timer_off_command = "timer_off_command", on_receive_command = "on_receive_command"
-            , off_receive_command = "off_receive_command";
+            , off_receive_command = "off_receive_command", output_id = "output_id";
     private static final String nama = "nama", posisi = "posisi", power = "power"
             , id_image = "id_image", status = "status", number = "number", topic = "topic";
     private static final String create_tabel_controller =
@@ -39,7 +39,7 @@ public class SQLiteAdapter extends SQLiteOpenHelper {
                     + power + " TEXT," + status + " TEXT," + id_image + " TEXT,"
                     + timestamp + " TEXT," + on_command + " TEXT," + off_command + " TEXT,"
                     + timer_on_command + " TEXT,"+ timer_off_command + " TEXT," + on_receive_command + " TEXT,"
-                    + off_receive_command  + " TEXT," + topic + " TEXT" + ")";
+                    + off_receive_command  + " TEXT," + topic  + " TEXT," + output_id + " TEXT" + ")";
 
     private static final String create_tabel_log =
             "create table " + tabel_log + " (" + key_id + " INTEGER PRIMARY KEY,"
@@ -69,19 +69,20 @@ public class SQLiteAdapter extends SQLiteOpenHelper {
     }
 
 
-    public void AddController(String nama_, String posisi_, String power_, int id_image_, String topic_){
+    public void AddController(String nama_, String posisi_, String power_, int id_image_, String topic_,
+                              String output_id_){
         db = this.getWritableDatabase();
         String on_command_, off_command_, timer_on, timer_off
                 ,on_r, off_r;
 
         ContentValues values = new ContentValues();
-        if(nama_!=null & posisi_!=null & power_!=null & id_image_!= 0){
-            on_command_ = nama_ + "/on";
-            off_command_ = nama_ + "/off";
-            timer_on = "00:00/" + nama_ + "/on";
-            timer_off = "00:00/" + nama_ + "/off";
-            on_r = "r/" + nama_ + "/on";
-            off_r = "r/" + nama_ + "/off";
+        if(nama_!=null && posisi_!=null && power_!=null && id_image_!= 0 && output_id_!=null){
+            on_command_ = output_id_ + "/on";
+            off_command_ = output_id_ + "/off";
+            timer_on = "00:00/" + output_id_ + "/on";
+            timer_off = "00:00/" + output_id_ + "/off";
+            on_r = "r/" + output_id_ + "/on";
+            off_r = "r/" + output_id_ + "/off";
             values.put(nama, nama_);
             values.put(posisi, posisi_);
             values.put(power, power_);
@@ -95,6 +96,7 @@ public class SQLiteAdapter extends SQLiteOpenHelper {
             values.put(on_receive_command, on_r);
             values.put(off_receive_command, off_r);
             values.put(topic, topic_);
+            values.put(output_id, output_id_);
         }
 
         db.insert(tabel_controller, null, values);
@@ -106,12 +108,12 @@ public class SQLiteAdapter extends SQLiteOpenHelper {
 
         String[] columns = new String[]{nama, posisi, power, status, id_image, timestamp, on_command
                 , off_command, timer_on_command, timer_off_command, on_receive_command
-                , off_receive_command, topic};
+                , off_receive_command, topic, output_id};
         Cursor cursor = db.query(tabel_controller, columns,
                 null, null, null, null, null);
 
         int size = (int)getRowCount(tabel_controller);
-        String[][] result = new String[13][size];
+        String[][] result = new String[14][size];
 
         int a = 0;
         cursor.moveToFirst();
@@ -129,6 +131,7 @@ public class SQLiteAdapter extends SQLiteOpenHelper {
             result[10][a] = cursor.getString(10);//on receive command
             result[11][a] = cursor.getString(11);//off receive command
             result[12][a] = cursor.getString(12);//topic
+            result[13][a] = cursor.getString(13);//output id
             a++;
             cursor.moveToNext();
         }
